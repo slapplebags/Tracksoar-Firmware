@@ -1267,30 +1267,6 @@ design rules under a new name.</description>
 <signal name="N$16">
 <wire x1="61.722" y1="61.2902" x2="61.722" y2="59.944" width="0.6096" layer="1"/>
 </signal>
-<signal name="N$17">
-<wire x1="49.0474" y1="64.9986" x2="56.2356" y2="64.9986" width="0.6096" layer="1"/>
-</signal>
-<signal name="N$18">
-<wire x1="59.182" y1="62.2046" x2="56.4134" y2="64.9986" width="0.6096" layer="1"/>
-</signal>
-<signal name="N$19">
-<wire x1="59.3852" y1="62.0522" x2="60.2488" y2="61.1378" width="0.6096" layer="1"/>
-</signal>
-<signal name="N$20">
-<wire x1="60.2488" y1="61.0108" x2="60.2488" y2="59.944" width="0.6096" layer="1"/>
-</signal>
-<signal name="N$21">
-<wire x1="48.9458" y1="61.722" x2="55.9054" y2="61.5188" width="0.6096" layer="1"/>
-<wire x1="55.9054" y1="61.5188" x2="56.8706" y2="60.1472" width="0.6096" layer="1"/>
-<wire x1="56.8706" y1="60.1472" x2="56.7436" y2="59.9948" width="0.6096" layer="1"/>
-<wire x1="56.7436" y1="59.9948" x2="56.7436" y2="60.0202" width="0.6096" layer="1"/>
-</signal>
-<signal name="N$22">
-<wire x1="47.2186" y1="60.0202" x2="55.1688" y2="60.0202" width="0.6096" layer="1"/>
-</signal>
-<signal name="N$23">
-<wire x1="48.8696" y1="64.643" x2="48.9204" y2="62.1284" width="0.6096" layer="1"/>
-</signal>
 </signals>
 </board>
 </drawing>
