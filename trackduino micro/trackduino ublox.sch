@@ -6061,6 +6061,11 @@ SMT- SWCH-08247</description>
 <part name="JP5" library="SparkFun-Connectors" deviceset="M04" device="1X04_NO_SILK"/>
 <part name="S1" library="SparkFun-Electromechanical" deviceset="TAC_SWITCH" device="SMD" value="TAC_SWITCHSMD"/>
 <part name="GND23" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="LED4" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
+<part name="R6" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES"/>
+<part name="GND24" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="SUPPLY11" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
+<part name="GND25" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6129,6 +6134,11 @@ SMT- SWCH-08247</description>
 <instance part="JP5" gate="G$1" x="17.78" y="-7.62"/>
 <instance part="S1" gate="S" x="12.7" y="83.82" rot="R90"/>
 <instance part="GND23" gate="1" x="17.78" y="88.9" rot="R90"/>
+<instance part="LED4" gate="G$1" x="228.6" y="-7.62"/>
+<instance part="R6" gate="G$1" x="228.6" y="0" rot="R90"/>
+<instance part="GND24" gate="1" x="228.6" y="-15.24"/>
+<instance part="SUPPLY11" gate="G$1" x="22.86" y="73.66" rot="R90"/>
+<instance part="GND25" gate="1" x="20.32" y="27.94" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -6277,6 +6287,16 @@ SMT- SWCH-08247</description>
 <junction x="12.7" y="88.9"/>
 <junction x="15.24" y="88.9"/>
 </segment>
+<segment>
+<pinref part="LED4" gate="G$1" pin="C"/>
+<pinref part="GND24" gate="1" pin="GND"/>
+<junction x="228.6" y="-12.7"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="AGND"/>
+<pinref part="GND25" gate="1" pin="GND"/>
+<junction x="22.86" y="27.94"/>
+</segment>
 </net>
 <net name="EN-5V" class="0">
 <segment>
@@ -6407,6 +6427,11 @@ SMT- SWCH-08247</description>
 <pinref part="R5" gate="G$1" pin="2"/>
 <pinref part="SUPPLY10" gate="G$1" pin="VCC"/>
 <junction x="22.86" y="88.9"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="AVCC"/>
+<pinref part="SUPPLY11" gate="G$1" pin="VCC"/>
+<junction x="22.86" y="73.66"/>
 </segment>
 </net>
 <net name="3V" class="0">
@@ -6645,6 +6670,13 @@ SMT- SWCH-08247</description>
 <pinref part="JP5" gate="G$1" pin="4"/>
 <wire x1="22.86" y1="-2.54" x2="25.4" y2="-2.54" width="0.1524" layer="91"/>
 <label x="25.4" y="-2.54" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$14" class="0">
+<segment>
+<pinref part="LED4" gate="G$1" pin="A"/>
+<pinref part="R6" gate="G$1" pin="1"/>
+<junction x="228.6" y="-5.08"/>
 </segment>
 </net>
 </nets>
