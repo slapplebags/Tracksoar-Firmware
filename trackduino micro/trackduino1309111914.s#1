@@ -7261,11 +7261,6 @@ Source: 008-0260-0_E.pdf</description>
 <part name="C7" library="SparkFun-Capacitors" deviceset="CAP" device="0805"/>
 <part name="GND24" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-LETTER" device=""/>
-<part name="SUPPLY11" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
-<part name="GND25" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="LED4" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
-<part name="R6" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES"/>
-<part name="GND26" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7363,11 +7358,6 @@ Source: 008-0260-0_E.pdf</description>
 <instance part="GND24" gate="1" x="22.86" y="53.34" rot="R270"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="FRAME1" gate="G$2" x="147.32" y="0"/>
-<instance part="SUPPLY11" gate="G$1" x="33.02" y="76.2" rot="R90"/>
-<instance part="GND25" gate="1" x="30.48" y="30.48" rot="R270"/>
-<instance part="LED4" gate="G$1" x="154.94" y="76.2" rot="R180"/>
-<instance part="R6" gate="G$1" x="154.94" y="68.58" rot="R270"/>
-<instance part="GND26" gate="1" x="154.94" y="83.82" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -7524,16 +7514,6 @@ Source: 008-0260-0_E.pdf</description>
 <wire x1="25.4" y1="53.34" x2="25.4" y2="50.8" width="0.1524" layer="91"/>
 <junction x="25.4" y="53.34"/>
 </segment>
-<segment>
-<pinref part="U1" gate="G$1" pin="AGND"/>
-<pinref part="GND25" gate="1" pin="GND"/>
-<junction x="33.02" y="30.48"/>
-</segment>
-<segment>
-<pinref part="LED4" gate="G$1" pin="C"/>
-<pinref part="GND26" gate="1" pin="GND"/>
-<junction x="154.94" y="81.28"/>
-</segment>
 </net>
 <net name="EN-5V" class="0">
 <segment>
@@ -7663,11 +7643,6 @@ Source: 008-0260-0_E.pdf</description>
 <segment>
 <pinref part="R5" gate="G$1" pin="2"/>
 <pinref part="SUPPLY10" gate="G$1" pin="VCC"/>
-</segment>
-<segment>
-<pinref part="U1" gate="G$1" pin="AVCC"/>
-<pinref part="SUPPLY11" gate="G$1" pin="VCC"/>
-<junction x="33.02" y="76.2"/>
 </segment>
 </net>
 <net name="3V" class="0">
@@ -7924,26 +7899,6 @@ Source: 008-0260-0_E.pdf</description>
 <pinref part="C7" gate="G$1" pin="2"/>
 <junction x="33.02" y="50.8"/>
 <pinref part="C7" gate="G$1" pin="2"/>
-</segment>
-</net>
-<net name="N$27" class="0">
-<segment>
-<pinref part="LED4" gate="G$1" pin="A"/>
-<pinref part="R6" gate="G$1" pin="1"/>
-<junction x="154.94" y="73.66"/>
-</segment>
-</net>
-<net name="LED" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PD2(INT0)"/>
-<wire x1="81.28" y1="53.34" x2="83.82" y2="53.34" width="0.1524" layer="91"/>
-<junction x="81.28" y="53.34"/>
-<label x="83.82" y="53.34" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="R6" gate="G$1" pin="2"/>
-<wire x1="154.94" y1="63.5" x2="154.94" y2="60.96" width="0.1524" layer="91"/>
-<label x="152.4" y="58.42" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
