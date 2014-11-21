@@ -1605,9 +1605,6 @@ design rules under a new name.</description>
 <signal name="N$23">
 <via x="59.309" y="60.96" extent="1-16" drill="0.6"/>
 </signal>
-<signal name="N$24">
-<via x="60.1472" y="60.1218" extent="1-16" drill="0.6"/>
-</signal>
 <signal name="N$25">
 <via x="53.3908" y="58.3438" extent="1-16" drill="0.6"/>
 </signal>
