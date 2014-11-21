@@ -6128,12 +6128,6 @@ Used, eg, on the Arduino Pro/ Pro Mini boards.&lt;br&gt;
 </net>
 <net name="TX" class="0">
 <segment>
-<pinref part="IC2" gate="A" pin="I"/>
-<wire x1="106.68" y1="33.02" x2="104.14" y2="33.02" width="0.1524" layer="91"/>
-<label x="104.14" y="33.02" size="1.778" layer="95"/>
-<junction x="106.68" y="33.02"/>
-</segment>
-<segment>
 <wire x1="220.98" y1="134.62" x2="223.52" y2="134.62" width="0.1524" layer="91"/>
 <label x="223.52" y="134.62" size="1.778" layer="95"/>
 <pinref part="U$1" gate="G$1" pin="2_TXD1"/>
@@ -6352,6 +6346,12 @@ Used, eg, on the Arduino Pro/ Pro Mini boards.&lt;br&gt;
 <wire x1="203.2" y1="50.8" x2="205.74" y2="50.8" width="0.1524" layer="91"/>
 <label x="205.74" y="50.8" size="1.778" layer="95"/>
 <junction x="203.2" y="50.8"/>
+</segment>
+<segment>
+<pinref part="IC2" gate="A" pin="I"/>
+<wire x1="106.68" y1="33.02" x2="104.14" y2="33.02" width="0.1524" layer="91"/>
+<label x="104.14" y="33.02" size="1.778" layer="95"/>
+<junction x="106.68" y="33.02"/>
 </segment>
 </net>
 <net name="TXO" class="0">
