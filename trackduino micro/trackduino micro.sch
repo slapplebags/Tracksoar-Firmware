@@ -5801,7 +5801,7 @@ Used, eg, on the Arduino Pro/ Pro Mini boards.&lt;br&gt;
 </classes>
 <parts>
 <part name="IC2" library="74xx-little-us" deviceset="74*1G125" device="DBV" technology="AHC"/>
-<part name="U1" library="SparkFun-DigitalIC" deviceset="ATMEGA168" device="MLF" value="ATMEGA168MLF"/>
+<part name="U1" library="SparkFun-DigitalIC" deviceset="ATMEGA168" device="" value="ATMEGA168"/>
 <part name="U$2" library="Ava" deviceset="RADIOMETRIX-HX1" device=""/>
 <part name="U$3" library="SparkFun-PowerIC" deviceset="LM3480IM4" device=""/>
 <part name="GND2" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -6111,6 +6111,12 @@ Used, eg, on the Arduino Pro/ Pro Mini boards.&lt;br&gt;
 <label x="241.3" y="68.58" size="1.778" layer="95" rot="R180"/>
 <junction x="238.76" y="68.58"/>
 </segment>
+<segment>
+<wire x1="220.98" y1="134.62" x2="223.52" y2="134.62" width="0.1524" layer="91"/>
+<label x="223.52" y="134.62" size="1.778" layer="95"/>
+<pinref part="U$1" gate="G$1" pin="2_TXD1"/>
+<junction x="220.98" y="134.62"/>
+</segment>
 </net>
 <net name="D3" class="0">
 <segment>
@@ -6127,12 +6133,6 @@ Used, eg, on the Arduino Pro/ Pro Mini boards.&lt;br&gt;
 </segment>
 </net>
 <net name="TX" class="0">
-<segment>
-<wire x1="220.98" y1="134.62" x2="223.52" y2="134.62" width="0.1524" layer="91"/>
-<label x="223.52" y="134.62" size="1.778" layer="95"/>
-<pinref part="U$1" gate="G$1" pin="2_TXD1"/>
-<junction x="220.98" y="134.62"/>
-</segment>
 <segment>
 <pinref part="JP3" gate="G$1" pin="1"/>
 <wire x1="238.76" y1="66.04" x2="241.3" y2="66.04" width="0.1524" layer="91"/>
