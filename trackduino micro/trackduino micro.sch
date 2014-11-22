@@ -5801,7 +5801,7 @@ Used, eg, on the Arduino Pro/ Pro Mini boards.&lt;br&gt;
 </classes>
 <parts>
 <part name="IC2" library="74xx-little-us" deviceset="74*1G125" device="DBV" technology="AHC"/>
-<part name="U1" library="SparkFun-DigitalIC" deviceset="ATMEGA168" device="" value="ATMEGA168"/>
+<part name="U1" library="SparkFun-DigitalIC" deviceset="ATMEGA168" device="MLF" value="ATMEGA168MLF"/>
 <part name="U$2" library="Ava" deviceset="RADIOMETRIX-HX1" device=""/>
 <part name="U$3" library="SparkFun-PowerIC" deviceset="LM3480IM4" device=""/>
 <part name="GND2" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -5810,7 +5810,6 @@ Used, eg, on the Arduino Pro/ Pro Mini boards.&lt;br&gt;
 <part name="GND4" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND5" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
-<part name="GND6" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="SUPPLY3" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="GND7" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -5826,7 +5825,6 @@ Used, eg, on the Arduino Pro/ Pro Mini boards.&lt;br&gt;
 <part name="C3" library="SparkFun-Capacitors" deviceset="CAP" device="0805"/>
 <part name="C4" library="SparkFun-Capacitors" deviceset="CAP" device="0805"/>
 <part name="GND15" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="GND16" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND17" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND18" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY4" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
@@ -5862,6 +5860,8 @@ Used, eg, on the Arduino Pro/ Pro Mini boards.&lt;br&gt;
 <part name="U$1" library="Ava" deviceset="UBLOX_MAX" device=""/>
 <part name="X1" library="adafruit" deviceset="ANTENNA_U.FL" device=""/>
 <part name="SW1" library="adafruit" deviceset="SPST_TACT" device="-KMR2"/>
+<part name="GND1" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="GND3" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5901,7 +5901,6 @@ Used, eg, on the Arduino Pro/ Pro Mini boards.&lt;br&gt;
 <instance part="GND4" gate="1" x="73.66" y="154.94"/>
 <instance part="GND5" gate="1" x="48.26" y="162.56"/>
 <instance part="SUPPLY1" gate="G$1" x="50.8" y="165.1" rot="R180"/>
-<instance part="GND6" gate="1" x="25.4" y="157.48"/>
 <instance part="SUPPLY2" gate="G$1" x="12.7" y="170.18" rot="R180"/>
 <instance part="SUPPLY3" gate="G$1" x="88.9" y="132.08" rot="R90"/>
 <instance part="GND7" gate="1" x="86.36" y="127" rot="R270"/>
@@ -5917,7 +5916,6 @@ Used, eg, on the Arduino Pro/ Pro Mini boards.&lt;br&gt;
 <instance part="C3" gate="G$1" x="38.1" y="139.7"/>
 <instance part="C4" gate="G$1" x="45.72" y="139.7"/>
 <instance part="GND15" gate="1" x="22.86" y="147.32" rot="R180"/>
-<instance part="GND16" gate="1" x="30.48" y="147.32" rot="R180"/>
 <instance part="GND17" gate="1" x="38.1" y="147.32" rot="R180"/>
 <instance part="GND18" gate="1" x="45.72" y="147.32" rot="R180"/>
 <instance part="SUPPLY4" gate="G$1" x="38.1" y="137.16" rot="R180"/>
@@ -5954,6 +5952,8 @@ Used, eg, on the Arduino Pro/ Pro Mini boards.&lt;br&gt;
 <instance part="U$1" gate="G$1" x="198.12" y="154.94"/>
 <instance part="X1" gate="G$1" x="134.62" y="165.1"/>
 <instance part="SW1" gate="G$1" x="22.86" y="86.36"/>
+<instance part="GND1" gate="1" x="30.48" y="147.32" rot="R180"/>
+<instance part="GND3" gate="1" x="25.4" y="157.48"/>
 </instances>
 <busses>
 </busses>
@@ -5986,11 +5986,6 @@ Used, eg, on the Arduino Pro/ Pro Mini boards.&lt;br&gt;
 <junction x="88.9" y="165.1"/>
 </segment>
 <segment>
-<pinref part="U$3" gate="G$1" pin="GND"/>
-<pinref part="GND6" gate="1" pin="GND"/>
-<junction x="25.4" y="160.02"/>
-</segment>
-<segment>
 <pinref part="JP1" gate="G$1" pin="1"/>
 <pinref part="GND5" gate="1" pin="GND"/>
 <junction x="48.26" y="165.1"/>
@@ -6018,11 +6013,6 @@ Used, eg, on the Arduino Pro/ Pro Mini boards.&lt;br&gt;
 <pinref part="C1" gate="G$1" pin="1"/>
 <pinref part="GND15" gate="1" pin="GND"/>
 <junction x="22.86" y="144.78"/>
-</segment>
-<segment>
-<pinref part="C2" gate="G$1" pin="1"/>
-<pinref part="GND16" gate="1" pin="GND"/>
-<junction x="30.48" y="144.78"/>
 </segment>
 <segment>
 <pinref part="C3" gate="G$1" pin="1"/>
@@ -6097,6 +6087,16 @@ Used, eg, on the Arduino Pro/ Pro Mini boards.&lt;br&gt;
 <pinref part="GND9" gate="1" pin="GND"/>
 <junction x="220.98" y="129.54"/>
 </segment>
+<segment>
+<pinref part="C2" gate="G$1" pin="1"/>
+<pinref part="GND1" gate="1" pin="GND"/>
+<junction x="30.48" y="144.78"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="GND"/>
+<pinref part="GND3" gate="1" pin="GND"/>
+<junction x="25.4" y="160.02"/>
+</segment>
 </net>
 <net name="TX-3V3" class="0">
 <segment>
@@ -6110,12 +6110,6 @@ Used, eg, on the Arduino Pro/ Pro Mini boards.&lt;br&gt;
 <wire x1="238.76" y1="68.58" x2="241.3" y2="68.58" width="0.1524" layer="91"/>
 <label x="241.3" y="68.58" size="1.778" layer="95" rot="R180"/>
 <junction x="238.76" y="68.58"/>
-</segment>
-<segment>
-<wire x1="220.98" y1="134.62" x2="223.52" y2="134.62" width="0.1524" layer="91"/>
-<label x="223.52" y="134.62" size="1.778" layer="95"/>
-<pinref part="U$1" gate="G$1" pin="2_TXD1"/>
-<junction x="220.98" y="134.62"/>
 </segment>
 </net>
 <net name="D3" class="0">
@@ -6138,6 +6132,12 @@ Used, eg, on the Arduino Pro/ Pro Mini boards.&lt;br&gt;
 <wire x1="238.76" y1="66.04" x2="241.3" y2="66.04" width="0.1524" layer="91"/>
 <label x="241.3" y="66.04" size="1.778" layer="95" rot="R180"/>
 <junction x="238.76" y="66.04"/>
+</segment>
+<segment>
+<wire x1="220.98" y1="134.62" x2="223.52" y2="134.62" width="0.1524" layer="91"/>
+<label x="223.52" y="134.62" size="1.778" layer="95"/>
+<pinref part="U$1" gate="G$1" pin="2_TXD1"/>
+<junction x="220.98" y="134.62"/>
 </segment>
 </net>
 <net name="D4" class="0">
