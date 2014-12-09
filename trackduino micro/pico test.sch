@@ -5924,7 +5924,6 @@ Source:  http://catalog.digikey.com .. 142-0711-201, 205, 202, 206.pdf</descript
 <part name="GND22" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY9" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="R5" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES"/>
-<part name="SUPPLY10" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="C5" library="SparkFun-Capacitors" deviceset="CAP" device="0805"/>
 <part name="JP3" library="SparkFun-Connectors" deviceset="M02" device="PTH"/>
 <part name="JP5" library="SparkFun-Connectors" deviceset="M04" device="1X04_NO_SILK"/>
@@ -6016,7 +6015,6 @@ Source:  http://catalog.digikey.com .. 142-0711-201, 205, 202, 206.pdf</descript
 <instance part="GND22" gate="1" x="208.28" y="60.96" rot="R90"/>
 <instance part="SUPPLY9" gate="G$1" x="208.28" y="55.88" rot="R270"/>
 <instance part="R5" gate="G$1" x="33.02" y="86.36" rot="R90"/>
-<instance part="SUPPLY10" gate="G$1" x="33.02" y="91.44"/>
 <instance part="C5" gate="G$1" x="17.78" y="81.28" rot="R90"/>
 <instance part="JP3" gate="G$1" x="231.14" y="66.04"/>
 <instance part="JP5" gate="G$1" x="198.12" y="83.82"/>
@@ -6277,10 +6275,6 @@ Source:  http://catalog.digikey.com .. 142-0711-201, 205, 202, 206.pdf</descript
 <junction x="203.2" y="55.88"/>
 </segment>
 <segment>
-<pinref part="R5" gate="G$1" pin="2"/>
-<pinref part="SUPPLY10" gate="G$1" pin="VCC"/>
-</segment>
-<segment>
 <pinref part="U1" gate="G$1" pin="AVCC"/>
 <pinref part="SUPPLY11" gate="G$1" pin="VCC"/>
 <junction x="33.02" y="76.2"/>
@@ -6326,6 +6320,11 @@ Source:  http://catalog.digikey.com .. 142-0711-201, 205, 202, 206.pdf</descript
 <wire x1="170.18" y1="63.5" x2="170.18" y2="60.96" width="0.1524" layer="91"/>
 <label x="170.18" y="60.96" size="1.778" layer="95" rot="R180"/>
 <junction x="170.18" y="63.5"/>
+</segment>
+<segment>
+<pinref part="R5" gate="G$1" pin="2"/>
+<wire x1="33.02" y1="91.44" x2="33.02" y2="93.98" width="0.1524" layer="91"/>
+<label x="33.02" y="93.98" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -6562,6 +6561,20 @@ Source:  http://catalog.digikey.com .. 142-0711-201, 205, 202, 206.pdf</descript
 <pinref part="U$3" gate="G$1" pin="IN"/>
 <wire x1="12.7" y1="170.18" x2="12.7" y2="167.64" width="0.1524" layer="91"/>
 <label x="12.7" y="167.64" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="SDA" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="PC4(ADC4/SDA)"/>
+<wire x1="81.28" y1="71.12" x2="83.82" y2="71.12" width="0.1524" layer="91"/>
+<label x="83.82" y="71.12" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="SCL" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="PC5(ADC5/SCL)"/>
+<wire x1="81.28" y1="68.58" x2="83.82" y2="68.58" width="0.1524" layer="91"/>
+<label x="83.82" y="68.58" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
