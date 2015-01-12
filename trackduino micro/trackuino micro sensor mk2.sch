@@ -9167,6 +9167,7 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <pinref part="RX" gate="G$1" pin="2"/>
 <wire x1="238.76" y1="86.36" x2="241.3" y2="86.36" width="0.1524" layer="91"/>
 <label x="241.3" y="86.36" size="1.778" layer="95"/>
+<junction x="238.76" y="86.36"/>
 </segment>
 </net>
 <net name="D4" class="0">
@@ -9358,6 +9359,7 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <pinref part="TX" gate="G$1" pin="2"/>
 <wire x1="238.76" y1="68.58" x2="241.3" y2="68.58" width="0.1524" layer="91"/>
 <label x="241.3" y="68.58" size="1.778" layer="95"/>
+<junction x="238.76" y="68.58"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -9402,6 +9404,7 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <pinref part="RX" gate="G$1" pin="1"/>
 <wire x1="238.76" y1="83.82" x2="241.3" y2="83.82" width="0.1524" layer="91"/>
 <label x="241.3" y="83.82" size="1.778" layer="95"/>
+<junction x="238.76" y="83.82"/>
 </segment>
 </net>
 <net name="TXO" class="0">
@@ -9421,6 +9424,7 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <pinref part="IC2" gate="A" pin="I"/>
 <wire x1="106.68" y1="33.02" x2="104.14" y2="33.02" width="0.1524" layer="91"/>
 <label x="104.14" y="33.02" size="1.778" layer="95"/>
+<junction x="106.68" y="33.02"/>
 </segment>
 </net>
 <net name="MISO" class="0">
@@ -9537,11 +9541,13 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <pinref part="IC2" gate="A" pin="O"/>
 <wire x1="127" y1="33.02" x2="129.54" y2="33.02" width="0.1524" layer="91"/>
 <label x="129.54" y="33.02" size="1.778" layer="95"/>
+<junction x="127" y="33.02"/>
 </segment>
 <segment>
 <pinref part="TX" gate="G$1" pin="1"/>
 <wire x1="238.76" y1="66.04" x2="241.3" y2="66.04" width="0.1524" layer="91"/>
 <label x="241.3" y="66.04" size="1.778" layer="95"/>
+<junction x="238.76" y="66.04"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -9549,6 +9555,7 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <pinref part="U1" gate="G$1" pin="PC4(ADC4/SDA)"/>
 <wire x1="81.28" y1="71.12" x2="83.82" y2="71.12" width="0.1524" layer="91"/>
 <label x="83.82" y="71.12" size="1.778" layer="95"/>
+<junction x="81.28" y="71.12"/>
 </segment>
 <segment>
 <pinref part="U$4" gate="G$1" pin="DATA"/>
@@ -9574,6 +9581,7 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <pinref part="U1" gate="G$1" pin="PC5(ADC5/SCL)"/>
 <wire x1="81.28" y1="68.58" x2="83.82" y2="68.58" width="0.1524" layer="91"/>
 <label x="83.82" y="68.58" size="1.778" layer="95"/>
+<junction x="81.28" y="68.58"/>
 </segment>
 <segment>
 <pinref part="U$4" gate="G$1" pin="SCK"/>
