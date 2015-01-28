@@ -8775,24 +8775,24 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <part name="SUPPLY2" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="SUPPLY3" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="GND7" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="R1" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES"/>
+<part name="R1" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="100ohm"/>
 <part name="LED1" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
 <part name="GND8" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND9" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND11" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND13" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND14" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="C1" library="SparkFun-Capacitors" deviceset="CAP" device="0805"/>
-<part name="C2" library="SparkFun-Capacitors" deviceset="CAP" device="0805"/>
-<part name="C3" library="SparkFun-Capacitors" deviceset="CAP" device="0805"/>
-<part name="C4" library="SparkFun-Capacitors" deviceset="CAP" device="0805"/>
+<part name="C1" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value=".1uf"/>
+<part name="C2" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value=".1uf"/>
+<part name="C3" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value=".1uf"/>
+<part name="C4" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value=".1uf"/>
 <part name="GND15" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND17" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND18" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY4" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="SUPPLY5" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="LED3" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
-<part name="R4" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES"/>
+<part name="R4" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="330ohm"/>
 <part name="GND19" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY6" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="FTDI" library="SparkFun-Connectors" deviceset="M06" device="NO_SILK_FEMALE_PTH"/>
@@ -8802,9 +8802,9 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <part name="GND21" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND22" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY9" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
-<part name="R5" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES"/>
+<part name="R5" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="10k"/>
 <part name="SUPPLY10" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
-<part name="C5" library="SparkFun-Capacitors" deviceset="CAP" device="0805"/>
+<part name="C5" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value=".1uf"/>
 <part name="TX" library="SparkFun-Connectors" deviceset="M02" device="PTH" value="TX"/>
 <part name="SPI" library="SparkFun-Connectors" deviceset="M04" device="1X04_NO_SILK"/>
 <part name="GND23" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -8812,7 +8812,7 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <part name="SUPPLY11" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="GND25" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="LED4" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
-<part name="R6" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES"/>
+<part name="R6" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="330ohm"/>
 <part name="GND26" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND24" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="Y1" library="SparkFun-FreqCtrl" deviceset="RESONATOR" device="16MHZ" value="16MHZ"/>
@@ -8831,8 +8831,8 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <part name="BMP180" library="SparkFun-Sensors" deviceset="BMP180" device=""/>
 <part name="GND16" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND20" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="R3" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES"/>
-<part name="R7" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES"/>
+<part name="R3" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="4.7k"/>
+<part name="R7" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="4.7k"/>
 <part name="GND27" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="LT3426" library="adafruit" deviceset="LT3426" device=""/>

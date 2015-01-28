@@ -1181,24 +1181,24 @@ Please make sure your boards conform to these design rules.</description>
 <element name="U1" library="SparkFun-DigitalIC" package="MLF32" value="ATMEGA168MLF" x="68.7578" y="66.294" rot="MR45"/>
 <element name="JP1" library="SparkFun-Connectors" package="JST-2-PTH-VERT" value="M02JST-PTH-VERT" x="53.7972" y="73.4568" rot="R90"/>
 <element name="J$1" library="SparkFun-Connectors" package="SMA-EDGE" value="SMA_EDGE" x="53.3908" y="58.674" rot="MR90"/>
-<element name="R1" library="SparkFun-Resistors" package="0805" value="" x="78.9178" y="70.0278" rot="MR270"/>
+<element name="R1" library="SparkFun-Resistors" package="0805" value="100ohm" x="78.9178" y="70.0278" rot="MR270"/>
 <element name="LED1" library="adafruit" package="CHIP-LED0805" value="" x="78.9178" y="66.8274" rot="MR180"/>
-<element name="C1" library="SparkFun-Capacitors" package="0805" value="" x="92.6338" y="68.707" rot="R90"/>
-<element name="C2" library="SparkFun-Capacitors" package="0805" value="" x="56.8706" y="71.501" rot="MR270"/>
-<element name="C3" library="SparkFun-Capacitors" package="0805" value="" x="72.5424" y="64.262" rot="MR315"/>
-<element name="C4" library="SparkFun-Capacitors" package="0805" value="" x="78.9178" y="63.4492" rot="MR270"/>
+<element name="C1" library="SparkFun-Capacitors" package="0805" value=".1uf" x="92.6338" y="68.707" rot="R90"/>
+<element name="C2" library="SparkFun-Capacitors" package="0805" value=".1uf" x="56.8706" y="71.501" rot="MR270"/>
+<element name="C3" library="SparkFun-Capacitors" package="0805" value=".1uf" x="72.5424" y="64.262" rot="MR315"/>
+<element name="C4" library="SparkFun-Capacitors" package="0805" value=".1uf" x="78.9178" y="63.4492" rot="MR270"/>
 <element name="LED3" library="adafruit" package="CHIP-LED0805" value="" x="53.2384" y="67.183" rot="MR270"/>
-<element name="R4" library="SparkFun-Resistors" package="0805" value="" x="56.515" y="67.183" rot="MR180"/>
+<element name="R4" library="SparkFun-Resistors" package="0805" value="330ohm" x="56.515" y="67.183" rot="MR180"/>
 <element name="FTDI" library="SparkFun-Connectors" package="1X06_NO_SILK" value="" x="63.0936" y="75.3618" rot="MR180">
 <attribute name="PROD_ID" value="CONN-08437" x="63.0936" y="75.3618" size="1.778" layer="28" rot="MR180" display="off"/>
 </element>
-<element name="R5" library="SparkFun-Resistors" package="0805" value="" x="66.461275" y="72.912878125" rot="MR180"/>
-<element name="C5" library="SparkFun-Capacitors" package="0805" value="" x="63.455359375" y="72.933175" rot="MR0"/>
+<element name="R5" library="SparkFun-Resistors" package="0805" value="10k" x="66.461275" y="72.912878125" rot="MR180"/>
+<element name="C5" library="SparkFun-Capacitors" package="0805" value=".1uf" x="63.455359375" y="72.933175" rot="MR0"/>
 <element name="TX" library="SparkFun-Connectors" package="1X02" value="TX" x="88.5952" y="75.4126"/>
 <element name="SPI" library="SparkFun-Connectors" package="1X04_NO_SILK" value="" x="65.1764" y="58.5724"/>
 <element name="FRAME1" library="SparkFun-Aesthetics" package="CREATIVE_COMMONS" value="FRAME-LETTER" x="65.7606" y="49.3522"/>
 <element name="LED4" library="adafruit" package="CHIP-LED0805" value="" x="53.213" y="68.7578" rot="MR270"/>
-<element name="R6" library="SparkFun-Resistors" package="0805" value="" x="56.515" y="68.7578" rot="MR180"/>
+<element name="R6" library="SparkFun-Resistors" package="0805" value="330ohm" x="56.515" y="68.7578" rot="MR180"/>
 <element name="Y1" library="SparkFun-FreqCtrl" package="RESONATOR-SMD" value="16MHZ" x="73.51015" y="61.884171875" rot="MR315">
 <attribute name="PROD_ID" value="XTAL-08900" x="73.51015" y="61.884171875" size="1.778" layer="28" rot="MR315" display="off"/>
 </element>
@@ -1211,8 +1211,8 @@ Please make sure your boards conform to these design rules.</description>
 <element name="RX" library="SparkFun-Connectors" package="1X02" value="RX" x="83.2866" y="75.4126"/>
 <element name="SHT15" library="SparkFun-Sensors" package="SHT1X" value="SHT1XSMD" x="65.9384" y="64.9732" rot="R180"/>
 <element name="BMP180" library="SparkFun-Sensors" package="BMP180" value="BMP180" x="72.9996" y="63.7032" rot="R270"/>
-<element name="R3" library="SparkFun-Resistors" package="0805" value="" x="61.6458" y="69.85"/>
-<element name="R7" library="SparkFun-Resistors" package="0805" value="" x="65.0748" y="69.8246"/>
+<element name="R3" library="SparkFun-Resistors" package="0805" value="4.7k" x="61.6458" y="69.85"/>
+<element name="R7" library="SparkFun-Resistors" package="0805" value="4.7k" x="65.0748" y="69.8246"/>
 <element name="LT3426" library="adafruit" package="SOT23-6" value="LT3426" x="81.2546" y="68.834"/>
 <element name="D1" library="diode" package="SOD123" value="MBR120VLSFT1" x="76.2508" y="68.7324" rot="R270"/>
 <element name="L2" library="SparkFun-Passives" package="0805" value="2.2uh" x="78.486" y="68.7324" rot="R270"/>
