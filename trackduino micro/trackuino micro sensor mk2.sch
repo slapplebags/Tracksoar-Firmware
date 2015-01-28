@@ -8836,11 +8836,11 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <part name="GND27" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="U$7" library="adafruit" deviceset="LT3426" device=""/>
-<part name="D1" library="diode" deviceset="DIODE-" device="SOD123"/>
+<part name="D1" library="diode" deviceset="DIODE-" device="SOD123" value="MBR120VLSFT1"/>
 <part name="L2" library="SparkFun-Passives" deviceset="INDUCTOR" device="0805" value="2.2uh"/>
-<part name="R8" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES"/>
-<part name="R9" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES"/>
-<part name="R10" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES"/>
+<part name="R8" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="1m"/>
+<part name="R9" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="95.3k"/>
+<part name="R10" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="30.9k"/>
 <part name="GND28" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="C7" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="22uf"/>
 <part name="C8" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="10uf"/>
