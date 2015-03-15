@@ -6489,31 +6489,6 @@ We've spent an enormous amount of time creating and checking these footprints an
 &lt;br&gt;&lt;br&gt;
 You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
 <packages>
-<package name="SHT1X">
-<description>&lt;b&gt;SHT1x&lt;/b&gt;
-Sensirion Humdity Sensor</description>
-<wire x1="-2.44" y1="2.75" x2="-2.44" y2="3.7" width="0.2032" layer="21"/>
-<wire x1="-2.44" y1="3.7" x2="2.44" y2="3.7" width="0.2032" layer="21"/>
-<wire x1="2.44" y1="3.7" x2="2.44" y2="2.8" width="0.2032" layer="21"/>
-<wire x1="2.44" y1="-2.75" x2="2.44" y2="-3.7" width="0.2032" layer="21"/>
-<wire x1="2.44" y1="-3.7" x2="-2.44" y2="-3.7" width="0.2032" layer="21"/>
-<wire x1="-2.44" y1="-3.7" x2="-2.44" y2="-2.75" width="0.2032" layer="21"/>
-<wire x1="-0.95" y1="2.11" x2="0.95" y2="2.11" width="0.2032" layer="21"/>
-<wire x1="0.95" y1="2.11" x2="0.95" y2="1.51" width="0.2032" layer="21"/>
-<wire x1="0.95" y1="1.51" x2="-0.95" y2="1.51" width="0.2032" layer="21"/>
-<wire x1="-0.95" y1="1.51" x2="-0.95" y2="2.11" width="0.2032" layer="21"/>
-<circle x="-1.29" y="3.17" radius="0.0943" width="0.2032" layer="21"/>
-<smd name="1" x="-2.667" y="1.905" dx="1.8" dy="0.8" layer="1" rot="R180"/>
-<smd name="2" x="-2.667" y="0.635" dx="1.8" dy="0.8" layer="1" rot="R180"/>
-<smd name="3" x="-2.667" y="-0.635" dx="1.8" dy="0.8" layer="1" rot="R180"/>
-<smd name="4" x="-2.667" y="-1.905" dx="1.8" dy="0.8" layer="1" rot="R180"/>
-<smd name="5" x="2.667" y="-1.905" dx="1.8" dy="0.8" layer="1" rot="R180"/>
-<smd name="6" x="2.667" y="-0.635" dx="1.8" dy="0.8" layer="1" rot="R180"/>
-<smd name="7" x="2.667" y="0.635" dx="1.8" dy="0.8" layer="1" rot="R180"/>
-<smd name="8" x="2.667" y="1.905" dx="1.8" dy="0.8" layer="1" rot="R180"/>
-<text x="-1.016" y="-3.048" size="0.4064" layer="27">&gt;Value</text>
-<text x="-0.889" y="-2.413" size="0.4064" layer="25">&gt;Name</text>
-</package>
 <package name="BMP180">
 <smd name="1" x="1.5" y="1.45" dx="0.5" dy="0.6" layer="1" rot="R90"/>
 <smd name="2" x="0" y="1.45" dx="0.5" dy="0.6" layer="1" rot="R90"/>
@@ -6546,18 +6521,6 @@ Sensirion Humdity Sensor</description>
 </package>
 </packages>
 <symbols>
-<symbol name="SHT1X">
-<wire x1="5.08" y1="-5.08" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="-5.08" x2="-5.08" y2="7.62" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="7.62" x2="5.08" y2="7.62" width="0.254" layer="94"/>
-<wire x1="5.08" y1="7.62" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
-<text x="-5.08" y="8.382" size="1.778" layer="95">&gt;NAME</text>
-<text x="-5.08" y="-7.62" size="1.778" layer="96">&gt;Value</text>
-<pin name="DATA" x="-7.62" y="2.54" visible="pin" length="short"/>
-<pin name="GND" x="-7.62" y="5.08" visible="pin" length="short" direction="pwr"/>
-<pin name="SCK" x="-7.62" y="0" visible="pin" length="short" direction="in"/>
-<pin name="VDD" x="-7.62" y="-2.54" visible="pin" length="short" direction="pwr"/>
-</symbol>
 <symbol name="BMP180">
 <description>BOSCH BMP180 DIGITAL BAROMETRIC PRESSURE SENSOR&lt;p&gt;
 
@@ -6612,26 +6575,6 @@ Typical applications:&lt;p&gt;
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="SHT1X">
-<description>&lt;b&gt;SHT1x Humdity Sensor&lt;/b&gt;
-Sensirion humdity sensor. Schematic element and footprint proven. Spark Fun Electronics SKU : COM-08227</description>
-<gates>
-<gate name="G$1" symbol="SHT1X" x="0" y="0"/>
-</gates>
-<devices>
-<device name="SMD" package="SHT1X">
-<connects>
-<connect gate="G$1" pin="DATA" pad="2"/>
-<connect gate="G$1" pin="GND" pad="1"/>
-<connect gate="G$1" pin="SCK" pad="3"/>
-<connect gate="G$1" pin="VDD" pad="4"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="BMP180" prefix="U">
 <description>BOSCH BMP180 DIGITAL BAROMETRIC PRESSURE SENSOR&lt;p&gt;
 
@@ -13183,6 +13126,77 @@ Source: AVX .. aphvc.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="sht21">
+<packages>
+<package name="DFN300X300X110-7N">
+<smd name="1" x="-1.4478" y="0.9906" dx="0.7112" dy="0.4064" layer="1"/>
+<smd name="2" x="-1.4478" y="0" dx="0.7112" dy="0.4064" layer="1"/>
+<smd name="3" x="-1.4478" y="-0.9906" dx="0.7112" dy="0.4064" layer="1"/>
+<smd name="4" x="1.4478" y="-0.9906" dx="0.7112" dy="0.4064" layer="1" rot="R180"/>
+<smd name="5" x="1.4478" y="0" dx="0.7112" dy="0.4064" layer="1" rot="R180"/>
+<smd name="6" x="1.4478" y="0.9906" dx="0.7112" dy="0.4064" layer="1" rot="R180"/>
+<smd name="7" x="0" y="0" dx="1.4986" dy="2.3876" layer="1"/>
+<wire x1="-2.2098" y1="0.9906" x2="-2.6162" y2="0.9906" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-2.6162" y1="0.9906" x2="-2.2098" y2="0.9906" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-0.9906" y1="1.4986" x2="-1.4986" y2="0.9906" width="0.1524" layer="51"/>
+<wire x1="-1.4986" y1="-1.4986" x2="1.4986" y2="-1.4986" width="0.1524" layer="51"/>
+<wire x1="1.4986" y1="-1.4986" x2="1.4986" y2="1.4986" width="0.1524" layer="51"/>
+<wire x1="1.4986" y1="1.4986" x2="-1.4986" y2="1.4986" width="0.1524" layer="51"/>
+<wire x1="-1.4986" y1="1.4986" x2="-1.4986" y2="-1.4986" width="0.1524" layer="51"/>
+<wire x1="-2.2098" y1="0.9906" x2="-2.6162" y2="0.9906" width="0.1524" layer="51" curve="-180"/>
+<wire x1="-2.6162" y1="0.9906" x2="-2.2098" y2="0.9906" width="0.1524" layer="51" curve="-180"/>
+<text x="-4.572" y="2.0574" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-5.7658" y="-4.2926" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="SHT21">
+<pin name="VDD" x="-17.78" y="7.62" length="middle" direction="pwr"/>
+<pin name="SCL" x="-17.78" y="2.54" length="middle" direction="in"/>
+<pin name="NC_2" x="-17.78" y="-2.54" length="middle" direction="nc"/>
+<pin name="NC" x="-17.78" y="-5.08" length="middle" direction="nc"/>
+<pin name="VSS" x="-17.78" y="-10.16" length="middle" direction="pwr"/>
+<pin name="EPAD" x="-17.78" y="-15.24" length="middle" direction="pas"/>
+<pin name="SDA" x="17.78" y="7.62" length="middle" rot="R180"/>
+<wire x1="-12.7" y1="12.7" x2="-12.7" y2="-20.32" width="0.4064" layer="94"/>
+<wire x1="-12.7" y1="-20.32" x2="12.7" y2="-20.32" width="0.4064" layer="94"/>
+<wire x1="12.7" y1="-20.32" x2="12.7" y2="12.7" width="0.4064" layer="94"/>
+<wire x1="12.7" y1="12.7" x2="-12.7" y2="12.7" width="0.4064" layer="94"/>
+<text x="-4.7244" y="16.7386" size="2.0828" layer="95" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-5.0546" y="-24.8158" size="2.0828" layer="96" ratio="10" rot="SR0">&gt;VALUE</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="SHT21" prefix="U">
+<description>SENSOR, HUMIDITY &amp; TEMP</description>
+<gates>
+<gate name="A" symbol="SHT21" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="DFN300X300X110-7N">
+<connects>
+<connect gate="A" pin="EPAD" pad="7"/>
+<connect gate="A" pin="NC" pad="3"/>
+<connect gate="A" pin="NC_2" pad="4"/>
+<connect gate="A" pin="SCL" pad="6"/>
+<connect gate="A" pin="SDA" pad="1"/>
+<connect gate="A" pin="VDD" pad="5"/>
+<connect gate="A" pin="VSS" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MPN" value="SHT21" constant="no"/>
+<attribute name="OC_FARNELL" value="1855468" constant="no"/>
+<attribute name="OC_NEWARK" value="20T1172" constant="no"/>
+<attribute name="PACKAGE" value="DFN-6" constant="no"/>
+<attribute name="SUPPLIER" value="SENSIRION" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -13257,7 +13271,6 @@ Source: AVX .. aphvc.pdf</description>
 <part name="GND6" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="RX" library="SparkFun-Connectors" deviceset="M02" device="PTH" value="RX"/>
 <part name="GND10" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="SHT15" library="SparkFun-Sensors" deviceset="SHT1X" device="SMD"/>
 <part name="BMP180" library="SparkFun-Sensors" deviceset="BMP180" device=""/>
 <part name="GND16" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND20" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -13278,6 +13291,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="GND30" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="C9" library="resistor" deviceset="C-US" device="C1206" value="100uf"/>
 <part name="GND31" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="U2" library="sht21" deviceset="SHT21" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13373,10 +13387,9 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="GND6" gate="1" x="165.1" y="139.7"/>
 <instance part="RX" gate="G$1" x="231.14" y="83.82"/>
 <instance part="GND10" gate="1" x="208.28" y="58.42" rot="R90"/>
-<instance part="SHT15" gate="G$1" x="124.46" y="86.36"/>
-<instance part="BMP180" gate="G$1" x="124.46" y="66.04"/>
-<instance part="GND16" gate="1" x="142.24" y="60.96" rot="R90"/>
-<instance part="GND20" gate="1" x="114.3" y="91.44" rot="R270"/>
+<instance part="BMP180" gate="G$1" x="104.14" y="48.26"/>
+<instance part="GND16" gate="1" x="121.92" y="43.18" rot="R90"/>
+<instance part="GND20" gate="1" x="101.6" y="73.66" rot="R270"/>
 <instance part="R3" gate="G$1" x="129.54" y="48.26" rot="R270"/>
 <instance part="R7" gate="G$1" x="137.16" y="48.26" rot="R270"/>
 <instance part="GND27" gate="1" x="27.94" y="121.92"/>
@@ -13394,6 +13407,7 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="GND30" gate="1" x="50.8" y="129.54"/>
 <instance part="C9" gate="G$1" x="58.42" y="137.16"/>
 <instance part="GND31" gate="1" x="58.42" y="129.54"/>
+<instance part="U2" gate="A" x="121.92" y="83.82"/>
 </instances>
 <busses>
 </busses>
@@ -13548,12 +13562,7 @@ Source: AVX .. aphvc.pdf</description>
 <segment>
 <pinref part="BMP180" gate="G$1" pin="GND"/>
 <pinref part="GND16" gate="1" pin="GND"/>
-<junction x="139.7" y="60.96"/>
-</segment>
-<segment>
-<pinref part="SHT15" gate="G$1" pin="GND"/>
-<pinref part="GND20" gate="1" pin="GND"/>
-<junction x="116.84" y="91.44"/>
+<junction x="119.38" y="43.18"/>
 </segment>
 <segment>
 <pinref part="LT3426" gate="G$1" pin="GND"/>
@@ -13579,6 +13588,11 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="C9" gate="G$1" pin="2"/>
 <pinref part="GND31" gate="1" pin="GND"/>
 <junction x="58.42" y="132.08"/>
+</segment>
+<segment>
+<pinref part="U2" gate="A" pin="VSS"/>
+<pinref part="GND20" gate="1" pin="GND"/>
+<junction x="104.14" y="73.66"/>
 </segment>
 </net>
 <net name="D3" class="0">
@@ -13739,19 +13753,19 @@ Source: AVX .. aphvc.pdf</description>
 <segment>
 <pinref part="BMP180" gate="G$1" pin="VDD"/>
 <pinref part="BMP180" gate="G$1" pin="VDDIO"/>
-<wire x1="139.7" y1="71.12" x2="139.7" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="68.58" x2="139.7" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="68.58" x2="142.24" y2="68.58" width="0.1524" layer="91"/>
-<junction x="139.7" y="71.12"/>
-<junction x="139.7" y="66.04"/>
-<junction x="139.7" y="68.58"/>
-<label x="142.24" y="68.58" size="1.778" layer="95"/>
+<wire x1="119.38" y1="53.34" x2="119.38" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="50.8" x2="119.38" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="50.8" x2="121.92" y2="50.8" width="0.1524" layer="91"/>
+<junction x="119.38" y="53.34"/>
+<junction x="119.38" y="48.26"/>
+<junction x="119.38" y="50.8"/>
+<label x="121.92" y="50.8" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="SHT15" gate="G$1" pin="VDD"/>
-<wire x1="116.84" y1="83.82" x2="114.3" y2="83.82" width="0.1524" layer="91"/>
-<junction x="116.84" y="83.82"/>
-<label x="114.3" y="83.82" size="1.778" layer="95"/>
+<wire x1="104.14" y1="91.44" x2="101.6" y2="91.44" width="0.1524" layer="91"/>
+<label x="101.6" y="91.44" size="1.778" layer="95"/>
+<pinref part="U2" gate="A" pin="VDD"/>
+<junction x="104.14" y="91.44"/>
 </segment>
 <segment>
 <pinref part="R3" gate="G$1" pin="1"/>
@@ -14001,16 +14015,16 @@ Source: AVX .. aphvc.pdf</description>
 <junction x="73.66" y="58.42"/>
 </segment>
 <segment>
-<pinref part="SHT15" gate="G$1" pin="DATA"/>
-<wire x1="116.84" y1="88.9" x2="114.3" y2="88.9" width="0.1524" layer="91"/>
-<label x="114.3" y="88.9" size="1.778" layer="95"/>
-<junction x="116.84" y="88.9"/>
+<wire x1="142.24" y1="91.44" x2="139.7" y2="91.44" width="0.1524" layer="91"/>
+<label x="139.7" y="91.44" size="1.778" layer="95"/>
+<pinref part="U2" gate="A" pin="SDA"/>
+<junction x="139.7" y="91.44"/>
 </segment>
 <segment>
 <pinref part="BMP180" gate="G$1" pin="SDA"/>
-<wire x1="109.22" y1="68.58" x2="106.68" y2="68.58" width="0.1524" layer="91"/>
-<label x="106.68" y="68.58" size="1.778" layer="95"/>
-<junction x="109.22" y="68.58"/>
+<wire x1="88.9" y1="50.8" x2="86.36" y2="50.8" width="0.1524" layer="91"/>
+<label x="86.36" y="50.8" size="1.778" layer="95"/>
+<junction x="88.9" y="50.8"/>
 </segment>
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
@@ -14027,16 +14041,16 @@ Source: AVX .. aphvc.pdf</description>
 <junction x="73.66" y="55.88"/>
 </segment>
 <segment>
-<pinref part="SHT15" gate="G$1" pin="SCK"/>
-<wire x1="116.84" y1="86.36" x2="114.3" y2="86.36" width="0.1524" layer="91"/>
-<label x="114.3" y="86.36" size="1.778" layer="95"/>
-<junction x="116.84" y="86.36"/>
+<wire x1="104.14" y1="86.36" x2="101.6" y2="86.36" width="0.1524" layer="91"/>
+<label x="101.6" y="86.36" size="1.778" layer="95"/>
+<pinref part="U2" gate="A" pin="SCL"/>
+<junction x="104.14" y="86.36"/>
 </segment>
 <segment>
 <pinref part="BMP180" gate="G$1" pin="SCL"/>
-<wire x1="109.22" y1="63.5" x2="106.68" y2="63.5" width="0.1524" layer="91"/>
-<label x="106.68" y="63.5" size="1.778" layer="95"/>
-<junction x="109.22" y="63.5"/>
+<wire x1="88.9" y1="45.72" x2="86.36" y2="45.72" width="0.1524" layer="91"/>
+<label x="86.36" y="45.72" size="1.778" layer="95"/>
+<junction x="88.9" y="45.72"/>
 </segment>
 <segment>
 <pinref part="R7" gate="G$1" pin="2"/>
