@@ -13235,7 +13235,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="GND18" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY4" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="SUPPLY5" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
-<part name="LED3" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
+<part name="VCC" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
 <part name="R4" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="330ohm"/>
 <part name="GND19" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY6" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
@@ -13255,7 +13255,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-LETTER" device=""/>
 <part name="SUPPLY11" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="GND25" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="LED4" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
+<part name="PTT" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
 <part name="R6" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="330ohm"/>
 <part name="GND26" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND24" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -13291,7 +13291,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="GND30" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="C9" library="resistor" deviceset="C-US" device="C1206" value="100uf"/>
 <part name="GND31" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="U2" library="sht21" deviceset="SHT21" device=""/>
+<part name="SHT21" library="sht21" deviceset="SHT21" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13350,7 +13350,7 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="GND18" gate="1" x="66.04" y="152.4" rot="R90"/>
 <instance part="SUPPLY4" gate="G$1" x="55.88" y="160.02" rot="R90"/>
 <instance part="SUPPLY5" gate="G$1" x="55.88" y="152.4" rot="R90"/>
-<instance part="LED3" gate="G$1" x="167.64" y="76.2" rot="R180"/>
+<instance part="VCC" gate="G$1" x="167.64" y="76.2" rot="R180"/>
 <instance part="R4" gate="G$1" x="167.64" y="68.58" rot="R270"/>
 <instance part="GND19" gate="1" x="167.64" y="83.82" rot="R180"/>
 <instance part="SUPPLY6" gate="G$1" x="167.64" y="63.5" rot="R180"/>
@@ -13371,7 +13371,7 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="FRAME1" gate="G$2" x="147.32" y="0"/>
 <instance part="SUPPLY11" gate="G$1" x="25.4" y="63.5" rot="R90"/>
 <instance part="GND25" gate="1" x="22.86" y="17.78" rot="R270"/>
-<instance part="LED4" gate="G$1" x="160.02" y="76.2" rot="R180"/>
+<instance part="PTT" gate="G$1" x="160.02" y="76.2" rot="R180"/>
 <instance part="R6" gate="G$1" x="160.02" y="68.58" rot="R270"/>
 <instance part="GND26" gate="1" x="160.02" y="83.82" rot="R180"/>
 <instance part="GND24" gate="1" x="12.7" y="40.64" rot="R270"/>
@@ -13407,7 +13407,7 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="GND30" gate="1" x="50.8" y="129.54"/>
 <instance part="C9" gate="G$1" x="58.42" y="137.16"/>
 <instance part="GND31" gate="1" x="58.42" y="129.54"/>
-<instance part="U2" gate="A" x="121.92" y="83.82"/>
+<instance part="SHT21" gate="A" x="121.92" y="83.82"/>
 </instances>
 <busses>
 </busses>
@@ -13478,7 +13478,7 @@ Source: AVX .. aphvc.pdf</description>
 <junction x="63.5" y="152.4"/>
 </segment>
 <segment>
-<pinref part="LED3" gate="G$1" pin="C"/>
+<pinref part="VCC" gate="G$1" pin="C"/>
 <pinref part="GND19" gate="1" pin="GND"/>
 <junction x="167.64" y="81.28"/>
 </segment>
@@ -13513,7 +13513,7 @@ Source: AVX .. aphvc.pdf</description>
 <junction x="25.4" y="17.78"/>
 </segment>
 <segment>
-<pinref part="LED4" gate="G$1" pin="C"/>
+<pinref part="PTT" gate="G$1" pin="C"/>
 <pinref part="GND26" gate="1" pin="GND"/>
 <junction x="160.02" y="81.28"/>
 </segment>
@@ -13590,7 +13590,7 @@ Source: AVX .. aphvc.pdf</description>
 <junction x="58.42" y="132.08"/>
 </segment>
 <segment>
-<pinref part="U2" gate="A" pin="VSS"/>
+<pinref part="SHT21" gate="A" pin="VSS"/>
 <pinref part="GND20" gate="1" pin="GND"/>
 <junction x="104.14" y="73.66"/>
 </segment>
@@ -13764,7 +13764,7 @@ Source: AVX .. aphvc.pdf</description>
 <segment>
 <wire x1="104.14" y1="91.44" x2="101.6" y2="91.44" width="0.1524" layer="91"/>
 <label x="101.6" y="91.44" size="1.778" layer="95"/>
-<pinref part="U2" gate="A" pin="VDD"/>
+<pinref part="SHT21" gate="A" pin="VDD"/>
 <junction x="104.14" y="91.44"/>
 </segment>
 <segment>
@@ -13821,7 +13821,7 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="N$8" class="0">
 <segment>
-<pinref part="LED3" gate="G$1" pin="A"/>
+<pinref part="VCC" gate="G$1" pin="A"/>
 <pinref part="R4" gate="G$1" pin="1"/>
 <junction x="167.64" y="73.66"/>
 </segment>
@@ -13942,7 +13942,7 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="N$27" class="0">
 <segment>
-<pinref part="LED4" gate="G$1" pin="A"/>
+<pinref part="PTT" gate="G$1" pin="A"/>
 <pinref part="R6" gate="G$1" pin="1"/>
 <junction x="160.02" y="73.66"/>
 </segment>
@@ -14017,7 +14017,7 @@ Source: AVX .. aphvc.pdf</description>
 <segment>
 <wire x1="142.24" y1="91.44" x2="139.7" y2="91.44" width="0.1524" layer="91"/>
 <label x="139.7" y="91.44" size="1.778" layer="95"/>
-<pinref part="U2" gate="A" pin="SDA"/>
+<pinref part="SHT21" gate="A" pin="SDA"/>
 <junction x="139.7" y="91.44"/>
 </segment>
 <segment>
@@ -14043,7 +14043,7 @@ Source: AVX .. aphvc.pdf</description>
 <segment>
 <wire x1="104.14" y1="86.36" x2="101.6" y2="86.36" width="0.1524" layer="91"/>
 <label x="101.6" y="86.36" size="1.778" layer="95"/>
-<pinref part="U2" gate="A" pin="SCL"/>
+<pinref part="SHT21" gate="A" pin="SCL"/>
 <junction x="104.14" y="86.36"/>
 </segment>
 <segment>
