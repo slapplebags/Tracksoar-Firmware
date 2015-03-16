@@ -2522,7 +2522,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="84.5732" y1="73.2282" x2="84.7794" y2="72.9204" width="0.4064" layer="16"/>
 <via x="93.3958" y="75.4634" extent="1-16" drill="0.6" shape="square"/>
 <via x="60.7822" y="64.9986" extent="1-16" drill="0.6" shape="square"/>
-<via x="66.0908" y="68.58" extent="1-16" drill="0.5"/>
+<via x="66.0654" y="68.5292" extent="1-16" drill="0.5"/>
 <contactref element="C9" pad="2"/>
 <contactref element="SHT21" pad="2"/>
 <via x="63.1952" y="66.1924" extent="1-16" drill="0.6" shape="square"/>
