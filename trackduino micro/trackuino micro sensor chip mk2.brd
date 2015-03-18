@@ -3019,9 +3019,9 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$6">
 <contactref element="U$1" pad="11_RF_IN"/>
 <contactref element="U$3" pad="SIG"/>
-<wire x1="60.6286" y1="44.7006" x2="60.6286" y2="41.8096" width="1.016" layer="16"/>
-<wire x1="60.6286" y1="41.8096" x2="61.976" y2="40.4622" width="1.016" layer="16"/>
-<wire x1="61.976" y1="40.4622" x2="64.072" y2="40.4622" width="1.016" layer="16"/>
+<wire x1="60.6286" y1="44.7006" x2="60.6286" y2="41.8096" width="0.8128" layer="16"/>
+<wire x1="60.6286" y1="41.8096" x2="61.976" y2="40.4622" width="0.8128" layer="16"/>
+<wire x1="61.976" y1="40.4622" x2="64.072" y2="40.4622" width="0.8128" layer="16"/>
 </signal>
 </signals>
 <errors>
