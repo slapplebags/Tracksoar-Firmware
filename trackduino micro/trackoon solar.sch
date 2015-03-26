@@ -18679,6 +18679,163 @@ Source: AVX .. aphvc.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="SparkFun-RF">
+<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
+In this library you'll find things that send or receive RF- GPS, cellular modules, Bluetooth, WiFi, etc.&lt;br&gt;&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="ANTENNA-CHIP2">
+<wire x1="-0.889" y1="0.508" x2="-0.889" y2="-0.508" width="0.2032" layer="21"/>
+<wire x1="0.889" y1="0.508" x2="0.889" y2="-0.508" width="0.2032" layer="21"/>
+<smd name="FEED" x="0" y="1.25" dx="1.7" dy="1" layer="1"/>
+<smd name="P$2" x="0" y="-1.25" dx="1.7" dy="1" layer="1"/>
+</package>
+<package name="ANTENNA-CHIP3">
+<wire x1="-1" y1="3.4" x2="-1" y2="2" width="0.2032" layer="21"/>
+<wire x1="-1" y1="2" x2="-1" y2="-3.4" width="0.2032" layer="21"/>
+<wire x1="1" y1="3.4" x2="1" y2="2" width="0.2032" layer="21"/>
+<wire x1="1" y1="2" x2="1" y2="-3.4" width="0.2032" layer="21"/>
+<wire x1="1" y1="2" x2="-1" y2="2" width="0.2032" layer="21"/>
+<smd name="FEED" x="0" y="4.5" dx="1.8" dy="1.5" layer="1"/>
+<smd name="NC" x="0" y="-4.5" dx="1.8" dy="1.5" layer="1"/>
+</package>
+<package name="ANTENNA-CHIP4">
+<wire x1="-4" y1="1" x2="-4" y2="-1" width="0.127" layer="51"/>
+<wire x1="-4" y1="-1" x2="4" y2="-1" width="0.127" layer="51"/>
+<wire x1="4" y1="-1" x2="4" y2="1" width="0.127" layer="51"/>
+<wire x1="4" y1="1" x2="-4" y2="1" width="0.127" layer="51"/>
+<wire x1="-3" y1="1" x2="3" y2="1" width="0.2032" layer="21"/>
+<wire x1="3" y1="-1" x2="-3" y2="-1" width="0.2032" layer="21"/>
+<circle x="-3" y="0.6" radius="0.1414" width="0.127" layer="21"/>
+<smd name="SIG" x="-4" y="0" dx="1" dy="2" layer="1"/>
+<smd name="NC" x="4" y="0" dx="1" dy="2" layer="1"/>
+<text x="-1.651" y="-0.254" size="0.6096" layer="51">152111</text>
+<text x="-4" y="-2" size="0.4064" layer="27">&gt;VALUE</text>
+<text x="-3.99" y="1.59" size="0.4064" layer="25">&gt;NAME</text>
+</package>
+<package name="ANTENNA-CHIP5">
+<wire x1="-2.413" y1="-1.143" x2="2.413" y2="-1.143" width="0.2032" layer="21"/>
+<wire x1="-2.413" y1="1.143" x2="2.413" y2="1.143" width="0.2032" layer="21"/>
+<wire x1="1.27" y1="0" x2="2.159" y2="0" width="0.2032" layer="21"/>
+<wire x1="2.159" y1="0" x2="1.778" y2="0.381" width="0.2032" layer="21"/>
+<wire x1="2.159" y1="0" x2="1.778" y2="-0.381" width="0.2032" layer="21"/>
+<smd name="FEED" x="-3.302" y="0" dx="1.016" dy="2.54" layer="1" rot="R180"/>
+<smd name="NC" x="3.302" y="0" dx="1.016" dy="2.54" layer="1" rot="R180"/>
+<text x="0.508" y="0.127" size="0.8128" layer="51">AF</text>
+<text x="-2.54" y="0.381" size="0.4064" layer="25">&gt;Name</text>
+<text x="-2.54" y="-0.762" size="0.4064" layer="27">&gt;Value</text>
+</package>
+<package name="ANTENNA-CHIP6">
+<description>Footprint for Part#1575AT43A40</description>
+<wire x1="-2.7" y1="1" x2="2.7" y2="1" width="0.127" layer="21"/>
+<wire x1="-2.7" y1="-1" x2="2.7" y2="-1" width="0.127" layer="21"/>
+<wire x1="-2.6" y1="0.3" x2="-2.6" y2="-0.3" width="0.127" layer="21"/>
+<wire x1="-2.6" y1="-0.3" x2="-1.6" y2="-0.3" width="0.127" layer="21"/>
+<wire x1="-1.6" y1="-0.3" x2="-1.6" y2="0.3" width="0.127" layer="21"/>
+<wire x1="-1.6" y1="0.3" x2="-2.6" y2="0.3" width="0.127" layer="21"/>
+<wire x1="-3.5" y1="1" x2="3.5" y2="1" width="0.127" layer="51"/>
+<wire x1="3.5" y1="1" x2="3.5" y2="-1" width="0.127" layer="51"/>
+<wire x1="3.5" y1="-1" x2="-3.5" y2="-1" width="0.127" layer="51"/>
+<wire x1="-3.5" y1="-1" x2="-3.5" y2="1" width="0.127" layer="51"/>
+<smd name="NC" x="3.4" y="0" dx="2" dy="0.75" layer="1" rot="R90"/>
+<smd name="1" x="-3.4" y="0" dx="2" dy="0.75" layer="1" rot="R90"/>
+<text x="-3.81" y="1.27" size="0.4064" layer="25">&gt;NAME</text>
+<text x="-1.7" y="-1.3" size="0.4064" layer="27" rot="R180">&gt;VALUE</text>
+</package>
+<package name="ANTENNA-CHIP_2500AT44M0400">
+<smd name="FEED" x="-4" y="0" dx="1" dy="1.5" layer="1"/>
+<smd name="NC" x="4" y="0" dx="1" dy="1.5" layer="1"/>
+<wire x1="-4" y1="0.5" x2="-2.5" y2="0.5" width="0.127" layer="51"/>
+<wire x1="-2.5" y1="0.5" x2="4" y2="0.5" width="0.127" layer="51"/>
+<wire x1="4" y1="0.5" x2="4" y2="-0.5" width="0.127" layer="51"/>
+<wire x1="4" y1="-0.5" x2="-2.5" y2="-0.5" width="0.127" layer="51"/>
+<wire x1="-2.5" y1="-0.5" x2="-4" y2="-0.5" width="0.127" layer="51"/>
+<wire x1="-4" y1="-0.5" x2="-4" y2="0.5" width="0.127" layer="51"/>
+<wire x1="-3.1" y1="0.5" x2="-2.5" y2="0.5" width="0.2032" layer="21"/>
+<wire x1="-2.5" y1="0.5" x2="3.1" y2="0.5" width="0.2032" layer="21"/>
+<wire x1="3.1" y1="-0.5" x2="-2.5" y2="-0.5" width="0.2032" layer="21"/>
+<wire x1="-2.5" y1="-0.5" x2="-3.1" y2="-0.5" width="0.2032" layer="21"/>
+<wire x1="-2.5" y1="0.5" x2="-2.5" y2="-0.5" width="0.2032" layer="21"/>
+<wire x1="-2.5" y1="0.5" x2="-2.5" y2="-0.5" width="0.127" layer="51"/>
+<text x="-3.302" y="1.016" size="0.4064" layer="25">&gt;NAME</text>
+<text x="-3.302" y="-1.524" size="0.4064" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="ANTENNA2">
+<wire x1="0" y1="2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="5.08" x2="2.54" y2="5.08" width="0.254" layer="94"/>
+<wire x1="0" y1="2.54" x2="2.54" y2="5.08" width="0.254" layer="94"/>
+<wire x1="0" y1="2.54" x2="-2.54" y2="5.08" width="0.254" layer="94"/>
+<text x="1.27" y="0" size="1.778" layer="95">&gt;NAME</text>
+<text x="1.27" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="SIGNAL" x="0" y="-5.08" visible="off" length="short" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="ANTENNA2">
+<description>&lt;b&gt;Chip antenna&lt;/b&gt;&lt;p&gt;
+Single endded antenna. Common with smaller chip antennas. CHIP4 package is the GPS Chip Antenna &lt;b&gt;SKU:&lt;/b&gt; GPS-08418. CHIP5 package is 2.4GHz chip antenna &lt;b&gt;SKU:&lt;/b&gt; WRL-00144.</description>
+<gates>
+<gate name="G$1" symbol="ANTENNA2" x="0" y="0"/>
+</gates>
+<devices>
+<device name="SMD" package="ANTENNA-CHIP2">
+<connects>
+<connect gate="G$1" pin="SIGNAL" pad="FEED"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD2" package="ANTENNA-CHIP3">
+<connects>
+<connect gate="G$1" pin="SIGNAL" pad="FEED"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD3" package="ANTENNA-CHIP4">
+<connects>
+<connect gate="G$1" pin="SIGNAL" pad="SIG"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD5" package="ANTENNA-CHIP5">
+<connects>
+<connect gate="G$1" pin="SIGNAL" pad="FEED"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD6" package="ANTENNA-CHIP6">
+<connects>
+<connect gate="G$1" pin="SIGNAL" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="2500AT44M0400" package="ANTENNA-CHIP_2500AT44M0400">
+<connects>
+<connect gate="G$1" pin="SIGNAL" pad="FEED"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -18777,12 +18934,6 @@ Source: AVX .. aphvc.pdf</description>
 <part name="IC1" library="adafruit" deviceset="MCP73871" device=""/>
 <part name="R11" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="100k"/>
 <part name="R12" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="270k"/>
-<part name="R13" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="1k"/>
-<part name="R14" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="1k"/>
-<part name="R15" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="1k"/>
-<part name="LED2" library="adafruit" deviceset="LED" device="CHIPLED_0805"/>
-<part name="LED3" library="adafruit" deviceset="LED" device="CHIPLED_0805"/>
-<part name="LED4" library="adafruit" deviceset="LED" device="CHIPLED_0805"/>
 <part name="R16" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="2k"/>
 <part name="R17" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="100k"/>
 <part name="C10" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="10uf"/>
@@ -18793,6 +18944,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="R20" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="150k"/>
 <part name="JP3" library="SparkFun-Connectors" deviceset="M02" device="JST-PTH-VERT" value="M02JST-PTH-VERT"/>
 <part name="C12" library="adafruit" deviceset="CPOL-US" device="153CLV-1012"/>
+<part name="U$3" library="SparkFun-RF" deviceset="ANTENNA2" device="SMD3"/>
 </parts>
 <sheets>
 <sheet>
@@ -18912,12 +19064,6 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="IC1" gate="G$1" x="-40.64" y="91.44"/>
 <instance part="R11" gate="G$1" x="-66.04" y="114.3" rot="R90"/>
 <instance part="R12" gate="G$1" x="-66.04" y="124.46" rot="R90"/>
-<instance part="R13" gate="G$1" x="-109.22" y="116.84" rot="R90"/>
-<instance part="R14" gate="G$1" x="-101.6" y="116.84" rot="R90"/>
-<instance part="R15" gate="G$1" x="-93.98" y="116.84" rot="R90"/>
-<instance part="LED2" gate="G$1" x="-93.98" y="109.22"/>
-<instance part="LED3" gate="G$1" x="-101.6" y="109.22"/>
-<instance part="LED4" gate="G$1" x="-109.22" y="109.22"/>
 <instance part="R16" gate="G$1" x="-71.12" y="71.12" rot="R90"/>
 <instance part="R17" gate="G$1" x="-63.5" y="71.12" rot="R90"/>
 <instance part="C10" gate="G$1" x="-10.16" y="99.06"/>
@@ -18928,6 +19074,7 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="R20" gate="G$1" x="-12.7" y="66.04" rot="R90"/>
 <instance part="JP3" gate="G$1" x="-50.8" y="134.62" rot="R270"/>
 <instance part="C12" gate="G$1" x="-91.44" y="76.2"/>
+<instance part="U$3" gate="G$1" x="-88.9" y="101.6"/>
 </instances>
 <busses>
 </busses>
@@ -19721,27 +19868,6 @@ Source: AVX .. aphvc.pdf</description>
 <junction x="-60.96" y="106.68"/>
 </segment>
 </net>
-<net name="N$19" class="0">
-<segment>
-<pinref part="R15" gate="G$1" pin="1"/>
-<pinref part="LED2" gate="G$1" pin="A"/>
-<junction x="-93.98" y="111.76"/>
-</segment>
-</net>
-<net name="N$20" class="0">
-<segment>
-<pinref part="R14" gate="G$1" pin="1"/>
-<pinref part="LED3" gate="G$1" pin="A"/>
-<junction x="-101.6" y="111.76"/>
-</segment>
-</net>
-<net name="N$21" class="0">
-<segment>
-<pinref part="R13" gate="G$1" pin="1"/>
-<pinref part="LED4" gate="G$1" pin="A"/>
-<junction x="-109.22" y="111.76"/>
-</segment>
-</net>
 <net name="VSOLAR" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="IN2"/>
@@ -19757,18 +19883,6 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="-66.04" y1="129.54" x2="-66.04" y2="132.08" width="0.1524" layer="91"/>
 <label x="-66.04" y="132.08" size="1.778" layer="95" rot="R90"/>
 <junction x="-66.04" y="129.54"/>
-</segment>
-<segment>
-<pinref part="R13" gate="G$1" pin="2"/>
-<pinref part="R15" gate="G$1" pin="2"/>
-<wire x1="-109.22" y1="121.92" x2="-101.6" y2="121.92" width="0.1524" layer="91"/>
-<wire x1="-101.6" y1="121.92" x2="-93.98" y2="121.92" width="0.1524" layer="91"/>
-<wire x1="-93.98" y1="121.92" x2="-93.98" y2="124.46" width="0.1524" layer="91"/>
-<label x="-93.98" y="124.46" size="1.778" layer="95"/>
-<junction x="-93.98" y="121.92"/>
-<pinref part="R14" gate="G$1" pin="2"/>
-<junction x="-101.6" y="121.92"/>
-<junction x="-109.22" y="121.92"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="CE"/>
@@ -19795,36 +19909,6 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="C12" gate="G$1" pin="+"/>
 <wire x1="-91.44" y1="78.74" x2="-91.44" y2="81.28" width="0.1524" layer="91"/>
 <label x="-91.44" y="81.28" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$22" class="0">
-<segment>
-<pinref part="LED2" gate="G$1" pin="C"/>
-<wire x1="-93.98" y1="104.14" x2="-93.98" y2="101.6" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="/PG"/>
-<wire x1="-93.98" y1="101.6" x2="-60.96" y2="101.6" width="0.1524" layer="91"/>
-<junction x="-60.96" y="101.6"/>
-<junction x="-93.98" y="104.14"/>
-</segment>
-</net>
-<net name="STAT2" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="STAT2"/>
-<pinref part="LED3" gate="G$1" pin="C"/>
-<wire x1="-60.96" y1="99.06" x2="-101.6" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="-101.6" y1="99.06" x2="-101.6" y2="104.14" width="0.1524" layer="91"/>
-<junction x="-60.96" y="99.06"/>
-<junction x="-101.6" y="104.14"/>
-</segment>
-</net>
-<net name="STAT1" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="STAT1/LBO"/>
-<pinref part="LED4" gate="G$1" pin="C"/>
-<wire x1="-60.96" y1="96.52" x2="-109.22" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="-109.22" y1="96.52" x2="-109.22" y2="104.14" width="0.1524" layer="91"/>
-<junction x="-60.96" y="96.52"/>
-<junction x="-109.22" y="104.14"/>
 </segment>
 </net>
 <net name="N$23" class="0">
