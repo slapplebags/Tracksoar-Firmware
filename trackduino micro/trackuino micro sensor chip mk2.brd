@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.2.0">
+<eagle version="7.1.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -126,9 +126,9 @@
 </layers>
 <board>
 <plain>
-<wire x1="19.5834" y1="38.7858" x2="73.0758" y2="38.7858" width="0" layer="20"/>
-<wire x1="73.0758" y1="38.7858" x2="73.0758" y2="42.1894" width="0" layer="20"/>
-<wire x1="73.0758" y1="42.1894" x2="62.9158" y2="42.1894" width="0" layer="20"/>
+<wire x1="19.5834" y1="38.7858" x2="69.4182" y2="38.7858" width="0" layer="20"/>
+<wire x1="69.4182" y1="38.7858" x2="69.4182" y2="42.1894" width="0" layer="20"/>
+<wire x1="69.4182" y1="42.1894" x2="62.9158" y2="42.1894" width="0" layer="20"/>
 <wire x1="62.9158" y1="42.1894" x2="62.9158" y2="42.2402" width="0" layer="20"/>
 <wire x1="62.9158" y1="42.2402" x2="62.916" y2="57.8004" width="0" layer="20"/>
 <wire x1="62.916" y1="57.8004" x2="19.5834" y2="57.8258" width="0" layer="20"/>
@@ -2311,7 +2311,7 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="SUPPLIER" value="SENSIRION" x="41.1988" y="45.3644" size="1.778" layer="27" display="off"/>
 <attribute name="OC_FARNELL" value="1855468" x="41.1988" y="45.3644" size="1.778" layer="27" display="off"/>
 </element>
-<element name="U$3" library="SparkFun-RF" package="ANTENNA-CHIP4" value="ANTENNA2SMD3" x="68.072" y="40.4622" rot="MR180"/>
+<element name="U$3" library="SparkFun-RF" package="ANTENNA-CHIP4" value="ANTENNA2SMD3" x="64.6684" y="40.4876" rot="MR180"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -2338,9 +2338,9 @@ Please make sure your boards conform to these design rules.</description>
 <vertex x="62.9158" y="57.7596"/>
 <vertex x="62.8904" y="42.9006"/>
 <vertex x="62.8904" y="42.545"/>
-<vertex x="63.0936" y="42.5704"/>
-<vertex x="63.0936" y="38.3032"/>
-<vertex x="62.9158" y="38.2778"/>
+<vertex x="59.6646" y="42.4688"/>
+<vertex x="59.6646" y="38.2016"/>
+<vertex x="55.499" y="38.227"/>
 <vertex x="32.1818" y="38.3032"/>
 <vertex x="32.0802" y="41.6052"/>
 <vertex x="26.8732" y="47.1424"/>
@@ -2351,9 +2351,9 @@ Please make sure your boards conform to these design rules.</description>
 <vertex x="62.9158" y="57.785"/>
 <vertex x="62.8904" y="42.926"/>
 <vertex x="62.8904" y="42.545"/>
-<vertex x="63.0428" y="42.6974"/>
-<vertex x="63.0428" y="38.4048"/>
-<vertex x="62.8904" y="38.2524"/>
+<vertex x="59.6646" y="42.4434"/>
+<vertex x="59.6646" y="38.1508"/>
+<vertex x="55.5498" y="38.2016"/>
 <vertex x="32.2834" y="38.3032"/>
 <vertex x="32.131" y="38.4556"/>
 <vertex x="32.131" y="41.5798"/>
@@ -3019,9 +3019,8 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$6">
 <contactref element="U$1" pad="11_RF_IN"/>
 <contactref element="U$3" pad="SIG"/>
-<wire x1="60.6286" y1="44.7006" x2="60.6286" y2="41.8096" width="0.8128" layer="16"/>
-<wire x1="60.6286" y1="41.8096" x2="61.976" y2="40.4622" width="0.8128" layer="16"/>
-<wire x1="61.976" y1="40.4622" x2="64.072" y2="40.4622" width="0.8128" layer="16"/>
+<wire x1="60.6286" y1="44.7006" x2="60.6684" y2="44.7006" width="0.8128" layer="16"/>
+<wire x1="60.6684" y1="44.7006" x2="60.6684" y2="40.4876" width="0.8128" layer="16"/>
 </signal>
 </signals>
 <errors>
