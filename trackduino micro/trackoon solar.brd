@@ -2367,11 +2367,11 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="OC_FARNELL" value="1855468" x="30.4292" y="18.415" size="1.778" layer="27" display="off"/>
 </element>
 <element name="IC1" library="adafruit" package="QFN20" value="MCP73871" x="55.2704" y="23.5712" rot="MR90"/>
-<element name="R11" library="SparkFun-Resistors" package="0805" value="100k" x="60.8076" y="22.1488" rot="MR0"/>
+<element name="R11" library="SparkFun-Resistors" package="0805" value="100k" x="60.96" y="22.1488" rot="MR0"/>
 <element name="R12" library="SparkFun-Resistors" package="0805" value="270k" x="59.8424" y="20.4978" rot="MR180"/>
 <element name="R16" library="SparkFun-Resistors" package="0805" value="2k" x="57.8104" y="28.0924" rot="MR270"/>
 <element name="R17" library="SparkFun-Resistors" package="0805" value="100k" x="56.1594" y="28.1432" rot="MR270"/>
-<element name="C10" library="SparkFun-Capacitors" package="0805" value="10uf" x="60.8076" y="23.8506" rot="MR180"/>
+<element name="C10" library="SparkFun-Capacitors" package="0805" value="10uf" x="60.96" y="23.8506" rot="MR180"/>
 <element name="JP2" library="SparkFun-Connectors" package="JST-2-PTH-VERT" value="M02JST-PTH-VERT" x="63.6524" y="27.813" rot="MR90"/>
 <element name="C11" library="SparkFun-Capacitors" package="0805" value="10uf" x="59.436" y="28.0924" rot="MR90"/>
 <element name="R18" library="SparkFun-Resistors" package="0805" value="1k" x="51.8414" y="24.1808" rot="R270"/>
@@ -2566,8 +2566,8 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="JP2" pad="2"/>
 <contactref element="JP3" pad="2"/>
 <contactref element="C12" pad="-"/>
-<wire x1="61.7076" y1="22.1488" x2="61.5552" y2="23.8252" width="0.3048" layer="16"/>
-<wire x1="61.5552" y1="23.8252" x2="61.7076" y2="23.8506" width="0.3048" layer="16"/>
+<wire x1="61.86" y1="22.1488" x2="61.5552" y2="23.8252" width="0.3048" layer="16"/>
+<wire x1="61.5552" y1="23.8252" x2="61.86" y2="23.8506" width="0.3048" layer="16"/>
 <via x="52.8066" y="26.2382" extent="1-16" drill="0.6"/>
 <via x="47.0662" y="20.9296" extent="1-16" drill="0.6"/>
 <wire x1="13.9954" y1="12.9794" x2="14.0208" y2="13.0048" width="0" layer="19" extent="1-1"/>
@@ -3040,7 +3040,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="56.277" y1="21.5646" x2="56.2704" y2="21.5712" width="0.3048" layer="16"/>
 <wire x1="57.2704" y1="22.5712" x2="58.6282" y2="22.5712" width="0.3048" layer="16"/>
 <wire x1="58.6282" y1="22.5712" x2="58.7447" y2="22.3321" width="0.3048" layer="16"/>
-<wire x1="58.9987" y1="22.5861" x2="59.9076" y2="23.8506" width="0.3048" layer="16"/>
+<wire x1="58.9987" y1="22.5861" x2="60.06" y2="23.8506" width="0.3048" layer="16"/>
 <wire x1="43.053" y1="25.6396" x2="43.053" y2="26.7208" width="0.3048" layer="1"/>
 <wire x1="43.053" y1="26.7208" x2="43.6626" y2="27.3304" width="0.3048" layer="1"/>
 <wire x1="43.6626" y1="27.3304" x2="45.0088" y2="27.3304" width="0.3048" layer="1"/>
@@ -3116,7 +3116,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="55.7704" y1="21.5712" x2="55.7704" y2="20.7852" width="0.3048" layer="16"/>
 <wire x1="55.7704" y1="20.7852" x2="56.0832" y2="20.4724" width="0.3048" layer="16"/>
 <wire x1="56.0832" y1="20.4724" x2="58.9424" y2="20.4978" width="0.3048" layer="16"/>
-<wire x1="59.9076" y1="22.1488" x2="59.9076" y2="21.463" width="0.3048" layer="16"/>
+<wire x1="60.06" y1="22.1488" x2="59.9076" y2="21.463" width="0.3048" layer="16"/>
 <wire x1="59.9076" y1="21.463" x2="58.9424" y2="20.4978" width="0.3048" layer="16"/>
 </signal>
 <signal name="VSOLAR">
