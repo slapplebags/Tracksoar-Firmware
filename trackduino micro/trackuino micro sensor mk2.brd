@@ -2336,7 +2336,7 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="SUPPLIER" value="SENSIRION" x="72.9996" y="64.0842" size="1.778" layer="27" display="off"/>
 <attribute name="OC_FARNELL" value="1855468" x="72.9996" y="64.0842" size="1.778" layer="27" display="off"/>
 </element>
-<element name="RX1" library="SparkFun-Connectors" package="JST-2-PTH-VERT" value="RX" x="65.3542" y="59.2328"/>
+<element name="RX1" library="SparkFun-Connectors" package="JST-2-PTH-VERT" value="RX" x="65.3542" y="59.2582"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -2980,7 +2980,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="68.961" y1="67.5132" x2="68.961" y2="67.58325625" width="0.3048" layer="16"/>
 <wire x1="68.961" y1="67.58325625" x2="69.889171875" y2="68.486028125" width="0.3048" layer="16"/>
 <contactref element="RX1" pad="2"/>
-<wire x1="66.3542" y1="58.6828" x2="66.3542" y2="62.1886" width="0.3048" layer="1"/>
+<wire x1="66.3542" y1="58.7082" x2="66.3542" y2="62.1886" width="0.3048" layer="1"/>
 <wire x1="66.3542" y1="62.1886" x2="66.3829" y2="62.2173" width="0.3048" layer="1"/>
 </signal>
 <signal name="SCL">
@@ -3007,7 +3007,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="70.242725" y1="68.132475" x2="68.5506" y2="69.8246" width="0.3048" layer="1"/>
 <wire x1="68.5506" y1="69.8246" x2="65.9748" y2="69.8246" width="0.3048" layer="1"/>
 <contactref element="RX1" pad="1"/>
-<wire x1="64.3542" y1="58.6828" x2="64.3542" y2="60.69" width="0.3048" layer="16"/>
+<wire x1="64.3542" y1="58.7082" x2="64.3542" y2="60.69" width="0.3048" layer="16"/>
 <wire x1="64.3542" y1="60.69" x2="63.0174" y2="62.0268" width="0.3048" layer="16"/>
 <wire x1="63.0174" y1="62.0268" x2="63.0174" y2="64.5668" width="0.3048" layer="16"/>
 <wire x1="63.0174" y1="64.5668" x2="63.246" y2="64.7954" width="0.3048" layer="16"/>
