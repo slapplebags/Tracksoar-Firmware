@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.2.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.001" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="1" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -38,7 +38,7 @@
 <layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
@@ -126,16 +126,47 @@
 </layers>
 <board>
 <plain>
-<wire x1="19.5834" y1="38.7858" x2="69.4182" y2="38.7858" width="0" layer="20"/>
+<wire x1="14.0716" y1="38.7858" x2="69.4182" y2="38.7858" width="0" layer="20"/>
 <wire x1="69.4182" y1="38.7858" x2="69.4182" y2="42.1894" width="0" layer="20"/>
 <wire x1="69.4182" y1="42.1894" x2="62.9158" y2="42.1894" width="0" layer="20"/>
-<wire x1="62.9158" y1="42.1894" x2="62.9158" y2="42.2402" width="0" layer="20"/>
-<wire x1="62.9158" y1="42.2402" x2="62.916" y2="57.8004" width="0" layer="20"/>
+<wire x1="62.9158" y1="42.1894" x2="62.9158" y2="42.2148" width="0" layer="20"/>
+<wire x1="62.9158" y1="42.2148" x2="62.9158" y2="42.2402" width="0" layer="20"/>
 <wire x1="62.916" y1="57.8004" x2="19.5834" y2="57.8258" width="0" layer="20"/>
-<wire x1="19.5834" y1="57.8258" x2="19.5834" y2="38.7858" width="0" layer="20"/>
+<wire x1="19.5834" y1="57.8258" x2="19.5834" y2="53.594" width="0" layer="20"/>
 <text x="62.5602" y="43.307" size="0.8128" layer="25" rot="R180">SBHX TRACKOON
 Rev .9</text>
 <text x="58.8264" y="39.3954" size="0.6096" layer="25">&lt;3 Swiss</text>
+<hole x="66" y="51" drill="3"/>
+<hole x="17" y="41" drill="3"/>
+<hole x="17" y="51" drill="3"/>
+<wire x1="19.5834" y1="48.387" x2="19.5834" y2="43.307" width="0" layer="20"/>
+<wire x1="14.0716" y1="38.7858" x2="14.0716" y2="43.307" width="0" layer="20"/>
+<wire x1="14.0716" y1="48.387" x2="14.0716" y2="53.594" width="0" layer="20"/>
+<wire x1="14.0716" y1="53.594" x2="19.5834" y2="53.594" width="0" layer="20"/>
+<wire x1="14.0716" y1="48.387" x2="19.5834" y2="48.387" width="0" layer="20"/>
+<wire x1="19.5834" y1="43.307" x2="14.0716" y2="43.307" width="0" layer="20"/>
+<hole x="19" y="49" drill="0.5"/>
+<hole x="19" y="50" drill="0.5"/>
+<hole x="19" y="51" drill="0.5"/>
+<hole x="19" y="52" drill="0.5"/>
+<hole x="19" y="53" drill="0.5"/>
+<hole x="19" y="43" drill="0.5"/>
+<hole x="19" y="42" drill="0.5"/>
+<hole x="19" y="41" drill="0.5"/>
+<hole x="19" y="40" drill="0.5"/>
+<hole x="19" y="39" drill="0.5"/>
+<wire x1="69" y1="53.5" x2="69" y2="48.5" width="0" layer="20"/>
+<hole x="63.5" y="53.5" drill="0.5"/>
+<hole x="63.5" y="52.5" drill="0.5"/>
+<hole x="63.5" y="51.5" drill="0.5"/>
+<hole x="63.5" y="50.5" drill="0.5"/>
+<hole x="63.5" y="49.5" drill="0.5"/>
+<hole x="63.5" y="48.5" drill="0.5"/>
+<wire x1="69" y1="53.5" x2="62.9158" y2="53.5" width="0" layer="20"/>
+<wire x1="62.9158" y1="53.5" x2="62.9158" y2="53.4924" width="0" layer="20"/>
+<wire x1="69" y1="48.5" x2="62.9158" y2="48.5" width="0" layer="20"/>
+<wire x1="62.9" y1="53.5" x2="62.9" y2="57.8" width="0" layer="20"/>
+<wire x1="62.9158" y1="48.5" x2="62.9158" y2="42.2402" width="0" layer="20"/>
 </plain>
 <libraries>
 <library name="74xx-little-us">
@@ -2176,11 +2207,8 @@ Please make sure your boards conform to these design rules.</description>
 <autorouter>
 <pass name="Default">
 <param name="RoutingGrid" value="50mil"/>
-<param name="AutoGrid" value="1"/>
-<param name="Efforts" value="0"/>
-<param name="TopRouterVariant" value="1"/>
 <param name="tpViaShape" value="round"/>
-<param name="PrefDir.1" value="a"/>
+<param name="PrefDir.1" value="|"/>
 <param name="PrefDir.2" value="0"/>
 <param name="PrefDir.3" value="0"/>
 <param name="PrefDir.4" value="0"/>
@@ -2195,7 +2223,7 @@ Please make sure your boards conform to these design rules.</description>
 <param name="PrefDir.13" value="0"/>
 <param name="PrefDir.14" value="0"/>
 <param name="PrefDir.15" value="0"/>
-<param name="PrefDir.16" value="a"/>
+<param name="PrefDir.16" value="-"/>
 <param name="cfVia" value="8"/>
 <param name="cfNonPref" value="5"/>
 <param name="cfChangeDir" value="2"/>
