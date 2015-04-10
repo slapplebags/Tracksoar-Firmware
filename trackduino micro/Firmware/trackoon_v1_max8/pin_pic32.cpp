@@ -14,15 +14,43 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
+#ifdef PIC32MX
 
-#ifndef __RADIO_H__
-#define __RADIO_H__
+#include "pin.h"
+#include <plib.h>
+#include <stdint.h>
+#include <WProgram.h>
 
-class Radio {
-  public:
-    virtual void setup() = 0;
-    virtual void ptt_on() = 0;
-    virtual void ptt_off() = 0;
-};
+// This is a digitalWrite() replacement that does not disrupt
+// timer 2.
+void pin_write(uint8_t pin, uint8_t val)
+{
+  volatile p32_ioport * iop;
+  uint8_t         port;
+  uint16_t        bit;
+  //* Get the port number for this pin.
+  if ((pin >= NUM_DIGITAL_PINS) || ((port = digitalPinToPort(pin)) == NOT_A_PIN))
+  {
+    return;
+  }
 
-#endif
+  //* Obtain pointer to the registers for this io port.
+  iop = (p32_ioport *)portRegisters(port);
+
+  //* Obtain bit mask for the specific bit for this pin.
+  bit = digitalPinToBitMask(pin);
+
+  //* Set the pin state
+  if (val == LOW)
+  {
+    iop->lat.clr = bit;
+  }
+  else
+  {
+    iop->lat.set = bit;
+  }
+}
+
+
+#endif // PIC32MX
+

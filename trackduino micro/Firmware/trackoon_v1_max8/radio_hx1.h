@@ -14,18 +14,17 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-#ifdef PIC32MX
 
-#include <plib.h>
-#include <WProgram.h>
-#include "config.h"
-#include "pin.h"
+#ifndef __RADIO_HX1_H__
+#define __RADIO_HX1_H__
 
-void power_save()
-{
-  pin_write(LED_PIN, LOW);
-  PowerSaveIdle();
-  pin_write(LED_PIN, HIGH);
-}
+#include "radio.h"
 
-#endif // #ifdef PIC32MX
+class RadioHx1 : public Radio {
+  public:
+    virtual void setup();
+    virtual void ptt_on();
+    virtual void ptt_off();
+};
+
+#endif

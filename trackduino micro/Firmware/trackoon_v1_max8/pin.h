@@ -14,43 +14,13 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-#ifdef PIC32MX
 
-#include "pin.h"
-#include <plib.h>
+#ifndef __PIN_H__
+#define __PIN_H__
+
 #include <stdint.h>
-#include <WProgram.h>
 
-// This is a digitalWrite() replacement that does not disrupt
-// timer 2.
-void pin_write(uint8_t pin, uint8_t val)
-{
-  volatile p32_ioport * iop;
-  uint8_t         port;
-  uint16_t        bit;
-  //* Get the port number for this pin.
-  if ((pin >= NUM_DIGITAL_PINS) || ((port = digitalPinToPort(pin)) == NOT_A_PIN))
-  {
-    return;
-  }
+void pin_write(uint8_t pin, uint8_t val);
 
-  //* Obtain pointer to the registers for this io port.
-  iop = (p32_ioport *)portRegisters(port);
-
-  //* Obtain bit mask for the specific bit for this pin.
-  bit = digitalPinToBitMask(pin);
-
-  //* Set the pin state
-  if (val == LOW)
-  {
-    iop->lat.clr = bit;
-  }
-  else
-  {
-    iop->lat.set = bit;
-  }
-}
-
-
-#endif // PIC32MX
+#endif // ifndef __PIN_H__
 

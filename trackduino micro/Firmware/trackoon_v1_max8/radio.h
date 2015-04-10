@@ -15,11 +15,14 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef __BUZZER_H__
-#define __BUZZER_H__
+#ifndef __RADIO_H__
+#define __RADIO_H__
 
-void buzzer_setup();
-void buzzer_on();
-void buzzer_off();
+class Radio {
+  public:
+    virtual void setup() = 0;
+    virtual void ptt_on() = 0;
+    virtual void ptt_off() = 0;
+};
 
-#endif // ifndef __BUZZER_H__
+#endif

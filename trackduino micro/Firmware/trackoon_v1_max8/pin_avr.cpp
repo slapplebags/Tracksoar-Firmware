@@ -15,18 +15,40 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef __AX25_H__
-#define __AX25_H__
+#ifdef AVR
 
-struct s_address {
-	char callsign[7];
-	unsigned char ssid;
-};
-
-void ax25_send_header(const struct s_address *addresses, int num_addresses);
-void ax25_send_byte(unsigned char byte);
-void ax25_send_string(const char *string);
-void ax25_send_footer();
-void ax25_flush_frame();
-
+#include "pin.h"
+#include <stdint.h>
+#include <pins_arduino.h>
+#if (ARDUINO + 1) >= 100
+#  include <Arduino.h>
+#else
+#  include <WProgram.h>
 #endif
+
+// This is a digitalWrite() replacement that does not disrupt
+// timer 2.
+void pin_write(uint8_t pin, uint8_t val)
+{
+  uint8_t bit = digitalPinToBitMask(pin);
+  uint8_t port = digitalPinToPort(pin);
+  volatile uint8_t *out;
+
+  if (port == NOT_A_PIN) return;
+
+  out = portOutputRegister(port);
+
+  if (val == LOW) {
+    uint8_t oldSREG = SREG;
+    cli();
+    *out &= ~bit;
+    SREG = oldSREG;
+  } else {
+    uint8_t oldSREG = SREG;
+    cli();
+    *out |= bit;
+    SREG = oldSREG;
+  }
+}
+
+#endif  // AVR

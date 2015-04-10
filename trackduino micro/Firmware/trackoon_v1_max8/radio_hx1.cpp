@@ -15,40 +15,31 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifdef AVR
-
+#include "config.h"
 #include "pin.h"
-#include <stdint.h>
-#include <pins_arduino.h>
+#include "radio_hx1.h"
 #if (ARDUINO + 1) >= 100
 #  include <Arduino.h>
 #else
 #  include <WProgram.h>
 #endif
 
-// This is a digitalWrite() replacement that does not disrupt
-// timer 2.
-void pin_write(uint8_t pin, uint8_t val)
+
+void RadioHx1::setup()
 {
-  uint8_t bit = digitalPinToBitMask(pin);
-  uint8_t port = digitalPinToPort(pin);
-  volatile uint8_t *out;
-
-  if (port == NOT_A_PIN) return;
-
-  out = portOutputRegister(port);
-
-  if (val == LOW) {
-    uint8_t oldSREG = SREG;
-    cli();
-    *out &= ~bit;
-    SREG = oldSREG;
-  } else {
-    uint8_t oldSREG = SREG;
-    cli();
-    *out |= bit;
-    SREG = oldSREG;
-  }
+  // Configure pins
+  pinMode(PTT_PIN, OUTPUT);
+  pin_write(PTT_PIN, LOW);
+  pinMode(AUDIO_PIN, OUTPUT);
 }
 
-#endif  // AVR
+void RadioHx1::ptt_on()
+{
+  pin_write(PTT_PIN, HIGH);
+  delay(25);   // The HX1 takes 5 ms from PTT to full RF, give it 25
+}
+
+void RadioHx1::ptt_off()
+{
+  pin_write(PTT_PIN, LOW);
+}

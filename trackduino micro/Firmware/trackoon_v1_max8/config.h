@@ -144,7 +144,8 @@
 #define INTERNAL_LM60_VOUT_PIN   0
 #define EXTERNAL_LM60_VS_PIN     7
 #define EXTERNAL_LM60_VOUT_PIN   1
-
+#define GPS_USING_UBLOX
+#define MIN_NO_CYCLIC_SATS     1
 // Units for temperature sensors (Added by: Kyle Crockett)
 // 1 = Celsius, 2 = Kelvin, 3 = Fahrenheit
 #define TEMP_UNIT 1
@@ -215,7 +216,7 @@
 //    will get errors.
 
  #define DEBUG_GPS    // GPS sentence dump and checksum validation
-// #define DEBUG_AX25   // AX.25 frame dump
+ #define DEBUG_AX25   // AX.25 frame dump
 // #define DEBUG_MODEM  // Modem ISR overrun and profiling
 // #define DEBUG_AFSK   // AFSK (modulation) output
 // #define DEBUG_RESET  // AVR reset

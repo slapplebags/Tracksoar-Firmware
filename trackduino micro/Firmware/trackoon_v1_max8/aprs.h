@@ -15,12 +15,9 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef __PIN_H__
-#define __PIN_H__
+#ifndef __APRS_H__
+#define __APRS_H__
 
-#include <stdint.h>
+void aprs_send();
 
-void pin_write(uint8_t pin, uint8_t val);
-
-#endif // ifndef __PIN_H__
-
+#endif

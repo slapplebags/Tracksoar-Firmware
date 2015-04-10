@@ -14,10 +14,12 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-#ifndef __POWER_H__
-#define __POWER_H__
 
-void power_save();
+#ifndef __BUZZER_H__
+#define __BUZZER_H__
 
-#endif // ifndef __POWER_H__
+void buzzer_setup();
+void buzzer_on();
+void buzzer_off();
 
+#endif // ifndef __BUZZER_H__

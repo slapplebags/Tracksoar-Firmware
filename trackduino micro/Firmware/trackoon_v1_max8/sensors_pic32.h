@@ -15,9 +15,16 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef __APRS_H__
-#define __APRS_H__
+#ifdef PIC32MX
+#ifndef __SENSORS_PIC32_H__
+#define __SENSORS_PIC32_H__
 
-void aprs_send();
+void sensors_setup();
+unsigned long sensors_aref();
+long sensors_internal_temp();
+int sensors_int_lm60();
+int sensors_ext_lm60();
+int sensors_vin();
 
-#endif
+#endif // ifndef __SENSORS_PIC32_H__
+#endif // ifdef PIC32MX
