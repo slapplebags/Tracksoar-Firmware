@@ -2582,7 +2582,6 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 </connects>
 <technologies>
 <technology name="">
-<attribute name="PROD_ID" value="CONN-09863" constant="no"/>
 <attribute name="SKU" value="PRT-09914" constant="no"/>
 </technology>
 </technologies>
@@ -12717,10 +12716,6 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <part name="GND18" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY4" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="SUPPLY5" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
-<part name="VCC" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
-<part name="R4" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="330ohm"/>
-<part name="GND19" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="SUPPLY6" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="FTDI" library="SparkFun-Connectors" deviceset="M06" device="NO_SILK_FEMALE_PTH"/>
 <part name="SUPPLY7" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="SUPPLY8" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
@@ -12731,7 +12726,7 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <part name="R5" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="10k"/>
 <part name="SUPPLY10" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="C5" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value=".1uf"/>
-<part name="TX" library="SparkFun-Connectors" deviceset="M02" device="PTH" value="TX"/>
+<part name="TX" library="SparkFun-Connectors" deviceset="M02" device="JST-PTH-VERT" value="TX"/>
 <part name="SPI" library="SparkFun-Connectors" deviceset="M04" device="JST-PTH-VERT"/>
 <part name="GND23" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-LETTER" device=""/>
@@ -12746,7 +12741,7 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <part name="SW1" library="adafruit" deviceset="SPST_TACT" device="-KMR2"/>
 <part name="GND1" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND3" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="RX" library="SparkFun-Connectors" deviceset="M02" device="PTH" value="RX"/>
+<part name="RX" library="SparkFun-Connectors" deviceset="M02" device="JST-PTH-VERT" value="RX"/>
 <part name="GND10" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="BMP180" library="SparkFun-Sensors" deviceset="BMP180" device=""/>
 <part name="GND16" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -12828,10 +12823,6 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <instance part="GND18" gate="1" x="66.04" y="152.4" rot="R90"/>
 <instance part="SUPPLY4" gate="G$1" x="55.88" y="160.02" rot="R90"/>
 <instance part="SUPPLY5" gate="G$1" x="55.88" y="152.4" rot="R90"/>
-<instance part="VCC" gate="G$1" x="167.64" y="76.2" rot="R180"/>
-<instance part="R4" gate="G$1" x="167.64" y="68.58" rot="R270"/>
-<instance part="GND19" gate="1" x="167.64" y="83.82" rot="R180"/>
-<instance part="SUPPLY6" gate="G$1" x="167.64" y="63.5" rot="R180"/>
 <instance part="FTDI" gate="G$1" x="198.12" y="53.34"/>
 <instance part="SUPPLY7" gate="G$1" x="25.4" y="60.96" rot="R90"/>
 <instance part="SUPPLY8" gate="G$1" x="25.4" y="58.42" rot="R90"/>
@@ -12943,11 +12934,6 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <pinref part="C4" gate="G$1" pin="1"/>
 <pinref part="GND18" gate="1" pin="GND"/>
 <junction x="63.5" y="152.4"/>
-</segment>
-<segment>
-<pinref part="VCC" gate="G$1" pin="C"/>
-<pinref part="GND19" gate="1" pin="GND"/>
-<junction x="167.64" y="81.28"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="GND@1"/>
@@ -13107,11 +13093,6 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <junction x="55.88" y="152.4"/>
 </segment>
 <segment>
-<pinref part="R4" gate="G$1" pin="2"/>
-<pinref part="SUPPLY6" gate="G$1" pin="VCC"/>
-<junction x="167.64" y="63.5"/>
-</segment>
-<segment>
 <pinref part="U1" gate="G$1" pin="VCC@1"/>
 <pinref part="SUPPLY7" gate="G$1" pin="VCC"/>
 <junction x="25.4" y="60.96"/>
@@ -13233,13 +13214,6 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <pinref part="R1" gate="G$1" pin="2"/>
 <pinref part="LED1" gate="G$1" pin="A"/>
 <junction x="231.14" y="144.78"/>
-</segment>
-</net>
-<net name="N$8" class="0">
-<segment>
-<pinref part="VCC" gate="G$1" pin="A"/>
-<pinref part="R4" gate="G$1" pin="1"/>
-<junction x="167.64" y="73.66"/>
 </segment>
 </net>
 <net name="DTR" class="0">
