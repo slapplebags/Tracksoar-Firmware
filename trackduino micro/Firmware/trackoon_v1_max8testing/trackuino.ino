@@ -55,6 +55,9 @@
 // Module constants
 static const uint32_t VALID_POS_TIMEOUT = 2000;  // ms
 
+// Though not used here, we need to include Wire.h in this file for other code:
+#include <Wire.h>
+
 // Module variables
 static int32_t next_aprs = 0;
 

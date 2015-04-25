@@ -17,6 +17,8 @@
 #ifdef AVR
 
 #include <avr/io.h>
+// in gcc with Arduino 1.6 prog_uchar is deprecated. Allow it:
+#define __PROG_TYPES_COMPAT__ 1
 #include <avr/pgmspace.h>
 #include "config.h"
 #include "afsk_avr.h"
