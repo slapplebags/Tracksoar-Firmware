@@ -20,11 +20,9 @@
 #define __SENSORS_AVR_H__
 
 void sensors_setup();
-unsigned long sensors_aref();
-long sensors_internal_temp();
-int sensors_int_lm60();
-int sensors_ext_lm60();
-int sensors_vin();
+float sensors_temperature();
+int sensors_pressure();
+float sensors_humidity();
 
 #endif // ifndef __SENSORS_AVR_H__
 #endif // ifdef AVR
