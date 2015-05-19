@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.2.0">
+<eagle version="7.1.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -13220,7 +13220,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="SUPPLY3" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="GND7" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="R1" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="100ohm"/>
-<part name="LED1" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
+<part name="GPSLOCK" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
 <part name="GND8" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND9" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND11" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -13331,9 +13331,9 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="SUPPLY2" gate="G$1" x="5.08" y="170.18" rot="R180"/>
 <instance part="SUPPLY3" gate="G$1" x="109.22" y="132.08" rot="R90"/>
 <instance part="GND7" gate="1" x="106.68" y="127" rot="R270"/>
-<instance part="R1" gate="G$1" x="226.06" y="144.78"/>
-<instance part="LED1" gate="G$1" x="233.68" y="144.78" rot="R90"/>
-<instance part="GND8" gate="1" x="241.3" y="144.78" rot="R90"/>
+<instance part="R1" gate="G$1" x="172.72" y="68.58" rot="R90"/>
+<instance part="GPSLOCK" gate="G$1" x="172.72" y="76.2" rot="R180"/>
+<instance part="GND8" gate="1" x="172.72" y="83.82" rot="R180"/>
 <instance part="GND9" gate="1" x="223.52" y="129.54" rot="R90"/>
 <instance part="GND11" gate="1" x="144.78" y="157.48" rot="R270"/>
 <instance part="GND13" gate="1" x="172.72" y="160.02" rot="R270"/>
@@ -13444,9 +13444,9 @@ Source: AVX .. aphvc.pdf</description>
 <junction x="109.22" y="127"/>
 </segment>
 <segment>
-<pinref part="LED1" gate="G$1" pin="C"/>
+<pinref part="GPSLOCK" gate="G$1" pin="C"/>
 <pinref part="GND8" gate="1" pin="GND"/>
-<junction x="238.76" y="144.78"/>
+<junction x="172.72" y="81.28"/>
 </segment>
 <segment>
 <pinref part="GND11" gate="1" pin="GND"/>
@@ -13774,8 +13774,8 @@ Source: AVX .. aphvc.pdf</description>
 <net name="N$3" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
-<pinref part="LED1" gate="G$1" pin="A"/>
-<junction x="231.14" y="144.78"/>
+<pinref part="GPSLOCK" gate="G$1" pin="A"/>
+<junction x="172.72" y="73.66"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -13951,13 +13951,6 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="Y1" gate="G$1" pin="1"/>
 </segment>
 </net>
-<net name="N$2" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="4_TIMEPULSE"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<junction x="220.98" y="144.78"/>
-</segment>
-</net>
 <net name="N$24" class="0">
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
@@ -14106,6 +14099,20 @@ Source: AVX .. aphvc.pdf</description>
 <junction x="17.78" y="68.58"/>
 <wire x1="17.78" y1="68.58" x2="25.4" y2="68.58" width="0.1524" layer="91"/>
 <junction x="25.4" y="68.58"/>
+</segment>
+</net>
+<net name="PPS" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="4_TIMEPULSE"/>
+<wire x1="220.98" y1="144.78" x2="223.52" y2="144.78" width="0.1524" layer="91"/>
+<junction x="220.98" y="144.78"/>
+<label x="223.52" y="144.78" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="172.72" y1="63.5" x2="172.72" y2="60.96" width="0.1524" layer="91"/>
+<junction x="172.72" y="63.5"/>
+<label x="170.18" y="58.42" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
