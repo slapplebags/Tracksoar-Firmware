@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.1.0">
+<eagle version="7.2.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -2881,9 +2881,9 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="22.5552" y1="8.0772" x2="20.5994" y2="8.0772" width="0.3048" layer="1"/>
 <wire x1="20.5994" y1="8.0772" x2="18.858525" y2="9.818075" width="0.3048" layer="1"/>
 <wire x1="18.858525" y1="9.818075" x2="18.858525" y2="10.626875" width="0.3048" layer="1"/>
-<wire x1="18.858525" y1="10.626875" x2="16.3028" y2="13.1826" width="0.3048" layer="1"/>
-<wire x1="16.3028" y1="13.1826" x2="15.6464" y2="13.1826" width="0.3048" layer="1"/>
-<wire x1="15.6464" y1="13.1826" x2="14.8336" y2="12.3698" width="0.3048" layer="1"/>
+<wire x1="18.858525" y1="10.626875" x2="16.5822" y2="12.9032" width="0.3048" layer="1"/>
+<wire x1="16.5822" y1="12.9032" x2="15.367" y2="12.9032" width="0.3048" layer="1"/>
+<wire x1="15.367" y1="12.9032" x2="14.8336" y2="12.3698" width="0.3048" layer="1"/>
 <wire x1="14.8336" y1="12.3698" x2="14.5906" y2="12.3698" width="0.3048" layer="1"/>
 <contactref element="TX1" pad="1"/>
 <wire x1="13.1478" y1="1.101" x2="13.1478" y2="5.6482" width="0.3048" layer="16"/>
