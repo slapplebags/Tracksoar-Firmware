@@ -126,10 +126,10 @@
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="0" x2="43.2564" y2="0" width="0" layer="20"/>
-<wire x1="43.2564" y1="0" x2="43.2564" y2="19.04" width="0" layer="20"/>
-<wire x1="43.2564" y1="19.04" x2="0" y2="19.04" width="0" layer="20"/>
-<wire x1="0" y1="19.04" x2="0" y2="0" width="0" layer="20"/>
+<wire x1="-0.4064" y1="-0.381" x2="43.4088" y2="-0.381" width="0" layer="20"/>
+<wire x1="43.4088" y1="-0.381" x2="43.4342" y2="19.167" width="0" layer="20"/>
+<wire x1="43.4342" y1="19.167" x2="-0.4064" y2="19.3194" width="0" layer="20"/>
+<wire x1="-0.4064" y1="19.3194" x2="-0.4064" y2="-0.381" width="0" layer="20"/>
 <text x="42.9768" y="4.5212" size="0.8128" layer="25" rot="R180">SBHX TRACKOON
 Rev .9</text>
 <text x="39.243" y="0.6096" size="0.6096" layer="25">&lt;3 Swiss</text>
@@ -2333,39 +2333,6 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="U1" pad="3"/>
 <contactref element="U1" pad="5"/>
 <contactref element="FTDI" pad="6"/>
-<polygon width="0.4064" layer="1">
-<vertex x="-0.127" y="19.05"/>
-<vertex x="43.3324" y="18.9738"/>
-<vertex x="43.3324" y="-0.508"/>
-<vertex x="12.5984" y="-0.4826"/>
-<vertex x="12.4968" y="2.8194"/>
-<vertex x="7.2898" y="8.3566"/>
-<vertex x="-0.1016" y="8.4328"/>
-</polygon>
-<polygon width="0.4064" layer="16">
-<vertex x="-0.1524" y="19.05"/>
-<vertex x="43.3324" y="18.9992"/>
-<vertex x="43.307" y="-0.5334"/>
-<vertex x="12.7" y="-0.4826"/>
-<vertex x="12.5476" y="-0.3302"/>
-<vertex x="12.5476" y="2.794"/>
-<vertex x="7.2898" y="8.3566"/>
-<vertex x="-0.2032" y="8.4836"/>
-</polygon>
-<polygon width="0.4064" layer="1" orphans="yes">
-<vertex x="-0.1016" y="7.7216"/>
-<vertex x="6.8072" y="7.6708"/>
-<vertex x="11.7094" y="2.6416"/>
-<vertex x="11.7094" y="-0.4826"/>
-<vertex x="-0.1016" y="-0.3556"/>
-</polygon>
-<polygon width="0.3048" layer="16" orphans="yes">
-<vertex x="-0.1016" y="7.747"/>
-<vertex x="6.7818" y="7.6962"/>
-<vertex x="11.7602" y="2.5908"/>
-<vertex x="11.7602" y="-0.4572"/>
-<vertex x="0" y="-0.4318"/>
-</polygon>
 <contactref element="U1" pad="21"/>
 <contactref element="PTT" pad="C"/>
 <contactref element="Y1" pad="2"/>
@@ -2510,6 +2477,38 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="20.059859375" y1="7.1628" x2="21.2344" y2="7.1628" width="0.254" layer="16"/>
 <wire x1="21.2344" y1="7.1628" x2="21.46439375" y2="7.39279375" width="0.254" layer="16"/>
 <wire x1="21.46439375" y1="7.39279375" x2="21.794596875" y2="7.39279375" width="0.254" layer="16"/>
+<polygon width="0.4064" layer="16">
+<vertex x="-0.4064" y="7.493"/>
+<vertex x="7.4676" y="7.493"/>
+<vertex x="11.9888" y="2.9464"/>
+<vertex x="11.9888" y="-0.4064"/>
+<vertex x="-0.4064" y="-0.4064"/>
+</polygon>
+<polygon width="0.4064" layer="1">
+<vertex x="-0.4064" y="7.493"/>
+<vertex x="7.4676" y="7.493"/>
+<vertex x="11.9888" y="2.9464"/>
+<vertex x="11.9888" y="-0.4064"/>
+<vertex x="-0.4064" y="-0.4064"/>
+</polygon>
+<polygon width="0.4064" layer="1">
+<vertex x="-0.4064" y="19.2278"/>
+<vertex x="43.4086" y="19.2278"/>
+<vertex x="43.4086" y="-0.381"/>
+<vertex x="12.6238" y="-0.381"/>
+<vertex x="12.6238" y="3.1496"/>
+<vertex x="7.6962" y="8.1534"/>
+<vertex x="-0.4064" y="8.128"/>
+</polygon>
+<polygon width="0.4064" layer="16">
+<vertex x="-0.4064" y="19.2278"/>
+<vertex x="43.4086" y="19.2278"/>
+<vertex x="43.4086" y="-0.381"/>
+<vertex x="12.6238" y="-0.381"/>
+<vertex x="12.6238" y="3.1496"/>
+<vertex x="7.6962" y="8.1534"/>
+<vertex x="-0.4064" y="8.128"/>
+</polygon>
 <wire x1="5.1816" y1="1.143" x2="5.207" y2="1.1684" width="0" layer="19" extent="1-1"/>
 <wire x1="9.398" y1="7.493" x2="6.9088" y2="6.2484" width="0" layer="19" extent="1-1"/>
 </signal>
@@ -2663,10 +2662,10 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="37.3888" y1="4.6228" x2="35.8902" y2="4.6228" width="0.3048" layer="16"/>
 <wire x1="35.8902" y1="4.6228" x2="35.6362" y2="4.3688" width="0.3048" layer="16"/>
 <wire x1="35.6362" y1="4.3688" x2="35.6362" y2="3.7956" width="0.3048" layer="16"/>
-<wire x1="9.3616" y1="12.3444" x2="6.9596" y2="12.3444" width="0.3048" layer="1"/>
-<wire x1="6.9596" y1="12.3444" x2="6.604" y2="12.7" width="0.3048" layer="1"/>
-<via x="6.604" y="12.7" extent="1-16" drill="0.6"/>
-<wire x1="6.604" y1="12.7" x2="5.8818" y2="12.7" width="0.3048" layer="16"/>
+<wire x1="9.3616" y1="12.3444" x2="7.1628" y2="12.3444" width="0.3048" layer="1"/>
+<wire x1="7.1628" y1="12.3444" x2="6.731" y2="12.7" width="0.3048" layer="1"/>
+<via x="6.731" y="12.7" extent="1-16" drill="0.6"/>
+<wire x1="6.731" y1="12.7" x2="5.8818" y2="12.7" width="0.3048" layer="16"/>
 <wire x1="5.8818" y1="12.7" x2="5.4864" y2="13.0954" width="0.3048" layer="16"/>
 <wire x1="9.3616" y1="12.3444" x2="9.3616" y2="13.07" width="0.3048" layer="1"/>
 <wire x1="9.3616" y1="13.07" x2="10.7696" y2="14.478" width="0.3048" layer="1"/>
