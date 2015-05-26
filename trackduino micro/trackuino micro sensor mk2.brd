@@ -130,8 +130,7 @@
 <wire x1="43.4088" y1="-0.381" x2="43.4342" y2="19.167" width="0" layer="20"/>
 <wire x1="43.4342" y1="19.167" x2="-0.4064" y2="19.3194" width="0" layer="20"/>
 <wire x1="-0.4064" y1="19.3194" x2="-0.4064" y2="-0.381" width="0" layer="20"/>
-<text x="42.9768" y="4.5212" size="0.8128" layer="25" rot="R180">SBHX TRACKOON
-Rev .9</text>
+<text x="42.9768" y="4.5212" size="0.8128" layer="25" rot="R180">Tracksoar v1</text>
 <text x="39.243" y="0.6096" size="0.6096" layer="25">&lt;3 Swiss</text>
 </plain>
 <libraries>
@@ -3143,10 +3142,4 @@ Please make sure your boards conform to these design rules.</description>
 </errors>
 </board>
 </drawing>
-<compatibility>
-<note version="6.3" minversion="6.2.2" severity="warning">
-Since Version 6.2.2 text objects can contain more than one line,
-which will not be processed correctly with this version.
-</note>
-</compatibility>
 </eagle>
