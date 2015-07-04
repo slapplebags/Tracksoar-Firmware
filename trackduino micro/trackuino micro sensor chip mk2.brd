@@ -145,8 +145,8 @@
 <wire x1="43.3324" y1="3.4544" x2="43.3326" y2="19.2178" width="0" layer="20"/>
 <wire x1="43.3326" y1="19.2178" x2="-0.4064" y2="19.2178" width="0" layer="20"/>
 <wire x1="-0.4064" y1="19.2178" x2="-0.4064" y2="-0.3302" width="0" layer="20"/>
-<text x="42.9768" y="4.5212" size="0.8128" layer="25" rot="R180">Tracksoar v1</text>
-<text x="39.243" y="0.6096" size="0.6096" layer="25">&lt;3 Swiss</text>
+<text x="42.9768" y="4.6228" size="0.8128" layer="25" rot="R180">Tracksoar v1</text>
+<text x="36.8554" y="2.8956" size="0.6096" layer="25">&lt;3 Swiss</text>
 </plain>
 <libraries>
 <library name="74xx-little-us">
