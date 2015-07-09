@@ -13432,16 +13432,16 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <junction x="73.66" y="45.72"/>
 </segment>
 <segment>
-<pinref part="FTDI" gate="G$1" pin="2"/>
-<wire x1="203.2" y1="50.8" x2="205.74" y2="50.8" width="0.1524" layer="91"/>
-<label x="205.74" y="50.8" size="1.778" layer="95"/>
-<junction x="203.2" y="50.8"/>
-</segment>
-<segment>
 <pinref part="TX" gate="G$1" pin="2"/>
 <wire x1="238.76" y1="68.58" x2="241.3" y2="68.58" width="0.1524" layer="91"/>
 <label x="241.3" y="68.58" size="1.778" layer="95"/>
 <junction x="238.76" y="68.58"/>
+</segment>
+<segment>
+<pinref part="FTDI" gate="G$1" pin="3"/>
+<wire x1="203.2" y1="53.34" x2="205.74" y2="53.34" width="0.1524" layer="91"/>
+<label x="205.74" y="53.34" size="1.778" layer="95"/>
+<junction x="203.2" y="53.34"/>
 </segment>
 </net>
 <net name="TXO" class="0">
@@ -13452,16 +13452,16 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <junction x="73.66" y="43.18"/>
 </segment>
 <segment>
-<pinref part="FTDI" gate="G$1" pin="3"/>
-<wire x1="203.2" y1="53.34" x2="205.74" y2="53.34" width="0.1524" layer="91"/>
-<label x="205.74" y="53.34" size="1.778" layer="95"/>
-<junction x="203.2" y="53.34"/>
-</segment>
-<segment>
 <pinref part="IC2" gate="A" pin="I"/>
 <wire x1="106.68" y1="7.62" x2="104.14" y2="7.62" width="0.1524" layer="91"/>
 <label x="104.14" y="7.62" size="1.778" layer="95"/>
 <junction x="106.68" y="7.62"/>
+</segment>
+<segment>
+<pinref part="FTDI" gate="G$1" pin="2"/>
+<wire x1="203.2" y1="50.8" x2="205.74" y2="50.8" width="0.1524" layer="91"/>
+<label x="205.74" y="50.8" size="1.778" layer="95"/>
+<junction x="203.2" y="50.8"/>
 </segment>
 </net>
 <net name="MISO" class="0">
