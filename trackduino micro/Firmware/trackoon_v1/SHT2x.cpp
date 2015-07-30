@@ -75,7 +75,7 @@ uint16_t SHT2xClass::readSensor(uint8_t command)
     Wire.endTransmission();               	//end
 
     Wire.requestFrom(eSHT2xAddress, 3);
-    while(Wire.available() < 3) {
+    while((Wire.available() < 3) && ((millis() - starttime) > 1000)) {
       ; //wait
     }
 
