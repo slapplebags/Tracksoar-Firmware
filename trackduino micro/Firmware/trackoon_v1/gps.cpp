@@ -439,7 +439,8 @@ void gps_setup() {
 #endif
 
   // Set MAX-6 to flight mode
-  while (!gps_success) {
+  int setup_attempts_remaining = 120;
+  while (!gps_success && (setup_attempts_remaining--) >= 0) {
     sendUBX(setNav, sizeof(setNav)/sizeof(uint8_t)); 
     gps_success = getUBX_ACK(setNav);
 	if (!gps_success) {
