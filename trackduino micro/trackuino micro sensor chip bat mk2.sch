@@ -12883,6 +12883,408 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 </deviceset>
 </devicesets>
 </library>
+<library name="wirepad">
+<description>&lt;b&gt;Single Pads&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="1,6/0,8">
+<description>&lt;b&gt;THROUGH-HOLE PAD&lt;/b&gt;</description>
+<wire x1="-0.762" y1="0.762" x2="-0.508" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="-0.762" y1="0.762" x2="-0.762" y2="0.508" width="0.1524" layer="21"/>
+<wire x1="0.762" y1="0.762" x2="0.762" y2="0.508" width="0.1524" layer="21"/>
+<wire x1="0.762" y1="0.762" x2="0.508" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="0.762" y1="-0.508" x2="0.762" y2="-0.762" width="0.1524" layer="21"/>
+<wire x1="0.762" y1="-0.762" x2="0.508" y2="-0.762" width="0.1524" layer="21"/>
+<wire x1="-0.508" y1="-0.762" x2="-0.762" y2="-0.762" width="0.1524" layer="21"/>
+<wire x1="-0.762" y1="-0.762" x2="-0.762" y2="-0.508" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="0.635" width="0.1524" layer="51"/>
+<pad name="1" x="0" y="0" drill="0.8128" diameter="1.6002" shape="octagon"/>
+<text x="-0.762" y="1.016" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="0" y="0.6" size="0.0254" layer="27">&gt;VALUE</text>
+</package>
+<package name="1,6/0,9">
+<description>&lt;b&gt;THROUGH-HOLE PAD&lt;/b&gt;</description>
+<wire x1="-0.508" y1="0.762" x2="-0.762" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="-0.762" y1="0.762" x2="-0.762" y2="0.508" width="0.1524" layer="21"/>
+<wire x1="-0.762" y1="-0.508" x2="-0.762" y2="-0.762" width="0.1524" layer="21"/>
+<wire x1="-0.762" y1="-0.762" x2="-0.508" y2="-0.762" width="0.1524" layer="21"/>
+<wire x1="0.508" y1="-0.762" x2="0.762" y2="-0.762" width="0.1524" layer="21"/>
+<wire x1="0.762" y1="-0.762" x2="0.762" y2="-0.508" width="0.1524" layer="21"/>
+<wire x1="0.762" y1="0.508" x2="0.762" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="0.762" y1="0.762" x2="0.508" y2="0.762" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="0.635" width="0.1524" layer="51"/>
+<pad name="1" x="0" y="0" drill="0.9144" diameter="1.6002" shape="octagon"/>
+<text x="-0.762" y="1.016" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="0" y="0.6" size="0.0254" layer="27">&gt;VALUE</text>
+</package>
+<package name="2,15/1,0">
+<description>&lt;b&gt;THROUGH-HOLE PAD&lt;/b&gt;</description>
+<wire x1="1.143" y1="-1.143" x2="1.143" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="1.143" y1="-1.143" x2="0.635" y2="-1.143" width="0.1524" layer="21"/>
+<wire x1="1.143" y1="0.635" x2="1.143" y2="1.143" width="0.1524" layer="21"/>
+<wire x1="1.143" y1="1.143" x2="0.635" y2="1.143" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="1.143" x2="-1.143" y2="1.143" width="0.1524" layer="21"/>
+<wire x1="-1.143" y1="1.143" x2="-1.143" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-1.143" y1="-0.635" x2="-1.143" y2="-1.143" width="0.1524" layer="21"/>
+<wire x1="-1.143" y1="-1.143" x2="-0.635" y2="-1.143" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="1.016" width="0.1524" layer="51"/>
+<pad name="1" x="0" y="0" drill="1.016" diameter="2.159" shape="octagon"/>
+<text x="-1.143" y="1.397" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="0" y="1" size="0.0254" layer="27">&gt;VALUE</text>
+</package>
+<package name="2,54/0,8">
+<description>&lt;b&gt;THROUGH-HOLE PAD&lt;/b&gt;</description>
+<wire x1="-1.27" y1="1.27" x2="-0.762" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="1.27" x2="-1.27" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="1.27" x2="0.762" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-0.762" x2="1.27" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-1.27" x2="0.762" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-0.762" y1="-1.27" x2="-1.27" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-1.27" x2="-1.27" y2="-0.762" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="0.635" width="0.1524" layer="51"/>
+<pad name="1" x="0" y="0" drill="0.8128" diameter="2.54" shape="octagon"/>
+<text x="-1.27" y="1.524" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="0" y="0.6" size="0.0254" layer="27">&gt;VALUE</text>
+</package>
+<package name="2,54/0,9">
+<description>&lt;b&gt;THROUGH-HOLE PAD&lt;/b&gt;</description>
+<wire x1="-1.27" y1="1.27" x2="-0.762" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="1.27" x2="-1.27" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="1.27" x2="0.762" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-0.762" x2="1.27" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-1.27" x2="0.762" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-0.762" y1="-1.27" x2="-1.27" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-1.27" x2="-1.27" y2="-0.762" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="0.635" width="0.1524" layer="51"/>
+<pad name="1" x="0" y="0" drill="0.9144" diameter="2.54" shape="octagon"/>
+<text x="-1.27" y="1.524" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="0" y="0.6" size="0.0254" layer="27">&gt;VALUE</text>
+</package>
+<package name="2,54/1,0">
+<description>&lt;b&gt;THROUGH-HOLE PAD&lt;/b&gt;</description>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="1.27" x2="0.762" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="1.27" x2="-0.762" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="1.27" x2="-1.27" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-1.27" x2="-1.27" y2="-0.762" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-1.27" x2="-0.762" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0.762" y1="-1.27" x2="1.27" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-1.27" x2="1.27" y2="-0.762" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="1.016" width="0.1524" layer="51"/>
+<pad name="1" x="0" y="0" drill="1.016" diameter="2.54" shape="octagon"/>
+<text x="-1.27" y="1.524" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="0" y="1" size="0.0254" layer="27">&gt;VALUE</text>
+</package>
+<package name="2,54/1,1">
+<description>&lt;b&gt;THROUGH-HOLE PAD&lt;/b&gt;</description>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="1.27" x2="0.762" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="1.27" x2="-1.27" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="1.27" x2="-0.762" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-1.27" x2="-1.27" y2="-0.762" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-1.27" x2="-0.762" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-1.27" x2="0.762" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-1.27" x2="1.27" y2="-0.762" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="1.016" width="0.1524" layer="51"/>
+<pad name="1" x="0" y="0" drill="1.1176" diameter="2.54" shape="octagon"/>
+<text x="-1.27" y="1.524" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="0" y="1" size="0.0254" layer="27">&gt;VALUE</text>
+</package>
+<package name="3,17/1,1">
+<description>&lt;b&gt;THROUGH-HOLE PAD&lt;/b&gt;</description>
+<wire x1="1.524" y1="-1.016" x2="1.524" y2="-1.524" width="0.1524" layer="21"/>
+<wire x1="1.524" y1="-1.524" x2="1.016" y2="-1.524" width="0.1524" layer="21"/>
+<wire x1="-1.016" y1="-1.524" x2="-1.524" y2="-1.524" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="-1.524" x2="-1.524" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="1.016" x2="-1.524" y2="1.524" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="1.524" x2="-1.016" y2="1.524" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="1.524" x2="1.524" y2="1.524" width="0.1524" layer="21"/>
+<wire x1="1.524" y1="1.524" x2="1.524" y2="1.016" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="1.27" width="0.1524" layer="51"/>
+<pad name="1" x="0" y="0" drill="1.1176" diameter="3.175" shape="octagon"/>
+<text x="-1.524" y="1.905" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="0" y="1.2" size="0.0254" layer="27">&gt;VALUE</text>
+</package>
+<package name="3,17/1,2">
+<description>&lt;b&gt;THROUGH-HOLE PAD&lt;/b&gt;</description>
+<wire x1="1.524" y1="-1.016" x2="1.524" y2="-1.524" width="0.1524" layer="21"/>
+<wire x1="1.524" y1="-1.524" x2="1.016" y2="-1.524" width="0.1524" layer="21"/>
+<wire x1="-1.016" y1="-1.524" x2="-1.524" y2="-1.524" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="-1.524" x2="-1.524" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="1.016" x2="-1.524" y2="1.524" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="1.524" x2="-1.016" y2="1.524" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="1.524" x2="1.524" y2="1.524" width="0.1524" layer="21"/>
+<wire x1="1.524" y1="1.524" x2="1.524" y2="1.016" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="1.27" width="0.1524" layer="51"/>
+<pad name="1" x="0" y="0" drill="1.1938" diameter="3.175" shape="octagon"/>
+<text x="-1.524" y="1.905" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="0" y="1.2" size="0.0254" layer="27">&gt;VALUE</text>
+</package>
+<package name="3,17/1,3">
+<description>&lt;b&gt;THROUGH-HOLE PAD&lt;/b&gt;</description>
+<wire x1="1.524" y1="-1.016" x2="1.524" y2="-1.524" width="0.1524" layer="21"/>
+<wire x1="1.524" y1="-1.524" x2="1.016" y2="-1.524" width="0.1524" layer="21"/>
+<wire x1="-1.016" y1="-1.524" x2="-1.524" y2="-1.524" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="-1.524" x2="-1.524" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="1.016" x2="-1.524" y2="1.524" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="1.524" x2="-1.016" y2="1.524" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="1.524" x2="1.524" y2="1.524" width="0.1524" layer="21"/>
+<wire x1="1.524" y1="1.524" x2="1.524" y2="1.016" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="1.27" width="0.1524" layer="51"/>
+<pad name="1" x="0" y="0" drill="1.3208" diameter="3.175" shape="octagon"/>
+<text x="-1.524" y="1.905" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="0" y="1.2" size="0.0254" layer="27">&gt;VALUE</text>
+</package>
+<package name="3,81/1,1">
+<description>&lt;b&gt;THROUGH-HOLE PAD&lt;/b&gt;</description>
+<wire x1="1.905" y1="-1.27" x2="1.905" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="-1.905" x2="1.27" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-1.905" x2="-1.905" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="-1.905" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="1.27" x2="-1.905" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="1.905" x2="-1.27" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="1.905" x2="1.905" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="1.905" x2="1.905" y2="1.27" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="1.27" width="0.1524" layer="51"/>
+<pad name="1" x="0" y="0" drill="1.1176" diameter="3.81" shape="octagon"/>
+<text x="-1.905" y="2.286" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="0" y="1.2" size="0.0254" layer="27">&gt;VALUE</text>
+</package>
+<package name="3,81/1,3">
+<description>&lt;b&gt;THROUGH-HOLE PAD&lt;/b&gt;</description>
+<wire x1="1.905" y1="-1.27" x2="1.905" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="-1.905" x2="1.27" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-1.905" x2="-1.905" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="-1.905" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="1.27" x2="-1.905" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="1.905" x2="-1.27" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="1.905" x2="1.905" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="1.905" x2="1.905" y2="1.27" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="1.27" width="0.1524" layer="51"/>
+<pad name="1" x="0" y="0" drill="1.3208" diameter="3.81" shape="octagon"/>
+<text x="-1.905" y="2.286" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="0" y="1.2" size="0.0254" layer="27">&gt;VALUE</text>
+</package>
+<package name="3,81/1,4">
+<description>&lt;b&gt;THROUGH-HOLE PAD&lt;/b&gt;</description>
+<wire x1="1.905" y1="-1.27" x2="1.905" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="-1.905" x2="1.27" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-1.905" x2="-1.905" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="-1.905" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="1.27" x2="-1.905" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="1.905" x2="-1.27" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="1.905" x2="1.905" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="1.905" x2="1.905" y2="1.27" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="1.27" width="0.1524" layer="51"/>
+<pad name="1" x="0" y="0" drill="1.397" diameter="3.81" shape="octagon"/>
+<text x="-1.905" y="2.286" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="0" y="1.2" size="0.0254" layer="27">&gt;VALUE</text>
+</package>
+<package name="4,16O1,6">
+<description>&lt;b&gt;THROUGH-HOLE PAD&lt;/b&gt;</description>
+<pad name="1" x="0" y="0" drill="1.6002" diameter="4.1656" shape="octagon"/>
+<text x="0" y="0" size="0.0254" layer="27">&gt;VALUE</text>
+<text x="-2.1" y="2.2" size="1.27" layer="25">&gt;NAME</text>
+</package>
+<package name="5-1,8">
+<description>&lt;b&gt;THROUGH-HOLE PAD&lt;/b&gt;</description>
+<wire x1="1.1684" y1="2.794" x2="-1.1684" y2="2.794" width="0.1524" layer="21"/>
+<wire x1="-1.1684" y1="-2.794" x2="-1.1684" y2="2.794" width="0.1524" layer="21"/>
+<wire x1="-1.1684" y1="-2.794" x2="1.1684" y2="-2.794" width="0.1524" layer="21"/>
+<wire x1="1.1684" y1="2.794" x2="1.1684" y2="-2.794" width="0.1524" layer="21"/>
+<smd name="1" x="0" y="0" dx="1.8288" dy="5.08" layer="1"/>
+<text x="-1.524" y="-2.54" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="-0.1" y="2.8" size="0.0254" layer="27">&gt;VALUE</text>
+</package>
+<package name="5-2,5">
+<description>&lt;b&gt;THROUGH-HOLE PAD&lt;/b&gt;</description>
+<wire x1="1.524" y1="2.794" x2="-1.524" y2="2.794" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="-2.794" x2="-1.524" y2="2.794" width="0.1524" layer="21"/>
+<wire x1="-1.524" y1="-2.794" x2="1.524" y2="-2.794" width="0.1524" layer="21"/>
+<wire x1="1.524" y1="2.794" x2="1.524" y2="-2.794" width="0.1524" layer="21"/>
+<smd name="1" x="0" y="0" dx="2.54" dy="5.08" layer="1"/>
+<text x="-1.778" y="-2.54" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="-0.1" y="2.8" size="0.0254" layer="27">&gt;VALUE</text>
+</package>
+<package name="SMD1,27-2,54">
+<description>&lt;b&gt;SMD PAD&lt;/b&gt;</description>
+<smd name="1" x="0" y="0" dx="1.27" dy="2.54" layer="1"/>
+<text x="0" y="0" size="0.0254" layer="27">&gt;VALUE</text>
+<text x="-0.8" y="-2.4" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+</package>
+<package name="SMD2,54-5,08">
+<description>&lt;b&gt;SMD PAD&lt;/b&gt;</description>
+<smd name="1" x="0" y="0" dx="2.54" dy="5.08" layer="1"/>
+<text x="0" y="0" size="0.0254" layer="27">&gt;VALUE</text>
+<text x="-1.5" y="-2.5" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+</package>
+</packages>
+<symbols>
+<symbol name="PAD">
+<wire x1="-1.016" y1="1.016" x2="1.016" y2="-1.016" width="0.254" layer="94"/>
+<wire x1="-1.016" y1="-1.016" x2="1.016" y2="1.016" width="0.254" layer="94"/>
+<text x="-1.143" y="1.8542" size="1.778" layer="95">&gt;NAME</text>
+<text x="-1.143" y="-3.302" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="P" x="2.54" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="WIREPAD" prefix="PAD">
+<description>&lt;b&gt;Wire PAD&lt;/b&gt; connect wire on PCB</description>
+<gates>
+<gate name="G$1" symbol="PAD" x="0" y="0"/>
+</gates>
+<devices>
+<device name="1,6/0,8" package="1,6/0,8">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="1,6/0,9" package="1,6/0,9">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="2,15/1,0" package="2,15/1,0">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="2,54/0,8" package="2,54/0,8">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="2,54/0,9" package="2,54/0,9">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="2,54/1,0" package="2,54/1,0">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="2,54/1,1" package="2,54/1,1">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="3,17/1,1" package="3,17/1,1">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="3,17/1,2" package="3,17/1,2">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="3,17/1,3" package="3,17/1,3">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="3,81/1,1" package="3,81/1,1">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="3,81/1,3" package="3,81/1,3">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="3,81/1,4" package="3,81/1,4">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="4,16O1,6" package="4,16O1,6">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD5-1,8" package="5-1,8">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD5-2,5" package="5-2,5">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD1,27-254" package="SMD1,27-2,54">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD2,54-5,08" package="SMD2,54-5,08">
+<connects>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -12894,7 +13296,7 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 </classes>
 <parts>
 <part name="IC2" library="74xx-little-us" deviceset="74*1G125" device="DBV" technology="AHC"/>
-<part name="U1" library="SparkFun-DigitalIC" deviceset="ATMEGA168" device="MLF" value="ATMEGA328P"/>
+<part name="U1" library="SparkFun-DigitalIC" deviceset="ATMEGA168" device="MLF" value="ATMEGA168MLF"/>
 <part name="U$2" library="Ava" deviceset="RADIOMETRIX-HX1" device=""/>
 <part name="LM3480" library="SparkFun-PowerIC" deviceset="LM3480IM4" device=""/>
 <part name="GND2" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -12966,9 +13368,12 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <part name="C9" library="resistor" deviceset="C-US" device="C1206" value="100uf"/>
 <part name="GND31" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SHT21" library="sht21" deviceset="SHT21" device=""/>
-<part name="GPS-ANT" library="SparkFun-RF" deviceset="ANTENNA2" device="SMD3"/>
+<part name="U$3" library="SparkFun-RF" deviceset="ANTENNA2" device="SMD3"/>
 <part name="TX1" library="SparkFun-Connectors" deviceset="M02" device="JST-PTH-VERT" value="TX"/>
 <part name="JP2" library="SparkFun-Connectors" deviceset="M01" device="PTH"/>
+<part name="PAD1" library="wirepad" deviceset="WIREPAD" device="SMD1,27-254"/>
+<part name="PAD2" library="wirepad" deviceset="WIREPAD" device="SMD1,27-254"/>
+<part name="D2" library="diode" deviceset="DIODE-" device="MICROMELF-R"/>
 </parts>
 <sheets>
 <sheet>
@@ -13073,9 +13478,12 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <instance part="C9" gate="G$1" x="58.42" y="137.16"/>
 <instance part="GND31" gate="1" x="58.42" y="129.54"/>
 <instance part="SHT21" gate="A" x="121.92" y="83.82"/>
-<instance part="GPS-ANT" gate="G$1" x="165.1" y="165.1" rot="R90"/>
+<instance part="U$3" gate="G$1" x="165.1" y="165.1" rot="R90"/>
 <instance part="TX1" gate="G$1" x="193.04" y="91.44"/>
 <instance part="JP2" gate="G$1" x="208.28" y="40.64"/>
+<instance part="PAD1" gate="G$1" x="233.68" y="154.94" rot="R180"/>
+<instance part="PAD2" gate="G$1" x="233.68" y="147.32" rot="R180"/>
+<instance part="D2" gate="G$1" x="228.6" y="157.48" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -13236,6 +13644,11 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <pinref part="GND20" gate="1" pin="GND"/>
 <junction x="104.14" y="73.66"/>
 </segment>
+<segment>
+<pinref part="PAD2" gate="G$1" pin="P"/>
+<wire x1="231.14" y1="147.32" x2="231.14" y2="144.78" width="0.1524" layer="91"/>
+<junction x="231.14" y="147.32"/>
+</segment>
 </net>
 <net name="D3" class="0">
 <segment>
@@ -13347,13 +13760,13 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <pinref part="U$1" gate="G$1" pin="9_V_RESET"/>
 <pinref part="U$1" gate="G$1" pin="7_VCC_IO"/>
 <wire x1="220.98" y1="170.18" x2="220.98" y2="165.1" width="0.1524" layer="91"/>
-<junction x="220.98" y="160.02"/>
 <junction x="220.98" y="165.1"/>
 <wire x1="220.98" y1="165.1" x2="220.98" y2="160.02" width="0.1524" layer="91"/>
 <junction x="220.98" y="170.18"/>
-<pinref part="U$1" gate="G$1" pin="6_V_BCKP"/>
-<wire x1="220.98" y1="160.02" x2="220.98" y2="154.94" width="0.1524" layer="91"/>
-<junction x="220.98" y="154.94"/>
+<junction x="220.98" y="160.02"/>
+<pinref part="D2" gate="G$1" pin="A"/>
+<wire x1="228.6" y1="160.02" x2="220.98" y2="160.02" width="0.1524" layer="91"/>
+<junction x="228.6" y="160.02"/>
 </segment>
 <segment>
 <pinref part="C2" gate="G$1" pin="2"/>
@@ -13686,7 +14099,7 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <net name="N$6" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="11_RF_IN"/>
-<pinref part="GPS-ANT" gate="G$1" pin="SIGNAL"/>
+<pinref part="U$3" gate="G$1" pin="SIGNAL"/>
 <wire x1="170.18" y1="165.1" x2="175.26" y2="165.1" width="0.1524" layer="91"/>
 <junction x="170.18" y="165.1"/>
 <junction x="175.26" y="165.1"/>
@@ -13752,6 +14165,18 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <wire x1="20.32" y1="68.58" x2="20.32" y2="71.12" width="0.1524" layer="91"/>
 <label x="20.32" y="71.12" size="1.778" layer="95" rot="R90"/>
 <junction x="20.32" y="68.58"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="6_V_BCKP"/>
+<wire x1="220.98" y1="154.94" x2="228.6" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="PAD1" gate="G$1" pin="P"/>
+<junction x="231.14" y="154.94"/>
+<junction x="220.98" y="154.94"/>
+<pinref part="D2" gate="G$1" pin="C"/>
+<wire x1="228.6" y1="154.94" x2="231.14" y2="154.94" width="0.1524" layer="91"/>
+<junction x="228.6" y="154.94"/>
 </segment>
 </net>
 </nets>
