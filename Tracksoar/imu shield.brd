@@ -175,22 +175,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="0.616" y="0.75" size="1.27" layer="51">+</text>
 <text x="-1.384" y="0.75" size="1.27" layer="51">-</text>
 </package>
-<package name="1X06_NO_SILK">
-<pad name="1" x="0" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="2" x="2.54" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="3" x="5.08" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="4" x="7.62" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="5" x="10.16" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="6" x="12.7" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="12.446" y1="-0.254" x2="12.954" y2="0.254" layer="51"/>
-<rectangle x1="9.906" y1="-0.254" x2="10.414" y2="0.254" layer="51"/>
-<rectangle x1="7.366" y1="-0.254" x2="7.874" y2="0.254" layer="51"/>
-<rectangle x1="4.826" y1="-0.254" x2="5.334" y2="0.254" layer="51"/>
-<rectangle x1="2.286" y1="-0.254" x2="2.794" y2="0.254" layer="51"/>
-<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
-</package>
 <package name="JST-4-PTH-VERT">
 <wire x1="-4.95" y1="-2.25" x2="-4.95" y2="2.25" width="0.2032" layer="21"/>
 <wire x1="-4.95" y1="2.25" x2="4.95" y2="2.25" width="0.2032" layer="21"/>
@@ -210,20 +194,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="0.6" y="0.75" size="1.27" layer="51">-</text>
 <text x="2.7" y="0.95" size="0.8" layer="51">Y</text>
 <text x="-3.3" y="0.95" size="0.8" layer="51">B</text>
-</package>
-<package name="1X01">
-<wire x1="1.27" y1="0.635" x2="0.635" y2="1.27" width="0.2032" layer="21"/>
-<wire x1="0.635" y1="1.27" x2="-0.635" y2="1.27" width="0.2032" layer="21"/>
-<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.2032" layer="21"/>
-<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.2032" layer="21"/>
-<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="-0.635" y1="-1.27" x2="0.635" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="0.635" y1="-1.27" x2="1.27" y2="-0.635" width="0.2032" layer="21"/>
-<wire x1="1.27" y1="-0.635" x2="1.27" y2="0.635" width="0.2032" layer="21"/>
-<pad name="1" x="0" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<text x="1.1938" y="1.8288" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
 </package>
 </packages>
 </library>
@@ -501,6 +471,26 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package>
 </packages>
 </library>
+<library name="headers(2mm)">
+<packages>
+<package name="1X7">
+<rectangle x1="-6.254" y1="-0.254" x2="-5.746" y2="0.254" layer="21"/>
+<rectangle x1="-4.254" y1="-0.254" x2="-3.746" y2="0.254" layer="21"/>
+<rectangle x1="-2.254" y1="-0.254" x2="-1.746" y2="0.254" layer="21"/>
+<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="21"/>
+<rectangle x1="1.746" y1="-0.254" x2="2.254" y2="0.254" layer="21"/>
+<rectangle x1="3.746" y1="-0.254" x2="4.254" y2="0.254" layer="21"/>
+<rectangle x1="5.746" y1="-0.254" x2="6.254" y2="0.254" layer="21"/>
+<pad name="1" x="-6" y="0" drill="0.8" diameter="1.4224"/>
+<pad name="2" x="-4" y="0" drill="0.8" diameter="1.4224"/>
+<pad name="3" x="-2" y="0" drill="0.8" diameter="1.4224"/>
+<pad name="4" x="0" y="0" drill="0.8" diameter="1.4224"/>
+<pad name="5" x="2" y="0" drill="0.8" diameter="1.4224"/>
+<pad name="6" x="4" y="0" drill="0.8" diameter="1.4224"/>
+<pad name="7" x="6" y="0" drill="0.8" diameter="1.4224"/>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -686,13 +676,9 @@ Please make sure your boards conform to these design rules.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="FTDI" library="SparkFun-Connectors" package="1X06_NO_SILK" value="" x="12.9794" y="17.8562" rot="MR180">
-<attribute name="PROD_ID" value="CONN-08437" x="12.9794" y="17.8562" size="1.778" layer="28" rot="MR180" display="off"/>
-</element>
 <element name="SPI" library="SparkFun-Connectors" package="JST-4-PTH-VERT" value="" x="20.0914" y="1.651"/>
 <element name="FRAME1" library="SparkFun-Aesthetics" package="CREATIVE_COMMONS" value="FRAME-LETTER" x="14.3764" y="-8.1534"/>
 <element name="TX1" library="SparkFun-Connectors" package="JST-2-PTH-VERT" value="TX" x="14.1478" y="1.651"/>
-<element name="JP2" library="SparkFun-Connectors" package="1X01" value="" x="10.287" y="17.8308"/>
 <element name="U1" library="SparkFun-Sensors" package="LGA24-8X4" value="LSM9DS1" x="12.2428" y="9.4234">
 <attribute name="PROD_ID" value="IC-12536" x="12.2428" y="9.4234" size="1.778" layer="27" display="off"/>
 </element>
@@ -706,11 +692,10 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="PROD_ID" value="IC-09604" x="21.6408" y="10.1854" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="U$2" library="adafruit" package="MICROSD" value="MICROSD" x="27.2796" y="4.2164" rot="R90"/>
+<element name="U$3" library="headers(2mm)" package="1X7" value="1X7" x="16.2814" y="17.8308" rot="R180"/>
 </elements>
 <signals>
 <signal name="GND">
-<contactref element="FTDI" pad="6"/>
-<contactref element="FTDI" pad="5"/>
 <polygon width="0.4064" layer="1">
 <vertex x="-0.4064" y="19.2278"/>
 <vertex x="43.3324" y="19.2278"/>
@@ -773,26 +758,27 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="U$2" pad="MT1"/>
 <contactref element="U$2" pad="MT2"/>
 <contactref element="U2" pad="9"/>
+<contactref element="U$3" pad="1"/>
+<contactref element="U$3" pad="2"/>
 </signal>
 <signal name="VCC">
-<contactref element="FTDI" pad="4"/>
 <contactref element="U$1" pad="2"/>
 <wire x1="4.1242" y1="14.3612" x2="4.9886" y2="14.3612" width="0.254" layer="1"/>
 <wire x1="4.9886" y1="14.3612" x2="5.969" y2="15.3416" width="0.254" layer="1"/>
 <wire x1="5.969" y1="15.3416" x2="11.811" y2="15.3416" width="0.254" layer="1"/>
 <wire x1="11.811" y1="15.3416" x2="12.3444" y2="15.875" width="0.254" layer="1"/>
-<wire x1="20.574" y1="17.8308" x2="20.5994" y2="17.8562" width="0.254" layer="1"/>
-<wire x1="12.3444" y1="15.875" x2="18.6182" y2="15.875" width="0.3048" layer="1"/>
-<wire x1="18.6182" y1="15.875" x2="20.5994" y2="17.8562" width="0.3048" layer="1"/>
+<contactref element="U$3" pad="3"/>
+<wire x1="12.3444" y1="15.875" x2="16.3256" y2="15.875" width="0.3048" layer="1"/>
+<wire x1="16.3256" y1="15.875" x2="18.2814" y2="17.8308" width="0.3048" layer="1"/>
 </signal>
 <signal name="DTR">
-<contactref element="FTDI" pad="1"/>
+<contactref element="U$3" pad="6"/>
 </signal>
 <signal name="RXO">
-<contactref element="FTDI" pad="2"/>
+<contactref element="U$3" pad="5"/>
 </signal>
 <signal name="TXO">
-<contactref element="FTDI" pad="3"/>
+<contactref element="U$3" pad="4"/>
 </signal>
 <signal name="MISO">
 <contactref element="SPI" pad="2"/>
@@ -895,7 +881,7 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$18">
 </signal>
 <signal name="!RESET">
-<contactref element="JP2" pad="1"/>
+<contactref element="U$3" pad="7"/>
 </signal>
 <signal name="3V">
 <contactref element="C1" pad="2"/>
