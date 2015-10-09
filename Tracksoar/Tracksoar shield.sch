@@ -427,7 +427,11 @@ Standard 8.5x11 US Letter frame</description>
 <instance part="GND22" gate="1" x="208.28" y="60.96" rot="R90"/>
 <instance part="SUPPLY9" gate="G$1" x="208.28" y="55.88" rot="R270"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
-<instance part="FRAME1" gate="G$2" x="147.32" y="0"/>
+<instance part="FRAME1" gate="G$2" x="147.32" y="0" smashed="yes">
+<attribute name="LAST_DATE_TIME" x="160.02" y="1.27" size="2.54" layer="94" font="vector"/>
+<attribute name="SHEET" x="233.68" y="1.27" size="2.54" layer="94" font="vector"/>
+<attribute name="DRAWING_NAME" x="162.814" y="17.78" size="2.7432" layer="94" font="vector"/>
+</instance>
 <instance part="GND10" gate="1" x="208.28" y="58.42" rot="R90"/>
 <instance part="FTDI" gate="G$1" x="200.66" y="53.34"/>
 <instance part="SPI/I2C" gate="G$1" x="195.58" y="86.36"/>

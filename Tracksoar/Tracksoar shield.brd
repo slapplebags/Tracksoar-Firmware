@@ -142,8 +142,8 @@
 <text x="35.3822" y="0.4064" size="0.6096" layer="26" rot="MR0">&lt;3 Swiss</text>
 <text x="23.7744" y="18.6944" size="0.8128" layer="26" rot="MR180">GND</text>
 <text x="21.209" y="15.9258" size="0.8128" layer="26" rot="MR0">FTDI</text>
-<text x="13.6144" y="2.7686" size="0.8128" layer="25">I2C</text>
-<text x="19.7612" y="2.7686" size="0.8128" layer="25">SPI</text>
+<text x="15.2908" y="3.175" size="0.8128" layer="26" rot="MR0">I2C</text>
+<text x="21.463" y="2.9718" size="0.8128" layer="26" rot="MR0">SPI</text>
 <rectangle x1="37.5793" y1="0.3429" x2="37.7317" y2="0.3683" layer="26" rot="R180"/>
 <rectangle x1="37.4015" y1="0.3683" x2="37.9095" y2="0.3937" layer="26" rot="R180"/>
 <rectangle x1="37.2999" y1="0.3937" x2="38.0111" y2="0.4191" layer="26" rot="R180"/>
