@@ -1262,11 +1262,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U$1" library="adafruit" deviceset="MICROSD" device=""/>
 <part name="U1" library="SparkFun-DigitalIC" deviceset="HEX_CONVERTER" device=""/>
 <part name="U2" library="SparkFun-Sensors" deviceset="LSM9DS1" device=""/>
-<part name="C1" library="SparkFun-Passives" deviceset="CAP" device="0805"/>
-<part name="C2" library="SparkFun-Passives" deviceset="CAP" device="0805"/>
-<part name="C3" library="SparkFun-Passives" deviceset="CAP" device="0805"/>
-<part name="C4" library="SparkFun-Passives" deviceset="CAP" device="0805"/>
-<part name="C5" library="SparkFun-Passives" deviceset="CAP" device="0805"/>
+<part name="C1" library="SparkFun-Passives" deviceset="CAP" device="0805" value="10uf"/>
+<part name="C2" library="SparkFun-Passives" deviceset="CAP" device="0805" value=".1uf"/>
+<part name="C3" library="SparkFun-Passives" deviceset="CAP" device="0805" value=".1uf"/>
+<part name="C4" library="SparkFun-Passives" deviceset="CAP" device="0805" value="10nf"/>
+<part name="C5" library="SparkFun-Passives" deviceset="CAP" device="0805" value=".1uf"/>
 <part name="U$2" library="SparkFun-PowerIC" deviceset="LM3480IM4" device=""/>
 </parts>
 <sheets>
@@ -1378,10 +1378,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="63.5" y1="60.96" x2="71.12" y2="60.96" width="0.1524" layer="91"/>
 <junction x="63.5" y="60.96"/>
 <pinref part="C5" gate="G$1" pin="2"/>
-<wire x1="71.12" y1="60.96" x2="73.66" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="60.96" x2="78.74" y2="60.96" width="0.1524" layer="91"/>
 <junction x="71.12" y="60.96"/>
 <junction x="40.64" y="60.96"/>
-<label x="73.66" y="60.96" size="1.778" layer="95"/>
+<label x="78.74" y="60.96" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VCC" class="0">

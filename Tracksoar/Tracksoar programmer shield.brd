@@ -967,8 +967,8 @@ Please make sure your boards conform to these design rules.</description>
 <element name="LED1" library="adafruit" package="CHIP-LED0805" value="" x="10.5156" y="12.0904" rot="MR0"/>
 <element name="LED2" library="adafruit" package="CHIP-LED0805" value="" x="14.0716" y="12.1412" rot="MR0"/>
 <element name="JP2" library="SparkFun-Connectors" package="2X3" value="AVR_SPI_PRG_6PTH" x="42.2148" y="7.4168" rot="R90"/>
-<element name="C1" library="SparkFun-Capacitors" package="0805" value="" x="11.811" y="5.7404" rot="MR270"/>
-<element name="C2" library="SparkFun-Capacitors" package="0805" value="" x="9.7536" y="5.7404" rot="MR270"/>
+<element name="C1" library="SparkFun-Capacitors" package="0805" value="100pf" x="11.811" y="5.7404" rot="MR270"/>
+<element name="C2" library="SparkFun-Capacitors" package="0805" value="10uf" x="9.7536" y="5.7404" rot="MR270"/>
 </elements>
 <signals>
 <signal name="GND">

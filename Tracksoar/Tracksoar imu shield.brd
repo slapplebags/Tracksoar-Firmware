@@ -1031,11 +1031,11 @@ Please make sure your boards conform to these design rules.</description>
 <element name="U2" library="SparkFun-Sensors" package="LGA24-8X4" value="LSM9DS1" x="10.0584" y="5.0292" rot="R90">
 <attribute name="PROD_ID" value="IC-12536" x="10.0584" y="5.0292" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="C1" library="SparkFun-Passives" package="0805" value="" x="16.0274" y="5.2832" rot="R90"/>
-<element name="C2" library="SparkFun-Passives" package="0805" value="" x="13.97" y="5.2578" rot="R90"/>
-<element name="C3" library="SparkFun-Passives" package="0805" value="" x="18.0594" y="5.2832" rot="R90"/>
-<element name="C4" library="SparkFun-Passives" package="0805" value="" x="3.7084" y="4.7752" rot="R180"/>
-<element name="C5" library="SparkFun-Passives" package="0805" value="" x="6.4262" y="4.7752" rot="R90"/>
+<element name="C1" library="SparkFun-Passives" package="0805" value="10uf" x="16.0274" y="5.2832" rot="R90"/>
+<element name="C2" library="SparkFun-Passives" package="0805" value=".1uf" x="13.97" y="5.2578" rot="R90"/>
+<element name="C3" library="SparkFun-Passives" package="0805" value=".1uf" x="18.0594" y="5.2832" rot="R90"/>
+<element name="C4" library="SparkFun-Passives" package="0805" value="10nf" x="3.7084" y="4.7752" rot="R180"/>
+<element name="C5" library="SparkFun-Passives" package="0805" value=".1uf" x="6.4262" y="4.7752" rot="R90"/>
 <element name="U$2" library="SparkFun-PowerIC" package="SOT23-3" value="LM3480IM4" x="17.8308" y="15.1892" rot="MR90"/>
 </elements>
 <signals>

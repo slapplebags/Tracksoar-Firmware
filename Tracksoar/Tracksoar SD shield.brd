@@ -909,8 +909,8 @@ Please make sure your boards conform to these design rules.</description>
 <element name="U1" library="SparkFun-DigitalIC" package="SO016" value="HEX_CONVERTER" x="24.511" y="8.89" rot="MR270">
 <attribute name="PROD_ID" value="IC-09604" x="24.511" y="8.89" size="1.778" layer="28" rot="MR270" display="off"/>
 </element>
-<element name="C1" library="SparkFun-Passives" package="0805" value="" x="26.2636" y="16.891" rot="MR180"/>
-<element name="C2" library="SparkFun-Passives" package="0805" value="" x="26.2382" y="15.1638" rot="MR180"/>
+<element name="C1" library="SparkFun-Passives" package="0805" value="10uf" x="26.2636" y="16.891" rot="MR180"/>
+<element name="C2" library="SparkFun-Passives" package="0805" value=".1uf" x="26.2382" y="15.1638" rot="MR180"/>
 </elements>
 <signals>
 <signal name="GND">

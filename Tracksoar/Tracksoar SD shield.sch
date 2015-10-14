@@ -1058,8 +1058,8 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="U$1" library="adafruit" deviceset="MICROSD" device=""/>
 <part name="U$2" library="SparkFun-PowerIC" deviceset="LM3480IM4" device=""/>
 <part name="U1" library="SparkFun-DigitalIC" deviceset="HEX_CONVERTER" device=""/>
-<part name="C1" library="SparkFun-Passives" deviceset="CAP" device="0805"/>
-<part name="C2" library="SparkFun-Passives" deviceset="CAP" device="0805"/>
+<part name="C1" library="SparkFun-Passives" deviceset="CAP" device="0805" value="10uf"/>
+<part name="C2" library="SparkFun-Passives" deviceset="CAP" device="0805" value=".1uf"/>
 </parts>
 <sheets>
 <sheet>

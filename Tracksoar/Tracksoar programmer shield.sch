@@ -3090,8 +3090,8 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="LED1" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
 <part name="LED2" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
 <part name="JP2" library="SparkFun-Connectors" deviceset="AVR_SPI_PRG_6" device="PTH"/>
-<part name="C1" library="SparkFun-Capacitors" deviceset="CAP" device="0805"/>
-<part name="C2" library="SparkFun-Capacitors" deviceset="CAP" device="0805"/>
+<part name="C1" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="100pf"/>
+<part name="C2" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="10uf"/>
 </parts>
 <sheets>
 <sheet>
