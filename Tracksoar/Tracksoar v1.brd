@@ -2892,7 +2892,13 @@ Please make sure your boards conform to these design rules.</description>
 <via x="34.1376" y="12.3444" extent="1-16" drill="0.6"/>
 <via x="38.7858" y="14.1986" extent="1-16" drill="0.6"/>
 <via x="37.5666" y="14.224" extent="1-16" drill="0.6"/>
-<wire x1="9.8298" y1="7.8486" x2="7.3406" y2="6.604" width="0" layer="19" extent="1-1"/>
+<via x="6.2992" y="6.7564" extent="1-16" drill="0.6"/>
+<via x="7.493" y="6.6548" extent="1-16" drill="0.6"/>
+<via x="8.3312" y="5.8166" extent="1-16" drill="0.6"/>
+<via x="9.1694" y="4.9784" extent="1-16" drill="0.6"/>
+<via x="10.0076" y="4.1402" extent="1-16" drill="0.6"/>
+<via x="10.8458" y="3.302" extent="1-16" drill="0.6"/>
+<wire x1="9.8298" y1="7.8486" x2="8.3312" y2="5.8166" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VCC">
 <contactref element="IC2" pad="5"/>
