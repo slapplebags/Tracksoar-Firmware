@@ -138,8 +138,8 @@
 </layers>
 <board>
 <plain>
-<text x="32.2326" y="4.318" size="0.8128" layer="26" rot="MR180">Tracksoar v1</text>
-<text x="38.5064" y="2.667" size="0.6096" layer="26" rot="MR0">&lt;3 Swiss</text>
+<text x="31.6484" y="4.2926" size="0.8128" layer="26" rot="MR180">Tracksoar v1</text>
+<text x="38.1" y="2.6924" size="0.6096" layer="26" rot="MR0">&lt;3 Swiss</text>
 <text x="0.9144" y="16.8402" size="1.778" layer="26">+</text>
 <text x="2.286" y="14.8082" size="1.778" layer="26" rot="R90">-</text>
 <text x="23.8506" y="16.6116" size="0.8128" layer="26" rot="MR90">GND</text>
