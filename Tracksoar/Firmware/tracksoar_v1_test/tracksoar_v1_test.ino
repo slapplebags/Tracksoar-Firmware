@@ -36,16 +36,12 @@
 // Trackuino custom libs
 #include "config.h"
 #include "afsk_avr.h"
-//#include "afsk_pic32.h"
 #include "aprs.h"
-//#include "buzzer.h"
 #include "gps.h"
 #include "pin.h"
 #include "power.h"
 #include "sensors_avr.h"
-//#include "sensors_pic32.h"
-//#include <SPI.h>
-//#include <SD.h>
+
 
 // Arduino/AVR libs
 #if (ARDUINO + 1) >= 100
@@ -56,6 +52,7 @@
 #define cbi(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
 // Module constants
 static const uint32_t VALID_POS_TIMEOUT = 2000;  // ms
+
 
 // Though not used here, we need to include Wire.h in this file for other code:
 #include <Wire.h>
@@ -124,7 +121,7 @@ void get_pos()
   if (valid_pos) {
 //    if (gps_altitude > BUZZER_ALTITUDE) {
 //      buzzer_off();   // In space, no one can hear you buzz
-    } else {
+//    } else {
 //      buzzer_on();
     }
   }
@@ -143,7 +140,7 @@ void loop()
   
   if ((millis() - last_sd_write) >= SD_WRITE_INTERVAL) {
     last_sd_write = millis();
-    
+//    file.print("test");
   }
     
 #ifdef DEBUG_MODEM

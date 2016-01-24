@@ -1,5 +1,4 @@
 /* trackuino copyright (C) 2010  EA5HAV Javi
- * tracksoar sensor changes copyright (C) 2015 Nick Winters
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,32 +15,31 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifdef AVR
+#include "config.h"
+#include "pin.h"
+#include "radio_hx1.h"
+#if (ARDUINO + 1) >= 100
+#  include <Arduino.h>
+#else
+#  include <WProgram.h>
+#endif
 
-#include <Wire.h>
-#include "Adafruit_BMP085.h"
-#include "SHT2x.h"
 
-Adafruit_BMP085 bmp;
-  
-void sensors_setup() {
-  if (!bmp.begin()) {
-//	Serial.println("Could not find a valid BMP085 sensor, check wiring!");
-	while (1) {}
-  }
+void RadioHx1::setup()
+{
+  // Configure pins
+  pinMode(PTT_PIN, OUTPUT);
+  pin_write(PTT_PIN, LOW);
+  pinMode(AUDIO_PIN, OUTPUT);
 }
 
-float sensors_temperature() {
-	return bmp.readTemperature();
+void RadioHx1::ptt_on()
+{
+  pin_write(PTT_PIN, HIGH);
+  delay(25);   // The HX1 takes 5 ms from PTT to full RF, give it 25
 }
 
-int sensors_pressure() {
-	return bmp.readPressure();
+void RadioHx1::ptt_off()
+{
+  pin_write(PTT_PIN, LOW);
 }
-
-float sensors_humidity() {
-	return SHT2x.GetHumidity();
-}
-
-
-#endif // ifdef AVR

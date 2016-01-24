@@ -1,5 +1,4 @@
 /* trackuino copyright (C) 2010  EA5HAV Javi
- * tracksoar sensor changes copyright (C) 2015 Nick Winters
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -18,30 +17,38 @@
 
 #ifdef AVR
 
-#include <Wire.h>
-#include "Adafruit_BMP085.h"
-#include "SHT2x.h"
+#include "pin.h"
+#include <stdint.h>
+#include <pins_arduino.h>
+#if (ARDUINO + 1) >= 100
+#  include <Arduino.h>
+#else
+#  include <WProgram.h>
+#endif
 
-Adafruit_BMP085 bmp;
-  
-void sensors_setup() {
-  if (!bmp.begin()) {
-//	Serial.println("Could not find a valid BMP085 sensor, check wiring!");
-	while (1) {}
+// This is a digitalWrite() replacement that does not disrupt
+// timer 2.
+void pin_write(uint8_t pin, uint8_t val)
+{
+  uint8_t bit = digitalPinToBitMask(pin);
+  uint8_t port = digitalPinToPort(pin);
+  volatile uint8_t *out;
+
+  if (port == NOT_A_PIN) return;
+
+  out = portOutputRegister(port);
+
+  if (val == LOW) {
+    uint8_t oldSREG = SREG;
+    cli();
+    *out &= ~bit;
+    SREG = oldSREG;
+  } else {
+    uint8_t oldSREG = SREG;
+    cli();
+    *out |= bit;
+    SREG = oldSREG;
   }
 }
 
-float sensors_temperature() {
-	return bmp.readTemperature();
-}
-
-int sensors_pressure() {
-	return bmp.readPressure();
-}
-
-float sensors_humidity() {
-	return SHT2x.GetHumidity();
-}
-
-
-#endif // ifdef AVR
+#endif  // AVR
