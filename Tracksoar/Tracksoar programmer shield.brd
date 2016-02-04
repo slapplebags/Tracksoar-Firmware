@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.3.0">
+<eagle version="7.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -9,6 +9,10 @@
 <grid distance="0.001" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="yes" active="yes"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="yes" active="yes"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
@@ -772,6 +776,25 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package>
 </packages>
 </library>
+<library name="SparkFun-Passives">
+<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
+In this library you'll find resistors, capacitors, inductors, test points, jumper pads, etc.&lt;br&gt;&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="0805">
+<wire x1="-0.3" y1="0.6" x2="0.3" y2="0.6" width="0.1524" layer="21"/>
+<wire x1="-0.3" y1="-0.6" x2="0.3" y2="-0.6" width="0.1524" layer="21"/>
+<smd name="1" x="-0.9" y="0" dx="0.8" dy="1.2" layer="1"/>
+<smd name="2" x="0.9" y="0" dx="0.8" dy="1.2" layer="1"/>
+<text x="-0.762" y="0.8255" size="0.4064" layer="25">&gt;NAME</text>
+<text x="-1.016" y="-1.397" size="0.4064" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -964,11 +987,13 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="PROD_ID" value="CONN-08193" x="4.4958" y="9.652" size="1.778" layer="28" rot="MR180" display="off"/>
 </element>
 <element name="U1" library="SparkFun-DigitalIC" package="SSOP28DB" value="FT232RL-BASICSSOP" x="20.955" y="10.1092" rot="MR270"/>
-<element name="LED1" library="adafruit" package="CHIP-LED0805" value="" x="10.5156" y="12.0904" rot="MR0"/>
-<element name="LED2" library="adafruit" package="CHIP-LED0805" value="" x="14.0716" y="12.1412" rot="MR0"/>
+<element name="LED1" library="adafruit" package="CHIP-LED0805" value="" x="10.541" y="10.795" rot="MR90"/>
+<element name="LED2" library="adafruit" package="CHIP-LED0805" value="" x="13.8938" y="12.573" rot="MR90"/>
 <element name="JP2" library="SparkFun-Connectors" package="2X3" value="AVR_SPI_PRG_6PTH" x="39.4716" y="7.6962" rot="MR90"/>
 <element name="C1" library="SparkFun-Capacitors" package="0805" value="100pf" x="11.811" y="5.7404" rot="MR270"/>
 <element name="C2" library="SparkFun-Capacitors" package="0805" value="10uf" x="9.7536" y="5.7404" rot="MR270"/>
+<element name="R1" library="SparkFun-Passives" package="0805" value="" x="12.0904" y="14.2748" rot="MR0"/>
+<element name="R2" library="SparkFun-Passives" package="0805" value="" x="10.3886" y="12.573" rot="MR180"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -979,8 +1004,6 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="U1" pad="3"/>
 <contactref element="C2" pad="2"/>
 <contactref element="C1" pad="2"/>
-<contactref element="LED2" pad="C"/>
-<contactref element="LED1" pad="C"/>
 <contactref element="JP1" pad="GND"/>
 <contactref element="JP2" pad="6"/>
 <contactref element="U1" pad="25"/>
@@ -1011,10 +1034,21 @@ Please make sure your boards conform to these design rules.</description>
 <vertex x="30.9626" y="16.8656"/>
 <vertex x="31.0134" y="19.6596"/>
 </polygon>
-<via x="9.0678" y="1.4986" extent="1-16" drill="0.6"/>
+<via x="15.24" y="8.763" extent="1-16" drill="0.6"/>
 <via x="21.971" y="7.5184" extent="1-16" drill="0.6"/>
-<via x="12.2936" y="14.7574" extent="1-16" drill="0.6"/>
+<via x="7.7216" y="16.9672" extent="1-16" drill="0.6"/>
 <via x="28.1686" y="1.5494" extent="1-16" drill="0.6"/>
+<wire x1="17.299" y1="9.7842" x2="16.3882" y2="9.7842" width="0.3048" layer="16"/>
+<wire x1="16.3882" y1="9.7842" x2="16.0274" y2="9.4234" width="0.3048" layer="16"/>
+<wire x1="16.0274" y1="9.4234" x2="16.0274" y2="8.0772" width="0.3048" layer="16"/>
+<wire x1="16.0274" y1="8.0772" x2="16.2814" y2="7.8232" width="0.3048" layer="16"/>
+<wire x1="16.2814" y1="7.8232" x2="17.288" y2="7.8232" width="0.3048" layer="16"/>
+<wire x1="17.288" y1="7.8232" x2="17.299" y2="7.8342" width="0.3048" layer="16"/>
+<via x="8.4074" y="2.286" extent="1-16" drill="0.6"/>
+<via x="2.3114" y="17.6022" extent="1-16" drill="0.6"/>
+<via x="31.369" y="13.1826" extent="1-16" drill="0.6"/>
+<via x="31.3436" y="7.0866" extent="1-16" drill="0.6"/>
+<via x="28.9052" y="10.2362" extent="1-16" drill="0.6"/>
 </signal>
 <signal name="VCC">
 <contactref element="FTDI" pad="3"/>
@@ -1059,6 +1093,21 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="43.307" y1="11.0236" x2="42.8244" y2="11.5062" width="0.3048" layer="16"/>
 <wire x1="42.8244" y1="11.5062" x2="27.3812" y2="11.5062" width="0.3048" layer="16"/>
 <wire x1="27.3812" y1="11.5062" x2="26.0858" y2="10.2108" width="0.3048" layer="16"/>
+<contactref element="R1" pad="2"/>
+<contactref element="R2" pad="2"/>
+<wire x1="11.1904" y1="14.2748" x2="11.1904" y2="12.6712" width="0.3048" layer="16"/>
+<wire x1="11.1904" y1="12.6712" x2="11.2886" y2="12.573" width="0.3048" layer="16" curve="263.522339"/>
+<wire x1="9.093" y1="8.052" x2="5.6386" y2="8.052" width="0.3048" layer="16"/>
+<wire x1="5.6386" y1="8.052" x2="4.6228" y2="9.0678" width="0.3048" layer="16"/>
+<wire x1="4.6228" y1="9.0678" x2="3.7338" y2="9.0678" width="0.3048" layer="16"/>
+<wire x1="3.7338" y1="9.0678" x2="3.2004" y2="9.6012" width="0.3048" layer="16"/>
+<wire x1="3.2004" y1="9.6012" x2="3.2004" y2="14.7574" width="0.3048" layer="16"/>
+<wire x1="3.2004" y1="14.7574" x2="6.6294" y2="18.1864" width="0.3048" layer="16"/>
+<wire x1="6.6294" y1="18.1864" x2="9.1186" y2="18.1864" width="0.3048" layer="16"/>
+<wire x1="9.1186" y1="18.1864" x2="9.4742" y2="17.8308" width="0.3048" layer="16"/>
+<wire x1="9.4742" y1="17.8308" x2="9.4742" y2="15.0876" width="0.3048" layer="16"/>
+<wire x1="9.4742" y1="15.0876" x2="10.287" y2="14.2748" width="0.3048" layer="16"/>
+<wire x1="10.287" y1="14.2748" x2="11.1904" y2="14.2748" width="0.3048" layer="16"/>
 </signal>
 <signal name="DTR">
 <contactref element="FTDI" pad="6"/>
@@ -1200,19 +1249,32 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 <signal name="TXLED">
 <contactref element="U1" pad="23"/>
-<contactref element="LED2" pad="A"/>
-<wire x1="17.299" y1="11.0842" x2="14.0786" y2="11.0842" width="0.4064" layer="16"/>
-<wire x1="14.0786" y1="11.0842" x2="14.0716" y2="11.0912" width="0.4064" layer="16"/>
+<contactref element="LED2" pad="C"/>
+<wire x1="17.299" y1="11.0842" x2="15.4334" y2="11.0842" width="0.3048" layer="16"/>
+<wire x1="15.4334" y1="11.0842" x2="14.9606" y2="11.557" width="0.3048" layer="16"/>
+<wire x1="14.9606" y1="11.557" x2="14.9606" y2="12.5562" width="0.3048" layer="16"/>
+<wire x1="14.9606" y1="12.5562" x2="14.9438" y2="12.573" width="0.3048" layer="16"/>
 </signal>
 <signal name="RXLED">
 <contactref element="U1" pad="22"/>
+<contactref element="LED1" pad="C"/>
+<wire x1="17.299" y1="10.4342" x2="16.1238" y2="10.4342" width="0.3048" layer="16"/>
+<wire x1="16.1238" y1="10.4342" x2="15.5448" y2="9.8552" width="0.3048" layer="16"/>
+<wire x1="15.5448" y1="9.8552" x2="11.5316" y2="9.8552" width="0.3048" layer="16"/>
+<wire x1="11.5316" y1="9.8552" x2="11.2268" y2="10.16" width="0.3048" layer="16"/>
+<wire x1="11.2268" y1="10.16" x2="11.2268" y2="10.9134" width="0.3048" layer="16"/>
+<wire x1="11.2268" y1="10.9134" x2="11.591" y2="10.795" width="0.3048" layer="16"/>
+</signal>
+<signal name="N$1">
+<contactref element="LED2" pad="A"/>
+<contactref element="R1" pad="1"/>
+<wire x1="12.9904" y1="14.2748" x2="12.9904" y2="12.7196" width="0.3048" layer="16"/>
+<wire x1="12.9904" y1="12.7196" x2="12.8438" y2="12.573" width="0.3048" layer="16"/>
+</signal>
+<signal name="N$2">
 <contactref element="LED1" pad="A"/>
-<wire x1="17.299" y1="10.4342" x2="15.5904" y2="10.4342" width="0.4064" layer="16"/>
-<wire x1="15.5904" y1="10.4342" x2="15.0622" y2="9.906" width="0.4064" layer="16"/>
-<wire x1="15.0622" y1="9.906" x2="10.9982" y2="9.906" width="0.4064" layer="16"/>
-<wire x1="10.9982" y1="9.906" x2="10.541" y2="10.3632" width="0.4064" layer="16"/>
-<wire x1="10.541" y1="10.3632" x2="10.541" y2="11.015" width="0.4064" layer="16"/>
-<wire x1="10.541" y1="11.015" x2="10.5156" y2="11.0404" width="0.4064" layer="16"/>
+<contactref element="R2" pad="1"/>
+<wire x1="9.4886" y1="12.573" x2="9.491" y2="10.795" width="0.3048" layer="16"/>
 </signal>
 </signals>
 <errors>
