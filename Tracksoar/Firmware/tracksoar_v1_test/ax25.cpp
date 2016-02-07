@@ -18,7 +18,7 @@
 #include "ax25.h"
 #include "config.h"
 #include "afsk_avr.h"
-//#include "afsk_pic32.h"
+#include "afsk_pic32.h"
 #include <stdint.h>
 #if (ARDUINO + 1) >= 100
 #  include <Arduino.h>

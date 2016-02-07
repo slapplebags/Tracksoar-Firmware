@@ -20,7 +20,7 @@
 #include "gps.h"
 #include "aprs.h"
 #include "sensors_avr.h"
-//#include "sensors_pic32.h"
+#include "sensors_pic32.h"
 #include <stdio.h>
 #include <stdlib.h>
 #if (ARDUINO + 1) >= 100
@@ -93,7 +93,7 @@ void aprs_send()
 //  snprintf(temp, 6, "%d", sensors_vin());
 //  ax25_send_string(temp);
   ax25_send_byte(' ');
-//  ax25_send_string(APRS_COMMENT);     // Comment
+  ax25_send_string(APRS_COMMENT);     // Comment
   ax25_send_footer();
 
   ax25_flush_frame();                 // Tell the modem to go

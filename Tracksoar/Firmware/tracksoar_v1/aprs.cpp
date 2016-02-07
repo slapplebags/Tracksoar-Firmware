@@ -70,7 +70,7 @@ void aprs_send()
   ax25_send_string(temp);
   // Pressure: "/Pa=12345"
   ax25_send_string("/Pa=");
-  snprintf(temp, 6, "%d", sensors_pressure());
+  snprintf(temp, 6, "%ld", sensors_pressure());
   ax25_send_string(temp);
   // Humidity: "/Rh=84.56"
   ax25_send_string("/Rh=");

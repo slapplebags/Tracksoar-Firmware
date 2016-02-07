@@ -26,7 +26,7 @@
 #include <avr/pgmspace.h>
 #include "config.h"
 
-#define AFSK_ISR ISR(TIMER2_OVF_vect)
+#define AFSK_ISR ISR(TIMER2_OVF_vect) // attatch interrupt to timer 2 overflow 
 
 // Exported consts
 extern const uint32_t MODEM_CLOCK_RATE;

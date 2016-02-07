@@ -14,7 +14,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-#ifdef AVR
+#define AVR
 
 #include <avr/io.h>
 // in gcc with Arduino 1.6 prog_uchar is deprecated. Allow it:
@@ -22,7 +22,23 @@
 #include <avr/pgmspace.h>
 #include "config.h"
 #include "afsk_avr.h"
+#include "variant.h"
+#define WAIT_TC16_REGS_SYNC(x) while(x->COUNT16.STATUS.bit.SYNCBUSY);
 
+uint32_t toneMaxFrequency = F_CPU / 2;
+uint32_t lastOutputPin = 0xFFFFFFFF;
+
+volatile uint32_t *portToggleRegister;
+volatile uint32_t *portClearRegister;
+volatile uint32_t portBitMask;
+volatile int64_t toggleCount;
+volatile bool toneIsActive = false;
+
+#define TONE_TC         TC5
+#define TONE_TC_IRQn    TC5_IRQn
+#define TONE_TC_TOP     0xFFFF
+#define TONE_TC_CHANNEL 0
+void TC5_Handler (void) __attribute__ ((weak, alias("Tone_Handler")));
 
 // Module consts
 
@@ -86,61 +102,120 @@ void afsk_timer_setup()
   // pin.
   
   // Source timer2 from clkIO (datasheet p.164)
-  ASSR &= ~(_BV(EXCLK) | _BV(AS2));
+//  ASSR &= ~(_BV(EXCLK) | _BV(AS2));
   
   // Set fast PWM mode with TOP = 0xff: WGM22:0 = 3  (p.150)
   // This allows 256 cycles per sample and gives 16M/256 = 62.5 KHz PWM rate
   
-  TCCR2A |= _BV(WGM21) | _BV(WGM20);
-  TCCR2B &= ~_BV(WGM22);
-  
+//  TCCR2A |= _BV(WGM21) | _BV(WGM20);
+//  TCCR2B &= ~_BV(WGM22);
+  static inline void resetTC (Tc* TCx)
+{
+  // Disable TCx
+  TCx->COUNT16.CTRLA.reg &= ~TC_CTRLA_ENABLE;
+  WAIT_TC16_REGS_SYNC(TCx)
+
+  // Reset TCx
+  TCx->COUNT16.CTRLA.reg = TC_CTRLA_SWRST;
+  WAIT_TC16_REGS_SYNC(TCx)
+  while (TCx->COUNT16.CTRLA.bit.SWRST);
+}
   // Phase correct PWM with top = 0xff: WGM22:0 = 1 (p.152 and p.160))
   // This allows 510 cycles per sample and gives 16M/510 = ~31.4 KHz PWM rate
   //TCCR2A = (TCCR2A | _BV(WGM20)) & ~_BV(WGM21);
   //TCCR2B &= ~_BV(WGM22);
-  
-#if AUDIO_PIN == 11
+  uint32_t prescalerConfigBits;
+  uint32_t ccValue;
+  ccValue = toneMaxFrequency / frequency / 256 - 1;
+              prescalerConfigBits = TC_CTRLA_PRESCALER_DIV256;
+//#if AUDIO_PIN == 11
   // Do non-inverting PWM on pin OC2A (arduino pin 11) (p.159)
   // OC2B (arduino pin 3) stays in normal port operation:
   // COM2A1=1, COM2A0=0, COM2B1=0, COM2B0=0
-  TCCR2A = (TCCR2A | _BV(COM2A1)) & ~(_BV(COM2A0) | _BV(COM2B1) | _BV(COM2B0));
-#endif  
+//  TCCR2A = (TCCR2A | _BV(COM2A1)) & ~(_BV(COM2A0) | _BV(COM2B1) | _BV(COM2B0));
+//#endif  
 
-#if AUDIO_PIN == 3
+
+  lastOutputPin = outputPin;
+  digitalWrite(outputPin, LOW);
+  pinMode(outputPin, OUTPUT);
+  toneIsActive = true;
+
+  // Enable TONE_TC
+  TONE_TC->COUNT16.CTRLA.reg |= TC_CTRLA_ENABLE;
+  WAIT_TC16_REGS_SYNC(TONE_TC)
+//#if AUDIO_PIN == 3
   // Do non-inverting PWM on pin OC2B (arduino pin 3) (p.159).
   // OC2A (arduino pin 11) stays in normal port operation: 
   // COM2B1=1, COM2B0=0, COM2A1=0, COM2A0=0
-  TCCR2A = (TCCR2A | _BV(COM2B1)) & ~(_BV(COM2B0) | _BV(COM2A1) | _BV(COM2A0));
-#endif
+//  TCCR2A = (TCCR2A | _BV(COM2B1)) & ~(_BV(COM2B0) | _BV(COM2A1) | _BV(COM2A0));
+//#endif
   
   // No prescaler (p.162)
-  TCCR2B = (TCCR2B & ~(_BV(CS22) | _BV(CS21))) | _BV(CS20);
+//  TCCR2B = (TCCR2B & ~(_BV(CS22) | _BV(CS21))) | _BV(CS20);
   // prescaler x8 for slow-mo testing
   //TCCR2B = (TCCR2B & ~(_BV(CS22) | _BV(CS20))) | _BV(CS21);
 
   // Set initial pulse width to the rest position (0v after DC decoupling)
-  OCR2 = REST_DUTY;
+//  OCR2 = REST_DUTY;
+
 }
 
 void afsk_timer_start()
 {
   // Clear the overflow flag, so that the interrupt doesn't go off
   // immediately and overrun the next one (p.163).
-  TIFR2 |= _BV(TOV2);       // Yeah, writing a 1 clears the flag.
+//  TIFR2 |= _BV(TOV2);       // Yeah, writing a 1 clears the flag.
 
   // Enable interrupt when TCNT2 reaches TOP (0xFF) (p.151, 163)
-  TIMSK2 |= _BV(TOIE2);
+//  TIMSK2 |= _BV(TOIE2);
+
+
+toggleCount = (duration > 0 ? frequency * duration * 2 / 1000UL : -1);
+// Enable GCLK for TC4 and TC5 (timer counter input clock)
+  GCLK->CLKCTRL.reg = (uint16_t) (GCLK_CLKCTRL_CLKEN | GCLK_CLKCTRL_GEN_GCLK0 | GCLK_CLKCTRL_ID(GCM_TC4_TC5));
+  while (GCLK->STATUS.bit.SYNCBUSY);
+
+  resetTC(TONE_TC);
+
+  // Set Timer counter Mode to 16 bits
+  TONE_TC->COUNT16.CTRLA.reg |= TC_CTRLA_MODE_COUNT16;
+
+  // Set TONE_TC mode as match frequency
+  TONE_TC->COUNT16.CTRLA.reg |= TC_CTRLA_WAVEGEN_MFRQ;
+
+  TONE_TC->COUNT16.CTRLA.reg |= prescalerConfigBits;
+
+  TONE_TC->COUNT16.CC[TONE_TC_CHANNEL].reg = (uint16_t) ccValue;
+  WAIT_TC16_REGS_SYNC(TONE_TC)
+
+  // Configure interrupt request
+  NVIC_DisableIRQ(TONE_TC_IRQn);
+  NVIC_ClearPendingIRQ(TONE_TC_IRQn);
+  NVIC_SetPriority(TONE_TC_IRQn, 0);
+  NVIC_EnableIRQ(TONE_TC_IRQn);
+
+  portToggleRegister = &(PORT->Group[g_APinDescription[outputPin].ulPort].OUTTGL.reg);
+  portClearRegister = &(PORT->Group[g_APinDescription[outputPin].ulPort].OUTCLR.reg);
+  portBitMask = (1ul << g_APinDescription[outputPin].ulPin);
+
+  // Enable the TONE_TC interrupt request
+  TONE_TC->COUNT16.INTENSET.bit.MC0 = 1;
 }
 
 void afsk_timer_stop()
 {
   // Output 0v (after DC coupling)
-  OCR2 = REST_DUTY;
+//  OCR2 = REST_DUTY;
 
   // Disable playback interrupt
-  TIMSK2 &= ~_BV(TOIE2);
+//  TIMSK2 &= ~_BV(TOIE2);
+
+resetTC(TONE_TC);
+  digitalWrite(outputPin, LOW);
+  toneIsActive = false;
 }
 
 
 
-#endif // ifdef AVR
+//#endif // ifdef AVR
