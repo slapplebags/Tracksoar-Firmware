@@ -1,5 +1,4 @@
 /* trackuino copyright (C) 2010  EA5HAV Javi
- * tracksoar sensor changes copyright (C) 2015 Nick Winters
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,32 +15,31 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifdef AVR
+#ifndef __GPS_H__
+#define __GPS_H__
 
-#include <Wire.h>
-#include "Adafruit_BMP085.h"
-#include "SHT2x.h"
+#include <stdint.h>
 
-Adafruit_BMP085 bmp;
-  
-void sensors_setup() {
-//  if (!bmp.begin()) {
-//	Serial.println("Could not find a valid BMP085 sensor, check wiring!");
-//	while (1) {}
-//  }
-}
+#if defined(__AVR_ATmega32U4__)
+#define GPS_SERIAL Serial1
+#else
+#define GPS_SERIAL Serial
+#endif
 
-float sensors_temperature() {
-	return bmp.readTemperature();
-}
+extern char gps_time[7];       // HHMMSS
+extern uint32_t gps_seconds;   // seconds after midnight
+extern char gps_date[7];       // DDMMYY
+extern float gps_lat;
+extern float gps_lon;
+extern char gps_aprs_lat[9];
+extern char gps_aprs_lon[10];
+extern float gps_course;
+extern float gps_speed;
+extern float gps_altitude;
+extern uint8_t gps_num_sats;
+extern bool gps_low_power_mode;
 
-int32_t sensors_pressure() {
-	return bmp.readPressure();
-}
+void gps_setup();
+bool gps_decode(char c);
 
-float sensors_humidity() {
-	return SHT2x.GetHumidity();
-}
-
-
-#endif // ifdef AVR
+#endif

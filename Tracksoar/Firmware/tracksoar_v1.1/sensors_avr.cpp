@@ -25,10 +25,10 @@
 Adafruit_BMP085 bmp;
   
 void sensors_setup() {
-//  if (!bmp.begin()) {
-//	Serial.println("Could not find a valid BMP085 sensor, check wiring!");
-//	while (1) {}
-//  }
+  if (!bmp.begin()) {
+	Serial.println("Could not find a valid BMP085 sensor, check wiring!");
+	while (1) {}
+  }
 }
 
 float sensors_temperature() {

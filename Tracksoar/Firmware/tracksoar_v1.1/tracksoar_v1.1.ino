@@ -36,15 +36,14 @@
 // Trackuino custom libs
 #include "config.h"
 #include "afsk_avr.h"
-//#include "afsk_pic32.h"
+#include "afsk_pic32.h"
 #include "aprs.h"
-//#include "buzzer.h"
+#include "buzzer.h"
 #include "gps.h"
 #include "pin.h"
 #include "power.h"
 #include "sensors_avr.h"
-//#include "sensors_pic32.h"
-
+#include "sensors_pic32.h"
 
 // Arduino/AVR libs
 #if (ARDUINO + 1) >= 100
@@ -61,7 +60,7 @@ static const uint32_t VALID_POS_TIMEOUT = 2000;  // ms
 
 // Module variables
 static int32_t next_aprs = 0;
-uint32_t last_sd_write = 0;
+
 
 void setup()
 {
@@ -78,7 +77,7 @@ void setup()
   Serial.println("RESET");
 #endif
 
-//  buzzer_setup();
+  buzzer_setup();
   afsk_setup();
   gps_setup();
   sensors_setup();
@@ -121,13 +120,13 @@ void get_pos()
   } while ( (millis() - timeout < VALID_POS_TIMEOUT) && ! valid_pos) ;
 
   if (valid_pos) {
-//    if (gps_altitude > BUZZER_ALTITUDE) {
-//      buzzer_off();   // In space, no one can hear you buzz
+    if (gps_altitude > BUZZER_ALTITUDE) {
+      buzzer_off();   // In space, no one can hear you buzz
     } else {
-//      buzzer_on();
+      buzzer_on();
     }
   }
-//}
+}
 
 void loop()
 {
@@ -139,8 +138,7 @@ void loop()
     while (afsk_flush()) {
       power_save();
     }
-  
-    
+
 #ifdef DEBUG_MODEM
     // Show modem ISR stats from the previous transmission
     afsk_debug();

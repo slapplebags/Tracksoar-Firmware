@@ -1,5 +1,4 @@
 /* trackuino copyright (C) 2010  EA5HAV Javi
- * tracksoar sensor changes copyright (C) 2015 Nick Winters
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,32 +15,12 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifdef AVR
+#ifndef __PIN_H__
+#define __PIN_H__
 
-#include <Wire.h>
-#include "Adafruit_BMP085.h"
-#include "SHT2x.h"
+#include <stdint.h>
 
-Adafruit_BMP085 bmp;
-  
-void sensors_setup() {
-//  if (!bmp.begin()) {
-//	Serial.println("Could not find a valid BMP085 sensor, check wiring!");
-//	while (1) {}
-//  }
-}
+void pin_write(uint8_t pin, uint8_t val);
 
-float sensors_temperature() {
-	return bmp.readTemperature();
-}
+#endif // ifndef __PIN_H__
 
-int32_t sensors_pressure() {
-	return bmp.readPressure();
-}
-
-float sensors_humidity() {
-	return SHT2x.GetHumidity();
-}
-
-
-#endif // ifdef AVR
