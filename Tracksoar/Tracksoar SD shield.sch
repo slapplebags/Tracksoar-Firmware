@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="7.3.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -1653,7 +1653,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 <part name="GND1" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND2" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
-<part name="JP1" library="SparkFun-Connectors" deviceset="M06" device="LOCK_LONGPADS"/>
+<part name="FTDI-1" library="SparkFun-Connectors" deviceset="M06" device="LOCK_LONGPADS"/>
 </parts>
 <sheets>
 <sheet>
@@ -1682,7 +1682,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 <instance part="GND1" gate="1" x="167.64" y="58.42" rot="R90"/>
 <instance part="GND2" gate="1" x="167.64" y="55.88" rot="R90"/>
 <instance part="SUPPLY1" gate="G$1" x="167.64" y="53.34" rot="R270"/>
-<instance part="JP1" gate="G$1" x="157.48" y="50.8"/>
+<instance part="FTDI-1" gate="G$1" x="157.48" y="50.8"/>
 </instances>
 <busses>
 </busses>
@@ -1712,14 +1712,14 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 <wire x1="162.56" y1="58.42" x2="165.1" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <junction x="165.1" y="58.42"/>
-<pinref part="JP1" gate="G$1" pin="6"/>
+<pinref part="FTDI-1" gate="G$1" pin="6"/>
 <junction x="162.56" y="58.42"/>
 </segment>
 <segment>
 <wire x1="162.56" y1="55.88" x2="165.1" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 <junction x="165.1" y="55.88"/>
-<pinref part="JP1" gate="G$1" pin="5"/>
+<pinref part="FTDI-1" gate="G$1" pin="5"/>
 <junction x="162.56" y="55.88"/>
 </segment>
 </net>
@@ -1741,7 +1741,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 <wire x1="162.56" y1="53.34" x2="167.64" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="SUPPLY1" gate="G$1" pin="VCC"/>
 <junction x="167.64" y="53.34"/>
-<pinref part="JP1" gate="G$1" pin="4"/>
+<pinref part="FTDI-1" gate="G$1" pin="4"/>
 <junction x="162.56" y="53.34"/>
 </segment>
 </net>
@@ -1755,7 +1755,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 </segment>
 <segment>
 <wire x1="162.56" y1="45.72" x2="165.1" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="JP1" gate="G$1" pin="1"/>
+<pinref part="FTDI-1" gate="G$1" pin="1"/>
 <junction x="162.56" y="45.72"/>
 </segment>
 </net>
@@ -1769,7 +1769,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 </segment>
 <segment>
 <wire x1="162.56" y1="50.8" x2="165.1" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="JP1" gate="G$1" pin="3"/>
+<pinref part="FTDI-1" gate="G$1" pin="3"/>
 <junction x="162.56" y="50.8"/>
 </segment>
 </net>
@@ -1783,7 +1783,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 </segment>
 <segment>
 <wire x1="162.56" y1="48.26" x2="165.1" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="JP1" gate="G$1" pin="2"/>
+<pinref part="FTDI-1" gate="G$1" pin="2"/>
 <junction x="162.56" y="48.26"/>
 </segment>
 </net>

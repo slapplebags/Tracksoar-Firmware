@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="7.3.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -530,6 +530,11 @@
 <wire x1="40.1574" y1="3.7338" x2="40.9956" y2="4.572" width="0" layer="20" curve="-90"/>
 <wire x1="40.9956" y1="4.572" x2="43.7388" y2="4.572" width="0" layer="20"/>
 <wire x1="43.7388" y1="4.572" x2="44.0182" y2="4.8514" width="0" layer="20" curve="90"/>
+<text x="12.1158" y="5.4864" size="1.016" layer="26" rot="MR270">GND</text>
+<text x="12.7762" y="6.985" size="1.016" layer="26" rot="MR0">5v</text>
+<text x="15.4686" y="14.3764" size="1.016" layer="26" rot="MR0">RESET</text>
+<text x="12.9032" y="11.7856" size="1.016" layer="26" rot="MR0">TX</text>
+<text x="12.9286" y="9.3472" size="1.016" layer="26" rot="MR0">RX</text>
 </plain>
 <libraries>
 <library name="SparkFun-Aesthetics">
@@ -857,7 +862,9 @@ Please make sure your boards conform to these design rules.</description>
 <element name="FTDI" library="headers(2mm)" package="1X7" value="1X7" x="16.7132" y="18.1864" rot="R180"/>
 <element name="SPI/I2C" library="headers(2mm)" package="1X6" value="1X6" x="18.58" y="1.46"/>
 <element name="U1" library="SparkFun-DigitalIC" package="SO08" value="EEPROM-I2CSMD" x="19.304" y="9.906" rot="MR180"/>
-<element name="JP1" library="SparkFun-Connectors" package="1X06_LOCK_LONGPADS" value="" x="8.8138" y="14.986" rot="R270"/>
+<element name="FTDI-1" library="SparkFun-Connectors" package="1X06_LOCK_LONGPADS" value="" x="8.8138" y="14.986" smashed="yes" rot="R270">
+<attribute name="VALUE" x="5.5118" y="16.256" size="1.27" layer="27" font="vector" rot="R270"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">
@@ -889,8 +896,8 @@ Please make sure your boards conform to these design rules.</description>
 </polygon>
 <contactref element="U1" pad="4"/>
 <via x="11.5316" y="1.4478" extent="1-16" drill="0.6"/>
-<contactref element="JP1" pad="6"/>
-<contactref element="JP1" pad="5"/>
+<contactref element="FTDI-1" pad="6"/>
+<contactref element="FTDI-1" pad="5"/>
 </signal>
 <signal name="VCC">
 <contactref element="FTDI" pad="3"/>
@@ -903,13 +910,13 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="17.7038" y1="14.8082" x2="18.7706" y2="15.875" width="0.4064" layer="16"/>
 <wire x1="18.7706" y1="15.875" x2="18.7706" y2="18.129" width="0.4064" layer="16"/>
 <wire x1="18.7706" y1="18.129" x2="18.7132" y2="18.1864" width="0.4064" layer="16"/>
-<contactref element="JP1" pad="4"/>
+<contactref element="FTDI-1" pad="4"/>
 <wire x1="8.5598" y1="7.366" x2="15.0368" y2="7.366" width="0.4064" layer="16"/>
 <wire x1="15.0368" y1="7.366" x2="16.256" y2="8.5852" width="0.4064" layer="16"/>
 </signal>
 <signal name="DTR">
 <contactref element="FTDI" pad="6"/>
-<contactref element="JP1" pad="1"/>
+<contactref element="FTDI-1" pad="1"/>
 <wire x1="8.8138" y1="14.986" x2="11.7602" y2="14.986" width="0.4064" layer="16"/>
 <wire x1="11.7602" y1="14.986" x2="12.7508" y2="15.9766" width="0.4064" layer="16"/>
 <wire x1="12.7508" y1="15.9766" x2="12.7508" y2="18.1488" width="0.4064" layer="16"/>
@@ -917,7 +924,7 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 <signal name="RXO">
 <contactref element="FTDI" pad="4"/>
-<contactref element="JP1" pad="3"/>
+<contactref element="FTDI-1" pad="3"/>
 <wire x1="8.8138" y1="9.906" x2="14.3256" y2="9.906" width="0.4064" layer="16"/>
 <wire x1="14.3256" y1="9.906" x2="15.0114" y2="10.5918" width="0.4064" layer="16"/>
 <wire x1="15.0114" y1="10.5918" x2="15.0114" y2="15.1892" width="0.4064" layer="16"/>
@@ -927,7 +934,7 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 <signal name="TXO">
 <contactref element="FTDI" pad="5"/>
-<contactref element="JP1" pad="2"/>
+<contactref element="FTDI-1" pad="2"/>
 <wire x1="8.5598" y1="12.446" x2="12.2936" y2="12.446" width="0.4064" layer="16"/>
 <wire x1="12.2936" y1="12.446" x2="13.716" y2="13.8684" width="0.4064" layer="16"/>
 <wire x1="13.716" y1="13.8684" x2="13.716" y2="16.2052" width="0.4064" layer="16"/>
