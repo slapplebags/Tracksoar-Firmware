@@ -13576,20 +13576,6 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <pad name="6" x="4" y="0" drill="0.8" diameter="1.4224"/>
 <pad name="7" x="6" y="0" drill="0.8" diameter="1.4224"/>
 </package>
-<package name="1X6">
-<rectangle x1="-5.254" y1="-0.254" x2="-4.746" y2="0.254" layer="21"/>
-<rectangle x1="-3.254" y1="-0.254" x2="-2.746" y2="0.254" layer="21"/>
-<rectangle x1="-1.254" y1="-0.254" x2="-0.746" y2="0.254" layer="21"/>
-<rectangle x1="0.746" y1="-0.254" x2="1.254" y2="0.254" layer="21"/>
-<rectangle x1="2.746" y1="-0.254" x2="3.254" y2="0.254" layer="21"/>
-<rectangle x1="4.746" y1="-0.254" x2="5.254" y2="0.254" layer="21"/>
-<pad name="1" x="-5" y="0" drill="0.8" diameter="1.4224"/>
-<pad name="2" x="-3" y="0" drill="0.8" diameter="1.4224"/>
-<pad name="3" x="-1" y="0" drill="0.8" diameter="1.4224"/>
-<pad name="4" x="1" y="0" drill="0.8" diameter="1.4224"/>
-<pad name="5" x="3" y="0" drill="0.8" diameter="1.4224"/>
-<pad name="6" x="5" y="0" drill="0.8" diameter="1.4224"/>
-</package>
 </packages>
 <symbols>
 <symbol name="1X7_HEADER">
@@ -13628,38 +13614,6 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <wire x1="1.27" y1="-7.62" x2="2.54" y2="-7.62" width="0.254" layer="94"/>
 <pin name="7" x="2.54" y="-7.62" visible="off" length="point" rot="R180"/>
 </symbol>
-<symbol name="1X6_HEADER">
-<wire x1="-2.54" y1="10.16" x2="2.54" y2="10.16" width="0.254" layer="94"/>
-<wire x1="1.27" y1="7.62" x2="2.54" y2="7.62" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="10.16" x2="-2.54" y2="-7.62" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="-7.62" x2="2.54" y2="-7.62" width="0.254" layer="94"/>
-<wire x1="2.54" y1="-7.62" x2="2.54" y2="-5.08" width="0.254" layer="94"/>
-<text x="0" y="7.62" size="1.016" layer="94" font="vector" rot="MR0" align="center">01</text>
-<text x="-2.54" y="10.795" size="1.27" layer="95" font="vector">&gt;NAME</text>
-<text x="-2.54" y="-9.525" size="1.27" layer="96" font="vector">&gt;VALUE</text>
-<pin name="1" x="2.54" y="7.62" visible="off" length="point" rot="R180"/>
-<wire x1="2.54" y1="-5.08" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="2.54" y1="-2.54" x2="2.54" y2="0" width="0.254" layer="94"/>
-<wire x1="2.54" y1="0" x2="2.54" y2="2.54" width="0.254" layer="94"/>
-<wire x1="2.54" y1="2.54" x2="2.54" y2="5.08" width="0.254" layer="94"/>
-<wire x1="2.54" y1="5.08" x2="2.54" y2="7.62" width="0.254" layer="94"/>
-<wire x1="2.54" y1="7.62" x2="2.54" y2="10.16" width="0.254" layer="94"/>
-<text x="0" y="5.08" size="1.016" layer="94" font="vector" rot="MR0" align="center">02</text>
-<pin name="2" x="2.54" y="5.08" visible="off" length="point" rot="R180"/>
-<text x="0" y="2.54" size="1.016" layer="94" font="vector" rot="MR0" align="center">03</text>
-<text x="0" y="0" size="1.016" layer="94" font="vector" rot="MR0" align="center">04</text>
-<pin name="3" x="2.54" y="2.54" visible="off" length="point" rot="R180"/>
-<pin name="4" x="2.54" y="0" visible="off" length="point" rot="R180"/>
-<wire x1="1.27" y1="5.08" x2="2.54" y2="5.08" width="0.254" layer="94"/>
-<wire x1="1.27" y1="2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
-<text x="0" y="-2.54" size="1.016" layer="94" font="vector" rot="MR0" align="center">05</text>
-<text x="0" y="-5.08" size="1.016" layer="94" font="vector" rot="MR0" align="center">06</text>
-<wire x1="1.27" y1="-2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="1.27" y1="-5.08" x2="2.54" y2="-5.08" width="0.254" layer="94"/>
-<pin name="5" x="2.54" y="-2.54" visible="off" length="point" rot="R180"/>
-<pin name="6" x="2.54" y="-5.08" visible="off" length="point" rot="R180"/>
-</symbol>
 </symbols>
 <devicesets>
 <deviceset name="1X7">
@@ -13676,26 +13630,6 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <connect gate="G$1" pin="5" pad="5"/>
 <connect gate="G$1" pin="6" pad="6"/>
 <connect gate="G$1" pin="7" pad="7"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="1X6">
-<gates>
-<gate name="G$1" symbol="1X6_HEADER" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="1X6">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
-<connect gate="G$1" pin="4" pad="4"/>
-<connect gate="G$1" pin="5" pad="5"/>
-<connect gate="G$1" pin="6" pad="6"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -13848,7 +13782,6 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <part name="U$1" library="Ava" deviceset="UBLOX_MAX" device=""/>
 <part name="GND1" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND3" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="GND10" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND20" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="R3" library="adafruit" deviceset="R-US_" device="R0402" value="4.7k"/>
 <part name="R7" library="adafruit" deviceset="R-US_" device="R0402" value="4.7k"/>
@@ -13867,7 +13800,6 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <part name="GND30" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GPS-ANT" library="SparkFun-RF" deviceset="ANTENNA2" device="SMD3"/>
 <part name="FTDI" library="headers(2mm)" deviceset="1X7" device=""/>
-<part name="SPI/I2C" library="headers(2mm)" deviceset="1X6" device=""/>
 <part name="GND5" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="IC1" library="bosch-bme280" deviceset="BME280" device=""/>
 <part name="GND6" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -13946,7 +13878,7 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <instance part="GND12" gate="1" x="22.86" y="15.24" rot="R270"/>
 <instance part="GND21" gate="1" x="22.86" y="12.7" rot="R270"/>
 <instance part="GND22" gate="1" x="208.28" y="60.96" rot="R90"/>
-<instance part="SUPPLY9" gate="G$1" x="208.28" y="55.88" rot="R270"/>
+<instance part="SUPPLY9" gate="G$1" x="205.74" y="58.42" rot="R270"/>
 <instance part="R5" gate="G$1" x="25.4" y="73.66" rot="R90"/>
 <instance part="SUPPLY10" gate="G$1" x="25.4" y="78.74"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
@@ -13961,7 +13893,6 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <instance part="U$1" gate="G$1" x="198.12" y="154.94"/>
 <instance part="GND1" gate="1" x="66.04" y="167.64" rot="R90"/>
 <instance part="GND3" gate="1" x="17.78" y="157.48"/>
-<instance part="GND10" gate="1" x="208.28" y="58.42" rot="R90"/>
 <instance part="GND20" gate="1" x="106.68" y="76.2" rot="R270"/>
 <instance part="R3" gate="G$1" x="129.54" y="48.26" rot="R270"/>
 <instance part="R7" gate="G$1" x="137.16" y="48.26" rot="R270"/>
@@ -13980,7 +13911,6 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <instance part="GND30" gate="1" x="53.34" y="127"/>
 <instance part="GPS-ANT" gate="G$1" x="165.1" y="165.1" rot="R90"/>
 <instance part="FTDI" gate="G$1" x="200.66" y="53.34"/>
-<instance part="SPI/I2C" gate="G$1" x="195.58" y="86.36"/>
 <instance part="GND5" gate="1" x="38.1" y="167.64"/>
 <instance part="IC1" gate="G$1" x="121.92" y="81.28"/>
 <instance part="GND6" gate="1" x="137.16" y="73.66"/>
@@ -14102,13 +14032,6 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <pinref part="LM3480" gate="G$1" pin="GND"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 <junction x="17.78" y="160.02"/>
-</segment>
-<segment>
-<wire x1="203.2" y1="58.42" x2="205.74" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="GND10" gate="1" pin="GND"/>
-<junction x="205.74" y="58.42"/>
-<pinref part="FTDI" gate="G$1" pin="2"/>
-<junction x="203.2" y="58.42"/>
 </segment>
 <segment>
 <pinref part="LT3426" gate="G$1" pin="GND"/>
@@ -14239,13 +14162,6 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <wire x1="55.88" y1="152.4" x2="53.34" y2="152.4" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="203.2" y1="55.88" x2="208.28" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="SUPPLY9" gate="G$1" pin="VCC"/>
-<junction x="208.28" y="55.88"/>
-<pinref part="FTDI" gate="G$1" pin="3"/>
-<junction x="203.2" y="55.88"/>
-</segment>
-<segment>
 <pinref part="R5" gate="G$1" pin="2"/>
 <pinref part="SUPPLY10" gate="G$1" pin="VCC"/>
 </segment>
@@ -14290,6 +14206,12 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <pinref part="F1" gate="G$1" pin="2"/>
 <pinref part="SUPPLY15" gate="G$1" pin="VCC"/>
 <junction x="40.64" y="99.06"/>
+</segment>
+<segment>
+<pinref part="FTDI" gate="G$1" pin="2"/>
+<pinref part="SUPPLY9" gate="G$1" pin="VCC"/>
+<wire x1="205.74" y1="58.42" x2="203.2" y2="58.42" width="0.1524" layer="91"/>
+<junction x="203.2" y="58.42"/>
 </segment>
 </net>
 <net name="3V" class="0">
@@ -14368,14 +14290,6 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <junction x="172.72" y="73.66"/>
 </segment>
 </net>
-<net name="DTR" class="0">
-<segment>
-<wire x1="203.2" y1="48.26" x2="205.74" y2="48.26" width="0.1524" layer="91"/>
-<label x="205.74" y="48.26" size="1.778" layer="95"/>
-<pinref part="FTDI" gate="G$1" pin="6"/>
-<junction x="203.2" y="48.26"/>
-</segment>
-</net>
 <net name="RXO" class="0">
 <segment>
 <wire x1="73.66" y1="45.72" x2="76.2" y2="45.72" width="0.1524" layer="91"/>
@@ -14394,15 +14308,15 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <label x="76.2" y="12.7" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="200.66" y1="86.36" x2="198.12" y2="86.36" width="0.1524" layer="91"/>
-<label x="200.66" y="86.36" size="1.778" layer="95"/>
-<pinref part="SPI/I2C" gate="G$1" pin="4"/>
-<junction x="198.12" y="86.36"/>
-</segment>
-<segment>
 <wire x1="-25.4" y1="12.7" x2="-22.86" y2="12.7" width="0.1524" layer="91"/>
 <pinref part="U$4" gate="G$1" pin="PB3(MISO)"/>
 <junction x="-25.4" y="12.7"/>
+</segment>
+<segment>
+<wire x1="205.74" y1="53.34" x2="203.2" y2="53.34" width="0.1524" layer="91"/>
+<label x="205.74" y="53.34" size="1.778" layer="95"/>
+<pinref part="FTDI" gate="G$1" pin="4"/>
+<junction x="203.2" y="53.34"/>
 </segment>
 </net>
 <net name="MOSI" class="0">
@@ -14411,15 +14325,15 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <label x="76.2" y="15.24" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="200.66" y1="83.82" x2="198.12" y2="83.82" width="0.1524" layer="91"/>
-<label x="200.66" y="83.82" size="1.778" layer="95"/>
-<pinref part="SPI/I2C" gate="G$1" pin="5"/>
-<junction x="198.12" y="83.82"/>
-</segment>
-<segment>
 <wire x1="-25.4" y1="15.24" x2="-22.86" y2="15.24" width="0.1524" layer="91"/>
 <pinref part="U$4" gate="G$1" pin="PB2(MOSI)"/>
 <junction x="-25.4" y="15.24"/>
+</segment>
+<segment>
+<wire x1="205.74" y1="50.8" x2="203.2" y2="50.8" width="0.1524" layer="91"/>
+<label x="205.74" y="50.8" size="1.778" layer="95"/>
+<pinref part="FTDI" gate="G$1" pin="5"/>
+<junction x="203.2" y="50.8"/>
 </segment>
 </net>
 <net name="SCK" class="0">
@@ -14428,15 +14342,15 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <label x="76.2" y="10.16" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="200.66" y1="88.9" x2="198.12" y2="88.9" width="0.1524" layer="91"/>
-<label x="200.66" y="88.9" size="1.778" layer="95"/>
-<pinref part="SPI/I2C" gate="G$1" pin="3"/>
-<junction x="198.12" y="88.9"/>
-</segment>
-<segment>
 <wire x1="-25.4" y1="17.78" x2="-22.86" y2="17.78" width="0.1524" layer="91"/>
 <pinref part="U$4" gate="G$1" pin="PB1(SCK)"/>
 <junction x="-25.4" y="17.78"/>
+</segment>
+<segment>
+<wire x1="205.74" y1="55.88" x2="203.2" y2="55.88" width="0.1524" layer="91"/>
+<label x="205.74" y="55.88" size="1.778" layer="95"/>
+<pinref part="FTDI" gate="G$1" pin="3"/>
+<junction x="203.2" y="55.88"/>
 </segment>
 </net>
 <net name="SS" class="0">
@@ -14445,15 +14359,15 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <label x="76.2" y="17.78" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="200.66" y1="81.28" x2="198.12" y2="81.28" width="0.1524" layer="91"/>
-<label x="200.66" y="81.28" size="1.778" layer="95"/>
-<pinref part="SPI/I2C" gate="G$1" pin="6"/>
-<junction x="198.12" y="81.28"/>
-</segment>
-<segment>
 <wire x1="-25.4" y1="20.32" x2="-22.86" y2="20.32" width="0.1524" layer="91"/>
 <pinref part="U$4" gate="G$1" pin="PB0(SS)"/>
 <junction x="-25.4" y="20.32"/>
+</segment>
+<segment>
+<wire x1="205.74" y1="48.26" x2="203.2" y2="48.26" width="0.1524" layer="91"/>
+<label x="205.74" y="48.26" size="1.778" layer="95"/>
+<pinref part="FTDI" gate="G$1" pin="6"/>
+<junction x="203.2" y="48.26"/>
 </segment>
 </net>
 <net name="N$27" class="0">
@@ -14534,12 +14448,6 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <junction x="129.54" y="43.18"/>
 </segment>
 <segment>
-<wire x1="200.66" y1="91.44" x2="198.12" y2="91.44" width="0.1524" layer="91"/>
-<label x="200.66" y="91.44" size="1.778" layer="95"/>
-<pinref part="SPI/I2C" gate="G$1" pin="2"/>
-<junction x="198.12" y="91.44"/>
-</segment>
-<segment>
 <wire x1="-25.4" y1="50.8" x2="-22.86" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="U$4" gate="G$1" pin="PD1(SDA)"/>
 <junction x="-25.4" y="50.8"/>
@@ -14561,12 +14469,6 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <wire x1="137.16" y1="43.18" x2="137.16" y2="40.64" width="0.1524" layer="91"/>
 <label x="137.16" y="40.64" size="1.778" layer="95"/>
 <junction x="137.16" y="43.18"/>
-</segment>
-<segment>
-<wire x1="200.66" y1="93.98" x2="198.12" y2="93.98" width="0.1524" layer="91"/>
-<label x="200.66" y="93.98" size="1.778" layer="95"/>
-<pinref part="SPI/I2C" gate="G$1" pin="1"/>
-<junction x="198.12" y="93.98"/>
 </segment>
 <segment>
 <wire x1="-25.4" y1="48.26" x2="-22.86" y2="48.26" width="0.1524" layer="91"/>
@@ -14725,24 +14627,12 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <label x="104.14" y="7.62" size="1.778" layer="95"/>
 <junction x="106.68" y="7.62"/>
 </segment>
-<segment>
-<wire x1="203.2" y1="50.8" x2="205.74" y2="50.8" width="0.1524" layer="91"/>
-<label x="205.74" y="50.8" size="1.778" layer="95"/>
-<pinref part="FTDI" gate="G$1" pin="5"/>
-<junction x="203.2" y="50.8"/>
-</segment>
 </net>
 <net name="RX" class="0">
 <segment>
 <wire x1="-25.4" y1="53.34" x2="-22.86" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="U$4" gate="G$1" pin="PD3(TX)"/>
 <junction x="-25.4" y="53.34"/>
-</segment>
-<segment>
-<wire x1="203.2" y1="53.34" x2="205.74" y2="53.34" width="0.1524" layer="91"/>
-<label x="205.74" y="53.34" size="1.778" layer="95"/>
-<pinref part="FTDI" gate="G$1" pin="4"/>
-<junction x="203.2" y="53.34"/>
 </segment>
 <segment>
 <wire x1="223.52" y1="139.7" x2="220.98" y2="139.7" width="0.1524" layer="91"/>
