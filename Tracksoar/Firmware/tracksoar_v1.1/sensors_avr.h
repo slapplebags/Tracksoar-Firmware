@@ -19,6 +19,18 @@
 #ifndef __SENSORS_AVR_H__
 #define __SENSORS_AVR_H__
 
+#include "config.h"
+#include <Wire.h>
+
+#ifdef TRACKSOAR_12
+	#include "./SparkFunBME280.h"
+ 	#pragma message("Version 1.2")
+#else
+	#include "Adafruit_BMP085.h"
+	#include "SHT2x.h"
+  	#pragma message("Version < 1.2")
+#endif
+
 void sensors_setup();
 float sensors_temperature();
 int32_t sensors_pressure();
