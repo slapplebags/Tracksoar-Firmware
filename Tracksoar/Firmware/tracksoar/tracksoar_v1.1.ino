@@ -23,7 +23,7 @@
 #error "Oops! We need the real Arduino IDE (version 22 or 23) for Arduino builds."
 #error "See trackuino.pde for details on this"
 
-// Refuse to compile on arduino version 21 or lower. 22 includes an
+// Refuse to compile on arduino version 21 or lower. 22 includes an 
 // optimization of the USART code that is critical for real-time operation
 // of the AVR code.
 #elif (ARDUINO + 0) < 22
@@ -32,20 +32,17 @@
 
 #endif
 
-
 // Trackuino custom libs
 #include "config.h"
 #include "afsk_avr.h"
-//#include "afsk_pic32.h"
+#include "afsk_pic32.h"
 #include "aprs.h"
-//#include "buzzer.h"
+#include "buzzer.h"
 #include "gps.h"
 #include "pin.h"
 #include "power.h"
 #include "sensors_avr.h"
-//#include "sensors_pic32.h"
-//#include <SPI.h>
-//#include <SD.h>
+#include "sensors_pic32.h"
 
 // Arduino/AVR libs
 #if (ARDUINO + 1) >= 100
@@ -59,13 +56,12 @@ static const uint32_t VALID_POS_TIMEOUT = 2000;  // ms
 
 // Though not used here, we need to include Wire.h in this file for other code:
 #include <Wire.h>
-
-#include "extEEPROM.h"
+// Same is true for SPI.h
+#include <SPI.h>
 
 // Module variables
 static int32_t next_aprs = 0;
-uint32_t g_last_data_write_time = 0;
-extEEPROM g_EEPROM(kbits_2048, 1, 256);
+
 
 void setup()
 {
@@ -82,7 +78,7 @@ void setup()
   Serial.println("RESET");
 #endif
 
-//  buzzer_setup();
+  buzzer_setup();
   afsk_setup();
   gps_setup();
   sensors_setup();
@@ -124,22 +120,13 @@ void get_pos()
       valid_pos = gps_decode(Serial.read());
   } while ( (millis() - timeout < VALID_POS_TIMEOUT) && ! valid_pos) ;
 
-}
-
-void writeData()
-{
-  g_EEPROM.writeData(gps_time);
-  g_EEPROM.writeData(gps_seconds);
-  g_EEPROM.writeData(gps_lat);
-  g_EEPROM.writeData(gps_lon);
-  g_EEPROM.writeData(gps_altitude);
-  float temperature = sensors_temperature();
-  g_EEPROM.writeData(temperature);
-  int32_t pressure = sensors_pressure();
-  g_EEPROM.writeData(pressure);
-  float humidity = sensors_humidity();
-  g_EEPROM.writeData(humidity);
-  g_last_data_write_time = millis();
+  if (valid_pos) {
+    if (gps_altitude > BUZZER_ALTITUDE) {
+      buzzer_off();   // In space, no one can hear you buzz
+    } else {
+      buzzer_on();
+    }
+  }
 }
 
 void loop()
@@ -152,11 +139,6 @@ void loop()
     while (afsk_flush()) {
       power_save();
     }
-
-  if ((millis() - g_last_data_write_time) >= SD_WRITE_INTERVAL)
-  {
-    writeData();
-  }
 
 #ifdef DEBUG_MODEM
     // Show modem ISR stats from the previous transmission

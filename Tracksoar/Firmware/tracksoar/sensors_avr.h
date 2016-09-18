@@ -15,9 +15,26 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef __APRS_H__
-#define __APRS_H__
+#ifdef AVR
+#ifndef __SENSORS_AVR_H__
+#define __SENSORS_AVR_H__
 
-void aprs_send();
+#include "config.h"
+#include <Wire.h>
 
+#ifdef TRACKSOAR_12
+	#include "./SparkFunBME280.h"
+ 	#pragma message("Version 1.2")
+#else
+	#include "Adafruit_BMP085.h"
+	#include "SHT2x.h"
+  	#pragma message("Version < 1.2")
 #endif
+
+void sensors_setup();
+float sensors_temperature();
+int32_t sensors_pressure();
+float sensors_humidity();
+
+#endif // ifndef __SENSORS_AVR_H__
+#endif // ifdef AVR
