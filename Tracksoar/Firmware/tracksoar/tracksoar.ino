@@ -44,6 +44,8 @@
 #include "sensors_avr.h"
 #include "sensors_pic32.h"
 
+#include "TrackSoarEeprom.h"
+
 // Arduino/AVR libs
 #if (ARDUINO + 1) >= 100
 #  include <Arduino.h>
@@ -166,7 +168,7 @@ void loop()
       power_save();
     }
 
-  if ((millis() - g_last_data_write_time) >= SD_WRITE_INTERVAL)
+  if ((millis() - g_last_data_write_time) >= EEPROM_WRITE_INTERVAL)
   {
     writeData();
   }
