@@ -64,7 +64,7 @@ static const uint32_t VALID_POS_TIMEOUT = 2000;  // ms
 // Module variables
 static int32_t next_aprs = 0;
 uint32_t g_last_data_write_time = 0;
-extEEPROM g_EEPROM(kbits_2048, 1, 256);
+TrackSoarEeprom g_EEPROM(kbits_2048, 1, 256);
 
 
 //------------------------------------------------------------------------------
