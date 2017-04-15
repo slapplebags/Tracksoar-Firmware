@@ -2,3 +2,5 @@
 *.s#*
 *.b#*
 trackduino micro/trackuino micro sensor chip mk2.pro
+*.lck
+
