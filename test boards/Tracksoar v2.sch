@@ -13560,34 +13560,36 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 </library>
 <library name="headers(2mm)">
 <packages>
-<package name="1X7">
-<rectangle x1="-6.254" y1="-0.254" x2="-5.746" y2="0.254" layer="21"/>
-<rectangle x1="-4.254" y1="-0.254" x2="-3.746" y2="0.254" layer="21"/>
-<rectangle x1="-2.254" y1="-0.254" x2="-1.746" y2="0.254" layer="21"/>
-<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="21"/>
-<rectangle x1="1.746" y1="-0.254" x2="2.254" y2="0.254" layer="21"/>
-<rectangle x1="3.746" y1="-0.254" x2="4.254" y2="0.254" layer="21"/>
-<rectangle x1="5.746" y1="-0.254" x2="6.254" y2="0.254" layer="21"/>
-<pad name="1" x="-6" y="0" drill="0.8" diameter="1.4224"/>
-<pad name="2" x="-4" y="0" drill="0.8" diameter="1.4224"/>
-<pad name="3" x="-2" y="0" drill="0.8" diameter="1.4224"/>
-<pad name="4" x="0" y="0" drill="0.8" diameter="1.4224"/>
-<pad name="5" x="2" y="0" drill="0.8" diameter="1.4224"/>
-<pad name="6" x="4" y="0" drill="0.8" diameter="1.4224"/>
-<pad name="7" x="6" y="0" drill="0.8" diameter="1.4224"/>
+<package name="1X8">
+<rectangle x1="-7.254" y1="-0.254" x2="-6.746" y2="0.254" layer="21"/>
+<rectangle x1="-5.254" y1="-0.254" x2="-4.746" y2="0.254" layer="21"/>
+<rectangle x1="-3.254" y1="-0.254" x2="-2.746" y2="0.254" layer="21"/>
+<rectangle x1="-1.254" y1="-0.254" x2="-0.746" y2="0.254" layer="21"/>
+<rectangle x1="0.746" y1="-0.254" x2="1.254" y2="0.254" layer="21"/>
+<rectangle x1="2.746" y1="-0.254" x2="3.254" y2="0.254" layer="21"/>
+<rectangle x1="4.746" y1="-0.254" x2="5.254" y2="0.254" layer="21"/>
+<rectangle x1="6.746" y1="-0.254" x2="7.254" y2="0.254" layer="21"/>
+<pad name="1" x="-7" y="0" drill="0.8" diameter="1.4224"/>
+<pad name="2" x="-5" y="0" drill="0.8" diameter="1.4224"/>
+<pad name="3" x="-3" y="0" drill="0.8" diameter="1.4224"/>
+<pad name="4" x="-1" y="0" drill="0.8" diameter="1.4224"/>
+<pad name="5" x="1" y="0" drill="0.8" diameter="1.4224"/>
+<pad name="6" x="3" y="0" drill="0.8" diameter="1.4224"/>
+<pad name="7" x="5" y="0" drill="0.8" diameter="1.4224"/>
+<pad name="8" x="7" y="0" drill="0.8" diameter="1.4224"/>
 </package>
 </packages>
 <symbols>
-<symbol name="1X7_HEADER">
-<wire x1="-2.54" y1="10.16" x2="2.54" y2="10.16" width="0.254" layer="94"/>
-<wire x1="1.27" y1="7.62" x2="2.54" y2="7.62" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="10.16" x2="-2.54" y2="-10.16" width="0.254" layer="94"/>
+<symbol name="1X8_HEADER">
+<wire x1="-2.54" y1="12.7" x2="2.54" y2="12.7" width="0.254" layer="94"/>
+<wire x1="1.27" y1="10.16" x2="2.54" y2="10.16" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="12.7" x2="-2.54" y2="-10.16" width="0.254" layer="94"/>
 <wire x1="-2.54" y1="-10.16" x2="2.54" y2="-10.16" width="0.254" layer="94"/>
 <wire x1="2.54" y1="-10.16" x2="2.54" y2="-7.62" width="0.254" layer="94"/>
-<text x="0" y="7.62" size="1.016" layer="94" font="vector" rot="MR0" align="center">01</text>
-<text x="-2.54" y="10.795" size="1.27" layer="95" font="vector">&gt;NAME</text>
+<text x="0" y="10.16" size="1.016" layer="94" font="vector" rot="MR0" align="center">01</text>
+<text x="-2.54" y="13.335" size="1.27" layer="95" font="vector">&gt;NAME</text>
 <text x="-2.54" y="-12.065" size="1.27" layer="96" font="vector">&gt;VALUE</text>
-<pin name="1" x="2.54" y="7.62" visible="off" length="point" rot="R180"/>
+<pin name="1" x="2.54" y="10.16" visible="off" length="point" rot="R180"/>
 <wire x1="2.54" y1="-7.62" x2="2.54" y2="-5.08" width="0.254" layer="94"/>
 <wire x1="2.54" y1="-5.08" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
 <wire x1="2.54" y1="-2.54" x2="2.54" y2="0" width="0.254" layer="94"/>
@@ -13595,33 +13597,37 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <wire x1="2.54" y1="2.54" x2="2.54" y2="5.08" width="0.254" layer="94"/>
 <wire x1="2.54" y1="5.08" x2="2.54" y2="7.62" width="0.254" layer="94"/>
 <wire x1="2.54" y1="7.62" x2="2.54" y2="10.16" width="0.254" layer="94"/>
-<text x="0" y="5.08" size="1.016" layer="94" font="vector" rot="MR0" align="center">02</text>
-<pin name="2" x="2.54" y="5.08" visible="off" length="point" rot="R180"/>
-<text x="0" y="2.54" size="1.016" layer="94" font="vector" rot="MR0" align="center">03</text>
-<text x="0" y="0" size="1.016" layer="94" font="vector" rot="MR0" align="center">04</text>
-<pin name="3" x="2.54" y="2.54" visible="off" length="point" rot="R180"/>
-<pin name="4" x="2.54" y="0" visible="off" length="point" rot="R180"/>
+<wire x1="2.54" y1="10.16" x2="2.54" y2="12.7" width="0.254" layer="94"/>
+<text x="0" y="7.62" size="1.016" layer="94" font="vector" rot="MR0" align="center">02</text>
+<pin name="2" x="2.54" y="7.62" visible="off" length="point" rot="R180"/>
+<text x="0" y="5.08" size="1.016" layer="94" font="vector" rot="MR0" align="center">03</text>
+<text x="0" y="2.54" size="1.016" layer="94" font="vector" rot="MR0" align="center">04</text>
+<pin name="3" x="2.54" y="5.08" visible="off" length="point" rot="R180"/>
+<pin name="4" x="2.54" y="2.54" visible="off" length="point" rot="R180"/>
+<wire x1="1.27" y1="7.62" x2="2.54" y2="7.62" width="0.254" layer="94"/>
 <wire x1="1.27" y1="5.08" x2="2.54" y2="5.08" width="0.254" layer="94"/>
 <wire x1="1.27" y1="2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<text x="0" y="0" size="1.016" layer="94" font="vector" rot="MR0" align="center">05</text>
+<text x="0" y="-2.54" size="1.016" layer="94" font="vector" rot="MR0" align="center">06</text>
 <wire x1="1.27" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
-<text x="0" y="-2.54" size="1.016" layer="94" font="vector" rot="MR0" align="center">05</text>
-<text x="0" y="-5.08" size="1.016" layer="94" font="vector" rot="MR0" align="center">06</text>
 <wire x1="1.27" y1="-2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<pin name="5" x="2.54" y="0" visible="off" length="point" rot="R180"/>
+<pin name="6" x="2.54" y="-2.54" visible="off" length="point" rot="R180"/>
+<text x="0" y="-5.08" size="1.016" layer="94" font="vector" rot="MR0" align="center">07</text>
 <wire x1="1.27" y1="-5.08" x2="2.54" y2="-5.08" width="0.254" layer="94"/>
-<pin name="5" x="2.54" y="-2.54" visible="off" length="point" rot="R180"/>
-<pin name="6" x="2.54" y="-5.08" visible="off" length="point" rot="R180"/>
-<text x="0" y="-7.62" size="1.016" layer="94" font="vector" rot="MR0" align="center">07</text>
+<pin name="7" x="2.54" y="-5.08" visible="off" length="point" rot="R180"/>
+<text x="0" y="-7.62" size="1.016" layer="94" font="vector" rot="MR0" align="center">08</text>
 <wire x1="1.27" y1="-7.62" x2="2.54" y2="-7.62" width="0.254" layer="94"/>
-<pin name="7" x="2.54" y="-7.62" visible="off" length="point" rot="R180"/>
+<pin name="8" x="2.54" y="-7.62" visible="off" length="point" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="1X7">
+<deviceset name="1X8">
 <gates>
-<gate name="G$1" symbol="1X7_HEADER" x="0" y="0"/>
+<gate name="G$1" symbol="1X8_HEADER" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="1X7">
+<device name="" package="1X8">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
@@ -13630,6 +13636,7 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 <connect gate="G$1" pin="5" pad="5"/>
 <connect gate="G$1" pin="6" pad="6"/>
 <connect gate="G$1" pin="7" pad="7"/>
+<connect gate="G$1" pin="8" pad="8"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -13799,7 +13806,7 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <part name="GND29" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND30" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GPS-ANT" library="SparkFun-RF" deviceset="ANTENNA2" device="SMD3"/>
-<part name="FTDI" library="headers(2mm)" deviceset="1X7" device=""/>
+<part name="FTDI" library="headers(2mm)" deviceset="1X8" device=""/>
 <part name="GND5" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="IC1" library="bosch-bme280" deviceset="BME280" device=""/>
 <part name="GND6" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -13877,7 +13884,7 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <instance part="SUPPLY8" gate="G$1" x="25.4" y="58.42" rot="R90"/>
 <instance part="GND12" gate="1" x="22.86" y="15.24" rot="R270"/>
 <instance part="GND21" gate="1" x="22.86" y="12.7" rot="R270"/>
-<instance part="GND22" gate="1" x="208.28" y="60.96" rot="R90"/>
+<instance part="GND22" gate="1" x="208.28" y="43.18" rot="R90"/>
 <instance part="SUPPLY9" gate="G$1" x="205.74" y="58.42" rot="R270"/>
 <instance part="R5" gate="G$1" x="25.4" y="73.66" rot="R90"/>
 <instance part="SUPPLY10" gate="G$1" x="25.4" y="78.74"/>
@@ -13910,7 +13917,7 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <instance part="GND29" gate="1" x="7.62" y="129.54"/>
 <instance part="GND30" gate="1" x="53.34" y="127"/>
 <instance part="GPS-ANT" gate="G$1" x="165.1" y="165.1" rot="R90"/>
-<instance part="FTDI" gate="G$1" x="200.66" y="53.34"/>
+<instance part="FTDI" gate="G$1" x="200.66" y="50.8"/>
 <instance part="GND5" gate="1" x="38.1" y="167.64"/>
 <instance part="IC1" gate="G$1" x="121.92" y="81.28"/>
 <instance part="GND6" gate="1" x="137.16" y="73.66"/>
@@ -13990,13 +13997,6 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <pinref part="GND18" gate="1" pin="GND"/>
 <junction x="60.96" y="152.4"/>
 <wire x1="63.5" y1="152.4" x2="60.96" y2="152.4" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<wire x1="203.2" y1="60.96" x2="205.74" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="GND22" gate="1" pin="GND"/>
-<junction x="205.74" y="60.96"/>
-<pinref part="FTDI" gate="G$1" pin="1"/>
-<junction x="203.2" y="60.96"/>
 </segment>
 <segment>
 <pinref part="PTT" gate="G$1" pin="C"/>
@@ -14102,6 +14102,12 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <wire x1="38.1" y1="101.6" x2="27.94" y2="101.6" width="0.1524" layer="91"/>
 <junction x="27.94" y="101.6"/>
 <junction x="38.1" y="101.6"/>
+</segment>
+<segment>
+<pinref part="FTDI" gate="G$1" pin="8"/>
+<pinref part="GND22" gate="1" pin="GND"/>
+<wire x1="205.74" y1="43.18" x2="203.2" y2="43.18" width="0.1524" layer="91"/>
+<junction x="203.2" y="43.18"/>
 </segment>
 </net>
 <net name="D3" class="0">
@@ -14272,6 +14278,11 @@ The library has been designed by&lt;a href="https://www.facebook.com/groups/eagl
 <wire x1="99.06" y1="81.28" x2="96.52" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="1"/>
 <junction x="99.06" y="81.28"/>
+</segment>
+<segment>
+<pinref part="FTDI" gate="G$1" pin="1"/>
+<wire x1="203.2" y1="60.96" x2="205.74" y2="60.96" width="0.1524" layer="91"/>
+<junction x="203.2" y="60.96"/>
 </segment>
 </net>
 <net name="N$1" class="0">
