@@ -17132,6 +17132,65 @@ Source: AVX .. aphvc.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="inductors">
+<description>&lt;b&gt;Inductors and Filters&lt;/b&gt;&lt;p&gt;
+Based on the previous library ind-a.lbr&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="0402">
+<description>&lt;b&gt;EMIFIL (R) Chip Ferrite Bead for GHz Noise&lt;/b&gt;&lt;p&gt;
+Source: http://www.murata.com/ Ferrite Bead BLM15H.pdf</description>
+<wire x1="-0.245" y1="0.224" x2="0.245" y2="0.224" width="0.1524" layer="51"/>
+<wire x1="0.245" y1="-0.224" x2="-0.245" y2="-0.224" width="0.1524" layer="51"/>
+<wire x1="-1.473" y1="0.483" x2="1.473" y2="0.483" width="0.0508" layer="39"/>
+<wire x1="1.473" y1="0.483" x2="1.473" y2="-0.483" width="0.0508" layer="39"/>
+<wire x1="1.473" y1="-0.483" x2="-1.473" y2="-0.483" width="0.0508" layer="39"/>
+<wire x1="-1.473" y1="-0.483" x2="-1.473" y2="0.483" width="0.0508" layer="39"/>
+<smd name="1" x="-0.65" y="0" dx="0.7" dy="0.9" layer="1"/>
+<smd name="2" x="0.65" y="0" dx="0.7" dy="0.9" layer="1"/>
+<text x="-0.635" y="0.635" size="1.27" layer="25">&gt;NAME</text>
+<text x="-0.635" y="-1.905" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.554" y1="-0.3048" x2="-0.254" y2="0.2951" layer="51"/>
+<rectangle x1="0.2588" y1="-0.3048" x2="0.5588" y2="0.2951" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
+</package>
+</packages>
+<symbols>
+<symbol name="L">
+<text x="-3.81" y="1.3716" size="1.778" layer="95">&gt;NAME</text>
+<text x="-3.81" y="-2.921" size="1.778" layer="96">&gt;VALUE</text>
+<rectangle x1="-2.54" y1="-0.889" x2="2.54" y2="0.889" layer="94"/>
+<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="BLM15H" prefix="L">
+<description>&lt;b&gt;EMIFIL (R) Chip Ferrite Bead for GHz Noise&lt;/b&gt;&lt;p&gt;
+Source: http://www.murata.com/ Ferrite Bead BLM15H.pdf</description>
+<gates>
+<gate name="G$1" symbol="L" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="0402">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="B121SN1"/>
+<technology name="B221SN1"/>
+<technology name="D102SN1"/>
+<technology name="D182SN1"/>
+<technology name="D601SN1"/>
+<technology name="G102SN1"/>
+<technology name="G601SN1"/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -17213,8 +17272,9 @@ Source: AVX .. aphvc.pdf</description>
 <part name="SUPPLY15" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="SUPPLY16" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="C5" library="rcl" deviceset="C-US" device="C0402" value="22uf"/>
-<part name="C6" library="rcl" deviceset="C-US" device="C0402" value="22uf"/>
 <part name="U$3" library="headers(2mm)" deviceset="1X5" device=""/>
+<part name="R12" library="adafruit" deviceset="R-US_" device="R0402" value="4.7k"/>
+<part name="L1" library="inductors" deviceset="BLM15H" device="" technology="B121SN1"/>
 </parts>
 <sheets>
 <sheet>
@@ -17282,7 +17342,7 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="R3" gate="G$1" x="129.54" y="48.26" rot="R270"/>
 <instance part="R7" gate="G$1" x="137.16" y="48.26" rot="R270"/>
 <instance part="GND27" gate="1" x="30.48" y="119.38"/>
-<instance part="SUPPLY1" gate="G$1" x="66.04" y="137.16" rot="R270"/>
+<instance part="SUPPLY1" gate="G$1" x="63.5" y="137.16" rot="R270"/>
 <instance part="LT3426" gate="G$1" x="30.48" y="134.62"/>
 <instance part="D1" gate="G$1" x="33.02" y="147.32"/>
 <instance part="L2" gate="G$1" x="22.86" y="147.32" rot="R90"/>
@@ -17312,8 +17372,9 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="SUPPLY15" gate="G$1" x="231.14" y="66.04" rot="R180"/>
 <instance part="SUPPLY16" gate="G$1" x="17.78" y="63.5" rot="R90"/>
 <instance part="C5" gate="G$1" x="7.62" y="58.42" rot="R90"/>
-<instance part="C6" gate="G$1" x="15.24" y="73.66" rot="R90"/>
 <instance part="U$3" gate="G$1" x="200.66" y="81.28"/>
+<instance part="R12" gate="G$1" x="15.24" y="73.66"/>
+<instance part="L1" gate="G$1" x="58.42" y="137.16"/>
 </instances>
 <busses>
 </busses>
@@ -17488,12 +17549,6 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="5.08" y1="58.42" x2="2.54" y2="58.42" width="0.1524" layer="91"/>
 <junction x="5.08" y="58.42"/>
 </segment>
-<segment>
-<pinref part="C6" gate="G$1" pin="1"/>
-<wire x1="12.7" y1="73.66" x2="7.62" y2="73.66" width="0.1524" layer="91"/>
-<junction x="12.7" y="73.66"/>
-<label x="5.08" y="73.66" size="1.778" layer="95"/>
-</segment>
 </net>
 <net name="D3" class="0">
 <segment>
@@ -17550,23 +17605,6 @@ Source: AVX .. aphvc.pdf</description>
 <junction x="17.78" y="96.52"/>
 </segment>
 <segment>
-<pinref part="LT3426" gate="G$1" pin="VOUT"/>
-<pinref part="SUPPLY1" gate="G$1" pin="VCC"/>
-<pinref part="D1" gate="G$1" pin="C"/>
-<wire x1="66.04" y1="137.16" x2="53.34" y2="137.16" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="137.16" x2="48.26" y2="137.16" width="0.1524" layer="91"/>
-<wire x1="48.26" y1="137.16" x2="45.72" y2="137.16" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="147.32" x2="45.72" y2="147.32" width="0.1524" layer="91"/>
-<wire x1="45.72" y1="147.32" x2="45.72" y2="137.16" width="0.1524" layer="91"/>
-<pinref part="R9" gate="G$1" pin="2"/>
-<junction x="48.26" y="137.16"/>
-<junction x="45.72" y="137.16"/>
-<junction x="35.56" y="147.32"/>
-<pinref part="C7" gate="G$1" pin="1"/>
-<junction x="53.34" y="137.16"/>
-<junction x="66.04" y="137.16"/>
-</segment>
-<segment>
 <pinref part="U$4" gate="G$1" pin="VCC@14"/>
 <pinref part="SUPPLY6" gate="G$1" pin="VCC"/>
 <junction x="20.32" y="81.28"/>
@@ -17601,6 +17639,11 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="U$4" gate="G$1" pin="UVCC"/>
 <wire x1="20.32" y1="63.5" x2="20.32" y2="60.96" width="0.1524" layer="91"/>
 <junction x="20.32" y="60.96"/>
+</segment>
+<segment>
+<pinref part="L1" gate="G$1" pin="2"/>
+<pinref part="SUPPLY1" gate="G$1" pin="VCC"/>
+<junction x="63.5" y="137.16"/>
 </segment>
 </net>
 <net name="3V" class="0">
@@ -17861,6 +17904,11 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="J1" gate="G$1" pin="2"/>
 <junction x="40.64" y="172.72"/>
 </segment>
+<segment>
+<pinref part="R12" gate="G$1" pin="1"/>
+<wire x1="10.16" y1="73.66" x2="7.62" y2="73.66" width="0.1524" layer="91"/>
+<junction x="10.16" y="73.66"/>
+</segment>
 </net>
 <net name="N$9" class="0">
 <segment>
@@ -18018,14 +18066,6 @@ Source: AVX .. aphvc.pdf</description>
 <junction x="20.32" y="58.42"/>
 </segment>
 </net>
-<net name="N$17" class="0">
-<segment>
-<pinref part="U$4" gate="G$1" pin="AREF"/>
-<pinref part="C6" gate="G$1" pin="2"/>
-<junction x="20.32" y="73.66"/>
-<junction x="20.32" y="73.66"/>
-</segment>
-</net>
 <net name="D8" class="0">
 <segment>
 <pinref part="U$4" gate="G$1" pin="PB4(ADC11)"/>
@@ -18070,6 +18110,30 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="203.2" y1="86.36" x2="205.74" y2="86.36" width="0.1524" layer="91"/>
 <junction x="203.2" y="86.36"/>
 <label x="205.74" y="86.36" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$17" class="0">
+<segment>
+<pinref part="U$4" gate="G$1" pin="AREF"/>
+<pinref part="R12" gate="G$1" pin="2"/>
+<junction x="20.32" y="73.66"/>
+</segment>
+</net>
+<net name="N$19" class="0">
+<segment>
+<pinref part="LT3426" gate="G$1" pin="VOUT"/>
+<pinref part="D1" gate="G$1" pin="C"/>
+<wire x1="53.34" y1="137.16" x2="48.26" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="137.16" x2="45.72" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="147.32" x2="45.72" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="147.32" x2="45.72" y2="137.16" width="0.1524" layer="91"/>
+<pinref part="R9" gate="G$1" pin="2"/>
+<junction x="48.26" y="137.16"/>
+<junction x="45.72" y="137.16"/>
+<junction x="35.56" y="147.32"/>
+<pinref part="C7" gate="G$1" pin="1"/>
+<pinref part="L1" gate="G$1" pin="1"/>
+<junction x="53.34" y="137.16"/>
 </segment>
 </net>
 </nets>
