@@ -26,7 +26,7 @@
 
 	void sensors_setup() {
 		bme280.settings.commInterface = I2C_MODE;
-		bme280.settings.I2CAddress = 0x77;
+		bme280.settings.I2CAddress = 0x76;
 		bme280.settings.runMode = 3; //Normal mode
 		bme280.settings.tStandby = 0;
 		bme280.settings.filter = 0;
