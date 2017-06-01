@@ -27,6 +27,7 @@
 #include "config.h"
 #include "pin.h"
 #include "power.h"
+#include <avr/wdt.h>
 
 void disable_bod_and_sleep()
 {
@@ -68,6 +69,8 @@ void power_save()
   power_spi_disable();
   power_twi_disable();
 
+  wdt_reset();
+  
   pin_write(LED_PIN, LOW);
   sleep_mode();    // Go to sleep
   pin_write(LED_PIN, HIGH);

@@ -43,6 +43,7 @@
 #include "power.h"
 #include "sensors_avr.h"
 #include "sensors_pic32.h"
+#include <avr/wdt.h>
 
 // Arduino/AVR libs
 #if (ARDUINO + 1) >= 100
@@ -67,7 +68,7 @@ void setup()
 {
   pinMode(LED_PIN, OUTPUT);
   pin_write(LED_PIN, LOW);
-
+  watchdogSetup();
 // deactivate internal pull-ups for twi
     // as per note from atmega8 manual pg167
     cbi(PORTC, 4);
@@ -132,12 +133,15 @@ void get_pos()
 void loop()
 {
   // Time for another APRS frame
+  wdt_reset();
   if ((int32_t) (millis() - next_aprs) >= 0) {
     get_pos();
     aprs_send();
+    wdt_reset();
     next_aprs += APRS_PERIOD * 1000L;
     while (afsk_flush()) {
       power_save();
+      wdt_reset();
     }
 
 #ifdef DEBUG_MODEM
@@ -147,4 +151,28 @@ void loop()
   }
 
   power_save(); // Incoming GPS data or interrupts will wake us up
+}
+
+void watchdogSetup(void)
+{
+ cli();
+ wdt_reset();
+/*
+ WDTCSR configuration:
+ WDIE = 1: Interrupt Enable
+ WDE = 1 :Reset Enable
+ See table for time-out variations:
+ WDP3 = 0 :For 1000ms Time-out
+ WDP2 = 1 :For 1000ms Time-out
+ WDP1 = 1 :For 1000ms Time-out
+ WDP0 = 0 :For 1000ms Time-out
+*/
+// Enter Watchdog Configuration mode:
+WDTCSR |= (1<<WDCE) | (1<<WDE);
+// Set Watchdog settings:
+ WDTCSR = (0<<WDIE) | (1<<WDE) |
+(1<<WDP3) | (0<<WDP2) | (0<<WDP1) |
+(1<<WDP0);
+Serial.println("WDT reset");
+sei();
 }
