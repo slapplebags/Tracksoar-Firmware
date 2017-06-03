@@ -18,6 +18,8 @@
 #ifndef __RADIO_H__
 #define __RADIO_H__
 
+#warning this will murder your things
+
 class Radio {
   public:
     virtual void setup() = 0;
