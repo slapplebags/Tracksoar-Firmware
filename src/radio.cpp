@@ -17,3 +17,5 @@
 
 
 #include "radio.h"
+
+ #error "I caused an error"
