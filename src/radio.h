@@ -18,7 +18,7 @@
 #ifndef __RADIO_H__
 #define __RADIO_H__
 
-#warning this will murder your things
+#error this will murder your things
 
 class Radio {
   public:
