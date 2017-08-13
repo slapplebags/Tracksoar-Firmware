@@ -32,7 +32,7 @@
 // #define TRACKSOAR_10
 // #define TRACKSOAR_11
 #define TRACKSOAR_12
- 
+
 // --------------------------------------------------------------------------
 // APRS config (aprs.c)
 // --------------------------------------------------------------------------
@@ -44,7 +44,7 @@
 // - Cars:       9
 // - Home:       0
 // - IGate:      5
-#define S_CALLSIGN      "KI6VBK"
+#define S_CALLSIGN      "KG7OYG"
 #define S_CALLSIGN_ID   11
 
 // Destination callsign: APRS (with SSID=0) is usually okay.
@@ -60,15 +60,15 @@
 
 // APRS comment: this goes in the comment portion of the APRS message. You
 // might want to keep this short. The longer the packet, the more vulnerable
-// it is to noise. 
-#ifdef TRACKSOAR_10 
+// it is to noise.
+#ifdef TRACKSOAR_10
 	#define APRS_COMMENT    "Tracksoar v1.0 Beta"
 #endif
 #ifdef TRACKSOAR_11
 	#define APRS_COMMENT    "Tracksoar v1.1"
 #endif
 #ifdef TRACKSOAR_12
-	#define APRS_COMMENT    "Tracksoar v1.2"
+	#define APRS_COMMENT    "Nyanpollo-2"
 #endif
 
 
@@ -91,8 +91,8 @@
 //
 // When launching multiple balloons, use the same APRS_PERIOD in all balloons
 // and set APRS_SLOT so that the packets are spaced equally in time.
-// Eg. for two balloons and APRS_PERIOD = 60, set APRS_SLOT to 0 and 30, 
-// respectively. The first balloon will transmit at 00:00:00, 00:01:00, 
+// Eg. for two balloons and APRS_PERIOD = 60, set APRS_SLOT to 0 and 30,
+// respectively. The first balloon will transmit at 00:00:00, 00:01:00,
 // 00:02:00, etc. and the second balloon will transmit at 00:00:30, 00:01:30,
 // 00:02:30, etc.
 #define APRS_SLOT     -1     // seconds. -1 disables slotted transmissions
@@ -113,7 +113,7 @@
 // in case you ever want to interface with an SPI device.
 #define AUDIO_PIN       3
 
-// Pre-emphasize the 2200 tone by 6 dB. This is actually done by 
+// Pre-emphasize the 2200 tone by 6 dB. This is actually done by
 // de-emphasizing the 1200 tone by 6 dB and it might greatly improve
 // reception at the expense of poorer FM deviation, which translates
 // into an overall lower amplitude of the received signal. 1 = yes, 0 = no.
@@ -136,7 +136,7 @@
 //
 // #define USE_AREF
 //
-// BEWARE! If you hook up an external voltage to the AREF pin and 
+// BEWARE! If you hook up an external voltage to the AREF pin and
 // accidentally set the ADC to any of the internal references, YOU WILL
 // FRY YOUR AVR.
 //
@@ -185,7 +185,7 @@
 // that maximizes the volume according to the buzzer's datasheet. Not all
 // the frequencies are valid, check out the buzzer_*.cpp code. On Arduino,
 // it must be between L and 65535, where L = F_CPU / 65535 and F_CPU is the
-// clock rate in hertzs. For 16 MHz Arduinos, this gives a lower limit of 
+// clock rate in hertzs. For 16 MHz Arduinos, this gives a lower limit of
 // 245 Hz.
 #define BUZZER_FREQ             895     // Hz
 
@@ -218,9 +218,9 @@
 //
 // Particularly the DEBUG_AFSK will print every PWM sample out the serial
 // port, causing extreme delays in the actual AFSK transmission.
-// 
-// 1. To properly receive debug information, only connect the Arduino RX pin 
-//    to the GPS TX pin, and leave the Arduino TX pin disconnected. 
+//
+// 1. To properly receive debug information, only connect the Arduino RX pin
+//    to the GPS TX pin, and leave the Arduino TX pin disconnected.
 //
 // 2. On the serial monitor, set the baudrate to GPS_BAUDRATE (above),
 //    usually 9600.
@@ -237,4 +237,3 @@
 
 
 #endif
-
