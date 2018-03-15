@@ -20,11 +20,12 @@
 
 #include "radio.h"
 
-class RadioHx1 : public Radio {
-  public:
-    virtual void setup();
-    virtual void ptt_on();
-    virtual void ptt_off();
+class RadioHx1 : public Radio
+{
+	public:
+		virtual void setup();
+		virtual void ptt_on();
+		virtual void ptt_off();
 };
 
 #endif

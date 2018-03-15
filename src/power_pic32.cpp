@@ -23,9 +23,9 @@
 
 void power_save()
 {
-  pin_write(LED_PIN, LOW);
-  PowerSaveIdle();
-  pin_write(LED_PIN, HIGH);
+	pin_write(LED_PIN, LOW);
+	PowerSaveIdle();
+	pin_write(LED_PIN, HIGH);
 }
 
 #endif // #ifdef PIC32MX

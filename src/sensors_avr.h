@@ -17,24 +17,24 @@
 
 #ifdef AVR
 #ifndef __SENSORS_AVR_H__
-#define __SENSORS_AVR_H__
+	#define __SENSORS_AVR_H__
 
-#include "config.h"
-#include <Wire.h>
+	#include "config.h"
+	#include <Wire.h>
 
-#ifdef TRACKSOAR_12
-	#include "./SparkFunBME280.h"
- 	#pragma message("Version 1.2")
-#else
-	#include "Adafruit_BMP085.h"
-	#include "SHT2x.h"
-  	#pragma message("Version < 1.2")
-#endif
+	#ifdef TRACKSOAR_12
+		#include "./SparkFunBME280.h"
+		#pragma message("Version 1.2")
+	#else
+		#include "Adafruit_BMP085.h"
+		#include "SHT2x.h"
+		#pragma message("Version < 1.2")
+	#endif
 
-void sensors_setup();
-float sensors_temperature();
-int32_t sensors_pressure();
-float sensors_humidity();
+	void sensors_setup();
+	float sensors_temperature();
+	int32_t sensors_pressure();
+	float sensors_humidity();
 
 #endif // ifndef __SENSORS_AVR_H__
 #endif // ifdef AVR

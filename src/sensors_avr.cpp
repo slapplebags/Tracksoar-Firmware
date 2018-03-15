@@ -22,58 +22,70 @@
 #include <Arduino.h>
 
 #ifdef TRACKSOAR_12
- 	BME280 bme280;
+	BME280 bme280;
 
-	void sensors_setup() {
+	void sensors_setup()
+	{
 		bme280.settings.commInterface = I2C_MODE;
 		bme280.settings.I2CAddress = 0x76;
 		bme280.settings.runMode = 3; //Normal mode
 		bme280.settings.tStandby = 0;
 		bme280.settings.filter = 0;
 		bme280.settings.tempOverSample = 1;
-	    bme280.settings.pressOverSample = 1;
+		bme280.settings.pressOverSample = 1;
 		bme280.settings.humidOverSample = 1;
 
-	  if (!bme280.begin()) {
-		Serial.println("Could not find a valid BMP085 sensor, check wiring!");
-		while (1) {}
-	  }
+		if (!bme280.begin())
+		{
+			Serial.println("Could not find a valid BMP085 sensor, check wiring!");
+
+			while (1) {}
+		}
 	}
 
-	float sensors_temperature() {
+	float sensors_temperature()
+	{
 		return bme280.readTempC();
 	}
 
-	int32_t sensors_pressure() {
+	int32_t sensors_pressure()
+	{
 		return (int32_t)bme280.readFloatPressure();
 	}
 
-	float sensors_humidity() {
+	float sensors_humidity()
+	{
 		return bme280.readFloatHumidity();
 	}
 
-#else
+	#else
 	Adafruit_BMP085 bmp805;
 
-	void sensors_setup() {
-	  if (!bmp805.begin()) {
-		Serial.println("Could not find a valid BMP085 sensor, check wiring!");
-		while (1) {}
-	  }
+	void sensors_setup()
+	{
+		if (!bmp805.begin())
+		{
+			Serial.println("Could not find a valid BMP085 sensor, check wiring!");
+
+			while (1) {}
+		}
 	}
 
-	float sensors_temperature() {
+	float sensors_temperature()
+	{
 		return bmp805.readTemperature();
 	}
 
-	int32_t sensors_pressure() {
+	int32_t sensors_pressure()
+	{
 		return bmp805.readPressure();
 	}
 
-	float sensors_humidity() {
+	float sensors_humidity()
+	{
 		return SHT2x.GetHumidity();
 	}
-#endif
+	#endif
 
 
 #endif // ifdef AVR

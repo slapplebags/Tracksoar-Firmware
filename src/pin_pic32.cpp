@@ -25,30 +25,31 @@
 // timer 2.
 void pin_write(uint8_t pin, uint8_t val)
 {
-  volatile p32_ioport * iop;
-  uint8_t         port;
-  uint16_t        bit;
-  //* Get the port number for this pin.
-  if ((pin >= NUM_DIGITAL_PINS) || ((port = digitalPinToPort(pin)) == NOT_A_PIN))
-  {
-    return;
-  }
+	volatile p32_ioport * iop;
+	uint8_t         port;
+	uint16_t        bit;
 
-  //* Obtain pointer to the registers for this io port.
-  iop = (p32_ioport *)portRegisters(port);
+	//* Get the port number for this pin.
+	if ((pin >= NUM_DIGITAL_PINS) || ((port = digitalPinToPort(pin)) == NOT_A_PIN))
+	{
+		return;
+	}
 
-  //* Obtain bit mask for the specific bit for this pin.
-  bit = digitalPinToBitMask(pin);
+	//* Obtain pointer to the registers for this io port.
+	iop = (p32_ioport *)portRegisters(port);
 
-  //* Set the pin state
-  if (val == LOW)
-  {
-    iop->lat.clr = bit;
-  }
-  else
-  {
-    iop->lat.set = bit;
-  }
+	//* Obtain bit mask for the specific bit for this pin.
+	bit = digitalPinToBitMask(pin);
+
+	//* Set the pin state
+	if (val == LOW)
+	{
+		iop->lat.clr = bit;
+	}
+	else
+	{
+		iop->lat.set = bit;
+	}
 }
 
 

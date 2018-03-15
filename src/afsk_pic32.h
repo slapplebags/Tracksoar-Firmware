@@ -39,28 +39,28 @@ extern const uint8_t afsk_sine_table[];
 // Inline functions (this saves precious cycles in the ISR)
 inline uint8_t afsk_read_sample(int phase)
 {
-  return afsk_sine_table[phase];
+	return afsk_sine_table[phase];
 }
 
 inline void afsk_output_sample(uint8_t s)
 {
-  SetDCOC1PWM(s);
+	SetDCOC1PWM(s);
 }
 
 inline void afsk_clear_interrupt_flag()
 {
-  mT2ClearIntFlag();
+	mT2ClearIntFlag();
 }
 
 #ifdef DEBUG_MODEM
 inline uint16_t afsk_timer_counter()
 {
-  return (uint16_t) TMR2;
+	return (uint16_t) TMR2;
 }
 
 inline int afsk_isr_overrun()
 {
-  return (IFS0bits.T2IF);
+	return (IFS0bits.T2IF);
 }
 #endif
 
@@ -75,7 +75,7 @@ void afsk_timer_setup();
 void afsk_timer_start();
 void afsk_timer_stop();
 #ifdef DEBUG_MODEM
-void afsk_debug();
+	void afsk_debug();
 #endif
 
 #endif

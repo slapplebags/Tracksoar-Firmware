@@ -21,9 +21,9 @@
 #include <stdint.h>
 
 #if defined(__AVR_ATmega32U4__)
-#define GPS_SERIAL Serial1
+	#define GPS_SERIAL Serial1
 #else
-#define GPS_SERIAL Serial
+	#define GPS_SERIAL Serial
 #endif
 
 extern char gps_time[7];       // HHMMSS

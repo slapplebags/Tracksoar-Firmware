@@ -39,39 +39,41 @@ extern const unsigned char afsk_sine_table[];
 
 // Inline functions (this saves precious cycles in the ISR)
 #if AUDIO_PIN == 3
-#  define OCR2 OCR2B
+	#define OCR2 OCR2B
 #endif
 #if AUDIO_PIN == 11
-#  define OCR2 OCR2A
+	#define OCR2 OCR2A
 #endif
 
 inline uint8_t afsk_read_sample(int phase)
 {
-  return pgm_read_byte_near(afsk_sine_table + phase);
+	return pgm_read_byte_near(afsk_sine_table + phase);
 }
 
 inline void afsk_output_sample(uint8_t s)
 {
-  OCR2 = s;
+	OCR2 = s;
 }
 
 inline void afsk_clear_interrupt_flag()
 {
-  // atmegas don't need this as opposed to pic32s.
+	// atmegas don't need this as opposed to pic32s.
 }
 
 #ifdef DEBUG_MODEM
 inline uint16_t afsk_timer_counter()
 {
-  uint16_t t = TCNT2;
-  if ((TIFR2 & _BV(TOV2)) && t < 128)
-    t += 256;
-  return t;
+	uint16_t t = TCNT2;
+
+	if ((TIFR2 & _BV(TOV2)) && t < 128)
+	{ t += 256; }
+
+	return t;
 }
 
 inline int afsk_isr_overrun()
 {
-  return (TIFR2 & _BV(TOV2));
+	return (TIFR2 & _BV(TOV2));
 }
 #endif
 
@@ -86,7 +88,7 @@ void afsk_timer_setup();
 void afsk_timer_start();
 void afsk_timer_stop();
 #ifdef DEBUG_MODEM
-void afsk_debug();
+	void afsk_debug();
 #endif
 
 #endif

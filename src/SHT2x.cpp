@@ -3,14 +3,14 @@
 
   Supported Sensor modules:
     SHT21-Breakout Module - http://www.moderndevice.com/products/sht21-humidity-sensor
-	SHT2x-Breakout Module - http://www.misenso.com/products/001
-	
+    SHT2x-Breakout Module - http://www.misenso.com/products/001
+
   Created by Christopher Ladden at Modern Device on December 2009.
   Modified by Paul Badger March 2010
-  
+
   Modified by www.misenso.com on October 2011:
-	- code optimisation
-	- compatibility with Arduino 1.0
+    - code optimisation
+    - compatibility with Arduino 1.0
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -67,24 +67,26 @@ float SHT2xClass::GetTemperature(void)
 
 uint16_t SHT2xClass::readSensor(uint8_t command)
 {
-    uint16_t result;
+	uint16_t result;
 
-    Wire.beginTransmission(eSHT2xAddress);	//begin
-    Wire.write(command);					//send the pointer location
-    delay(100);
-    Wire.endTransmission();               	//end
+	Wire.beginTransmission(eSHT2xAddress);  //begin
+	Wire.write(command);                    //send the pointer location
+	delay(100);
+	Wire.endTransmission();                 //end
 
-    Wire.requestFrom(eSHT2xAddress, 3);
-    unsigned long starttime = millis();
-    while((Wire.available() < 3) && ((millis() - starttime) > 1000)) {
-      ; //wait
-    }
+	Wire.requestFrom(eSHT2xAddress, 3);
+	unsigned long starttime = millis();
 
-    //Store the result
-    result = ((Wire.read()) << 8);
-    result += Wire.read();
+	while ((Wire.available() < 3) && ((millis() - starttime) > 1000))
+	{
+		; //wait
+	}
+
+	//Store the result
+	result = ((Wire.read()) << 8);
+	result += Wire.read();
 	result &= ~0x0003;   // clear two low bits (status bits)
-    return result;
+	return result;
 }
 
 SHT2xClass SHT2x;

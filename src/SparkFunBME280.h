@@ -14,7 +14,7 @@ Arduino IDE 1.6.4
 Teensy loader 1.23
 
 This code is released under the [MIT License](http://opensource.org/licenses/MIT).
-Please review the LICENSE.md file included with this example. If you have any questions 
+Please review the LICENSE.md file included with this example. If you have any questions
 or concerns with licensing, please contact techsupport@sparkfun.com.
 Distributed as-is; no warranty is given.
 ******************************************************************************/
@@ -90,19 +90,19 @@ Distributed as-is; no warranty is given.
 //
 struct SensorSettings
 {
-  public:
-	
-  //Main Interface and mode settings
-    uint8_t commInterface;
-    uint8_t I2CAddress;
-    uint8_t chipSelectPin;
-	
-	uint8_t runMode;
-	uint8_t tStandby;
-	uint8_t filter;
-	uint8_t tempOverSample;
-	uint8_t pressOverSample;
-	uint8_t humidOverSample;
+	public:
+
+		//Main Interface and mode settings
+		uint8_t commInterface;
+		uint8_t I2CAddress;
+		uint8_t chipSelectPin;
+
+		uint8_t runMode;
+		uint8_t tStandby;
+		uint8_t filter;
+		uint8_t tempOverSample;
+		uint8_t pressOverSample;
+		uint8_t humidOverSample;
 
 };
 
@@ -110,76 +110,76 @@ struct SensorSettings
 //by the driver as measurements are being taking
 struct SensorCalibration
 {
-  public:
-	uint16_t dig_T1;
-	int16_t dig_T2;
-	int16_t dig_T3;
-	
-	uint16_t dig_P1;
-	int16_t dig_P2;
-	int16_t dig_P3;
-	int16_t dig_P4;
-	int16_t dig_P5;
-	int16_t dig_P6;
-	int16_t dig_P7;
-	int16_t dig_P8;
-	int16_t dig_P9;
-	
-	uint8_t dig_H1;
-	int16_t dig_H2;
-	uint8_t dig_H3;
-	int16_t dig_H4;
-	int16_t dig_H5;
-	uint8_t dig_H6;
-	
+	public:
+		uint16_t dig_T1;
+		int16_t dig_T2;
+		int16_t dig_T3;
+
+		uint16_t dig_P1;
+		int16_t dig_P2;
+		int16_t dig_P3;
+		int16_t dig_P4;
+		int16_t dig_P5;
+		int16_t dig_P6;
+		int16_t dig_P7;
+		int16_t dig_P8;
+		int16_t dig_P9;
+
+		uint8_t dig_H1;
+		int16_t dig_H2;
+		uint8_t dig_H3;
+		int16_t dig_H4;
+		int16_t dig_H5;
+		uint8_t dig_H6;
+
 };
 
 //This is the man operational class of the driver.
 
 class BME280
 {
-  public:
-    //settings
-    SensorSettings settings;
-	SensorCalibration calibration;
-	int32_t t_fine;
-	
-	//Constructor generates default SensorSettings.
-	//(over-ride after construction if desired)
-    BME280( void );
-    //~BME280() = default;
-	
-	//Call to apply SensorSettings.
-	//This also gets the SensorCalibration constants
-    uint8_t begin( void );
+	public:
+		//settings
+		SensorSettings settings;
+		SensorCalibration calibration;
+		int32_t t_fine;
 
-	//Software reset routine
-	void reset( void );
-	
-    //Returns the values as floats.
-    float readFloatPressure( void );
-	float readFloatAltitudeMeters( void );
-	float readFloatAltitudeFeet( void );
-	
-	float readFloatHumidity( void );
+		//Constructor generates default SensorSettings.
+		//(over-ride after construction if desired)
+		BME280( void );
+		//~BME280() = default;
 
-	//Temperature related methods
-    float readTempC( void );
-    float readTempF( void );
+		//Call to apply SensorSettings.
+		//This also gets the SensorCalibration constants
+		uint8_t begin( void );
 
-    //The following utilities read and write
+		//Software reset routine
+		void reset( void );
 
-	//ReadRegisterRegion takes a uint8 array address as input and reads
-	//a chunk of memory into that array.
-    void readRegisterRegion(uint8_t*, uint8_t, uint8_t );
-	//readRegister reads one register
-    uint8_t readRegister(uint8_t);
-    //Reads two regs, LSByte then MSByte order, and concatenates them
-	//Used for two-byte reads
-	int16_t readRegisterInt16( uint8_t offset );
-	//Writes a byte;
-    void writeRegister(uint8_t, uint8_t);
-    
+		//Returns the values as floats.
+		float readFloatPressure( void );
+		float readFloatAltitudeMeters( void );
+		float readFloatAltitudeFeet( void );
+
+		float readFloatHumidity( void );
+
+		//Temperature related methods
+		float readTempC( void );
+		float readTempF( void );
+
+		//The following utilities read and write
+
+		//ReadRegisterRegion takes a uint8 array address as input and reads
+		//a chunk of memory into that array.
+		void readRegisterRegion(uint8_t*, uint8_t, uint8_t );
+		//readRegister reads one register
+		uint8_t readRegister(uint8_t);
+		//Reads two regs, LSByte then MSByte order, and concatenates them
+		//Used for two-byte reads
+		int16_t readRegisterInt16( uint8_t offset );
+		//Writes a byte;
+		void writeRegister(uint8_t, uint8_t);
+
 };
 
 
