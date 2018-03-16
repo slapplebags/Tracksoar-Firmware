@@ -29,30 +29,30 @@
 #include "power.h"
 #include <avr/wdt.h>
 
-void disable_bod_and_sleep()
-{
-	/* This will turn off brown-out detection while
-	 * sleeping. Unfortunately this won't work in IDLE mode.
-	 * Relevant info about BOD disabling: datasheet p.44
-	 *
-	 * Procedure to disable the BOD:
-	 *
-	 * 1. BODSE and BODS must be set to 1
-	 * 2. Turn BODSE to 0
-	 * 3. BODS will automatically turn 0 after 4 cycles
-	 *
-	 * The catch is that we *must* go to sleep between 2
-	 * and 3, ie. just before BODS turns 0.
-	 */
-	unsigned char mcucr;
+// void disable_bod_and_sleep()
+// {
+// 	/* This will turn off brown-out detection while
+// 	 * sleeping. Unfortunately this won't work in IDLE mode.
+// 	 * Relevant info about BOD disabling: datasheet p.44
+// 	 *
+// 	 * Procedure to disable the BOD:
+// 	 *
+// 	 * 1. BODSE and BODS must be set to 1
+// 	 * 2. Turn BODSE to 0
+// 	 * 3. BODS will automatically turn 0 after 4 cycles
+// 	 *
+// 	 * The catch is that we *must* go to sleep between 2
+// 	 * and 3, ie. just before BODS turns 0.
+// 	 */
+// 	unsigned char mcucr;
 
-	cli();
-	mcucr = MCUCR | (_BV(BODS) | _BV(BODSE));
-	MCUCR = mcucr;
-	MCUCR = mcucr & (~_BV(BODSE));
-	sei();
-	sleep_mode();    // Go to sleep
-}
+// 	cli();
+// 	mcucr = MCUCR | (_BV(BODS) | _BV(BODSE));
+// 	MCUCR = mcucr;
+// 	MCUCR = mcucr & (~_BV(BODSE));
+// 	sei();
+// 	sleep_mode();    // Go to sleep
+// }
 
 void power_save()
 {

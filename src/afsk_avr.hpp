@@ -17,6 +17,20 @@
 #ifndef __AFSK_AVR_H__
 #define __AFSK_AVR_H__
 
+
+/*
+
+328P Variant (radio pin -> mcu pin):
+TXD - > PD3 (OC2B)
+EN  - > PD4
+
+32u4 Variant (radio pin -> mcu pin):
+TXD - > PB6 (OC4B)
+EN  - > PD4
+
+
+*/
+
 #if defined(AVR)
 	#define __PROG_TYPES_COMPAT__ 1
 
@@ -52,13 +66,6 @@
 			#define AFSK_ISR ISR(TIMER2_OVF_vect)
 
 
-			// Inline functions (this saves precious cycles in the ISR)
-			#if AUDIO_PIN == 3
-				#define OCR2 OCR2B
-			#endif
-			#if AUDIO_PIN == 11
-				#define OCR2 OCR2A
-			#endif
 
 			inline uint8_t afsk_read_sample(int phase)
 			{
@@ -67,7 +74,7 @@
 
 			inline void afsk_output_sample(uint8_t s)
 			{
-				OCR2 = s;
+				OCR2B = s;
 			}
 
 			inline void afsk_clear_interrupt_flag()
@@ -96,18 +103,9 @@
 	#endif  // __AVR_ATmega328P__
 
 	#if defined(__AVR_ATmega32U4__)
-		// in gcc with Arduino 1.6 prog_uchar is deprecated. Allow it:
 
-			#define AFSK_ISR ISR(TIMER2_OVF_vect)
+			#define AFSK_ISR ISR(TIMER4_OVF_vect)
 
-
-			// Inline functions (this saves precious cycles in the ISR)
-			#if AUDIO_PIN == 3
-				#define OCR2 OCR2B
-			#endif
-			#if AUDIO_PIN == 11
-				#define OCR2 OCR2A
-			#endif
 
 			inline uint8_t afsk_read_sample(int phase)
 			{
@@ -116,7 +114,7 @@
 
 			inline void afsk_output_sample(uint8_t s)
 			{
-				OCR2 = s;
+				OCR4B = s;
 			}
 
 			inline void afsk_clear_interrupt_flag()
@@ -127,9 +125,9 @@
 			#ifdef DEBUG_MODEM
 				inline uint16_t afsk_timer_counter()
 				{
-					uint16_t t = TCNT2;
+					uint16_t t = TCNT4;
 
-					if ((TIFR2 & _BV(TOV2)) && t < 128)
+					if ((TIFR4 & _BV(TOV4)) && t < 128)
 					{ t += 256; }
 
 					return t;
@@ -137,7 +135,7 @@
 
 				inline int afsk_isr_overrun()
 				{
-					return (TIFR2 & _BV(TOV2));
+					return (TIFR4 & _BV(TOV4));
 				}
 			#endif
 

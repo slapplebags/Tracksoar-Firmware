@@ -73,7 +73,7 @@ void setup()
 
 	Serial.begin(GPS_BAUDRATE);
 	#ifdef DEBUG_RESET
-	Serial.println("RESET");
+		Serial.println("RESET");
 	#endif
 
 	buzzer_setup();
@@ -82,12 +82,12 @@ void setup()
 	sensors_setup();
 
 	#ifdef DEBUG_SENS
-	Serial.print("Ti=");
-	Serial.print(sensors_int_lm60());
-	Serial.print(", Te=");
-	Serial.print(sensors_ext_lm60());
-	Serial.print(", Vin=");
-	Serial.println(sensors_vin());
+		Serial.print("Ti=");
+		Serial.print(sensors_int_lm60());
+		Serial.print(", Te=");
+		Serial.print(sensors_ext_lm60());
+		Serial.print(", Vin=");
+		Serial.println(sensors_vin());
 	#endif
 
 	// Do not start until we get a valid time reference
