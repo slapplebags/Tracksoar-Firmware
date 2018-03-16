@@ -33,15 +33,13 @@
 
 // Trackuino custom libs
 #include "config.h"
-#include "afsk_avr328.h"
-#include "afsk_avr32u4.h"
+#include "afsk_avr.h"
 #include "aprs.h"
 #include "buzzer.h"
 #include "gps.h"
 #include "pin.h"
 #include "power.h"
 #include "sensors_avr.h"
-#include "sensors_pic32.h"
 #include <avr/wdt.h>
 
 // Arduino/AVR libs

@@ -24,7 +24,7 @@
 
 	#ifdef TRACKSOAR_12
 		#include "./SparkFunBME280.h"
-		#pragma message("Version 1.2")
+		#pragma message("Version 1.3a")
 	#else
 		#include "Adafruit_BMP085.h"
 		#include "SHT2x.h"
