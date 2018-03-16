@@ -15,17 +15,18 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifdef PIC32MX
+#if defined(AVR) && defined(__AVR_ATmega328P__)
 
-#ifndef __AFSK_PIC32_H__
-#define __AFSK_PIC32_H__
+#ifndef __AFSK_AVR_H__
+#define __AFSK_AVR_H__
 
-#include <p32xxxx.h>
-#include <plib.h>
 #include <stdint.h>
+// in gcc with Arduino 1.6 prog_uchar is deprecated. Allow it:
+#define __PROG_TYPES_COMPAT__ 1
+#include <avr/pgmspace.h>
 #include "config.h"
 
-#define AFSK_ISR extern "C" void __ISR(_TIMER_2_VECTOR, ipl6) T2_IntHandler (void)
+#define AFSK_ISR ISR(TIMER2_OVF_vect)
 
 // Exported consts
 extern const uint32_t MODEM_CLOCK_RATE;
@@ -34,33 +35,45 @@ extern const uint16_t TABLE_SIZE;
 extern const uint32_t PLAYBACK_RATE;
 
 // Exported vars
-extern const uint8_t afsk_sine_table[];
+extern const unsigned char afsk_sine_table[];
 
 // Inline functions (this saves precious cycles in the ISR)
+#if AUDIO_PIN == 3
+	#define OCR2 OCR2B
+#endif
+#if AUDIO_PIN == 11
+	#define OCR2 OCR2A
+#endif
+
 inline uint8_t afsk_read_sample(int phase)
 {
-	return afsk_sine_table[phase];
+	return pgm_read_byte_near(afsk_sine_table + phase);
 }
 
 inline void afsk_output_sample(uint8_t s)
 {
-	SetDCOC1PWM(s);
+	OCR2 = s;
 }
 
 inline void afsk_clear_interrupt_flag()
 {
-	mT2ClearIntFlag();
+	// atmegas don't need this as opposed to pic32s.
 }
 
 #ifdef DEBUG_MODEM
 inline uint16_t afsk_timer_counter()
 {
-	return (uint16_t) TMR2;
+	uint16_t t = TCNT2;
+
+	if ((TIFR2 & _BV(TOV2)) && t < 128)
+	{ t += 256; }
+
+	return t;
 }
 
 inline int afsk_isr_overrun()
 {
-	return (IFS0bits.T2IF);
+	return (TIFR2 & _BV(TOV2));
 }
 #endif
 
@@ -79,4 +92,4 @@ void afsk_timer_stop();
 #endif
 
 #endif
-#endif // PIC32MX
+#endif // AVR

@@ -15,7 +15,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifdef AVR
+#if defined(AVR) && defined(__AVR_ATmega32U4__)
 
 #ifndef __AFSK_AVR_H__
 #define __AFSK_AVR_H__

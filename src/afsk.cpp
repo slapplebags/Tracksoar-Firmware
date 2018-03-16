@@ -40,6 +40,7 @@
 #endif
 #include <stdint.h>
 
+
 // Module consts
 
 // The actual baudrate after rounding errors will be:

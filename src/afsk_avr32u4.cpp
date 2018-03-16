@@ -14,7 +14,8 @@
 * along with this program; if not, write to the Free Software
 * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
-#ifdef AVR
+#if defined(AVR) && defined(__AVR_ATmega32U4__)
+
 
 #include <avr/io.h>
 // in gcc with Arduino 1.6 prog_uchar is deprecated. Allow it:
@@ -73,7 +74,7 @@ PROGMEM extern const unsigned char afsk_sine_table[512] =
 // External consts
 
 extern const uint32_t MODEM_CLOCK_RATE = F_CPU; // 16 MHz
-extern const uint8_t REST_DUTY         = 127;
+extern const uint8_t  REST_DUTY        = 127;
 extern const uint16_t TABLE_SIZE       = sizeof(afsk_sine_table);
 //extern const uint32_t PLAYBACK_RATE    = MODEM_CLOCK_RATE / 510;  // Phase correct PWM
 extern const uint32_t PLAYBACK_RATE    = MODEM_CLOCK_RATE / 256;  // Fast PWM

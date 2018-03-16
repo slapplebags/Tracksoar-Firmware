@@ -29,13 +29,12 @@
 #elif (ARDUINO + 0) < 22
 	#error "Oops! We need Arduino 22 or 23"
 	#error "See trackuino.pde for details on this"
-
 #endif
 
 // Trackuino custom libs
 #include "config.h"
-#include "afsk_avr.h"
-#include "afsk_pic32.h"
+#include "afsk_avr328.h"
+#include "afsk_avr32u4.h"
 #include "aprs.h"
 #include "buzzer.h"
 #include "gps.h"
