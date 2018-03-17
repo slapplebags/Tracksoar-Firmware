@@ -15,11 +15,11 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#include "config.h"
-#include "ax25.h"
-#include "gps.h"
-#include "aprs.h"
-#include "sensors_avr.h"
+#include "config.hpp"
+#include "ax25.hpp"
+#include "gps.hpp"
+#include "aprs.hpp"
+#include "sensors_avr.hpp"
 #include <stdio.h>
 #include <stdlib.h>
 #if (ARDUINO + 1) >= 100
@@ -44,10 +44,10 @@ void aprs_send()
 		{D_CALLSIGN, D_CALLSIGN_ID},  // Destination callsign
 		{S_CALLSIGN, S_CALLSIGN_ID},  // Source callsign (-11 = balloon, -9 = car)
 		#ifdef DIGI_PATH1
-		{DIGI_PATH1, DIGI_PATH1_TTL}, // Digi1 (first digi in the chain)
+			{DIGI_PATH1, DIGI_PATH1_TTL}, // Digi1 (first digi in the chain)
 		#endif
 		#ifdef DIGI_PATH2
-		{DIGI_PATH2, DIGI_PATH2_TTL}, // Digi2 (second digi in the chain)
+			{DIGI_PATH2, DIGI_PATH2_TTL}, // Digi2 (second digi in the chain)
 		#endif
 	};
 

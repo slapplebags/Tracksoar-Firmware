@@ -30,7 +30,7 @@
 #include <inttypes.h>
 #include <Wire.h>
 #include "Arduino.h"
-#include "SHT2x.h"
+#include "SHT2x.hpp"
 
 
 

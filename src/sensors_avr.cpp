@@ -18,10 +18,10 @@
 
 #ifdef AVR
 
-#include "sensors_avr.h"
+#include "sensors_avr.hpp"
 #include <Arduino.h>
 
-#ifdef TRACKSOAR_12
+#ifdef TRACKSOAR_20
 	BME280 bme280;
 
 	void sensors_setup()

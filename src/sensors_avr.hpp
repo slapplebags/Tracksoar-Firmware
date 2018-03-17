@@ -19,16 +19,14 @@
 #ifndef __SENSORS_AVR_H__
 	#define __SENSORS_AVR_H__
 
-	#include "config.h"
+	#include "config.hpp"
 	#include <Wire.h>
 
-	#ifdef TRACKSOAR_12
+	#ifdef TRACKSOAR_20
 		#include "./SparkFunBME280.h"
-		#pragma message("Version 1.3a")
+		#pragma message("Version 2.0a")
 	#else
-		#include "Adafruit_BMP085.h"
-		#include "SHT2x.h"
-		#pragma message("Version < 1.2")
+		#error "Unknown version!"
 	#endif
 
 	void sensors_setup();

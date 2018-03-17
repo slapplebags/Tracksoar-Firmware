@@ -15,9 +15,9 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#include "ax25.h"
-#include "config.h"
-#include "afsk_avr.h"
+#include "ax25.hpp"
+#include "config.hpp"
+#include "afsk_avr.hpp"
 #include <stdint.h>
 #if (ARDUINO + 1) >= 100
 	#include <Arduino.h>
@@ -85,9 +85,9 @@ ax25_send_byte(uint8_t a_byte)
 {
 	// Wrap around send_byte, but prints debug info
 	send_byte(a_byte);
-	#ifdef DEBUG_AX25
-	Serial.print((char)a_byte);
-	#endif
+	// #ifdef DEBUG_AX25
+	// 	Serial.print((char)a_byte);
+	// #endif
 }
 
 void
@@ -137,17 +137,25 @@ ax25_send_header(const struct s_address *addresses, int num_addresses)
 	{
 		// Transmit callsign
 		for (j = 0; addresses[i].callsign[j]; j++)
-		{ send_byte(addresses[i].callsign[j] << 1); }
+		{
+			send_byte(addresses[i].callsign[j] << 1);
+		}
 
 		// Transmit pad
 		for ( ; j < 6; j++)
-		{ send_byte(' ' << 1); }
+		{
+			send_byte(' ' << 1);
+		}
 
 		// Transmit SSID. Termination signaled with last bit = 1
 		if (i == num_addresses - 1)
-		{ send_byte(('0' + addresses[i].ssid) << 1 | 1); }
+		{
+			send_byte(('0' + addresses[i].ssid) << 1 | 1);
+		}
 		else
-		{ send_byte(('0' + addresses[i].ssid) << 1); }
+		{
+			send_byte(('0' + addresses[i].ssid) << 1);
+		}
 	}
 
 	// Control field: 3 = APRS-UI frame
@@ -157,40 +165,40 @@ ax25_send_header(const struct s_address *addresses, int num_addresses)
 	send_byte(0xf0);
 
 	#ifdef DEBUG_AX25
-	// Print source callsign
-	Serial.println();
-	Serial.print('[');
-	Serial.print(millis());
-	Serial.print("] ");
-	Serial.print(addresses[1].callsign);
+		// Print source callsign
+		Serial.println();
+		Serial.print('[');
+		Serial.print(millis());
+		Serial.print("] ");
+		Serial.print(addresses[1].callsign);
 
-	if (addresses[1].ssid)
-	{
-		Serial.print('-');
-		Serial.print((unsigned int)addresses[1].ssid);
-	}
-
-	Serial.print('>');
-	// Destination callsign
-	Serial.print(addresses[0].callsign);
-
-	if (addresses[0].ssid)
-	{
-		Serial.print('-');
-		Serial.print((unsigned int)addresses[0].ssid);
-	}
-
-	for (i = 2; i < num_addresses; i++)
-	{
-		Serial.print(',');
-		Serial.print(addresses[i].callsign);
-
-		if (addresses[i].ssid)
+		if (addresses[1].ssid)
 		{
 			Serial.print('-');
-			Serial.print((unsigned int)addresses[i].ssid);
+			Serial.print((unsigned int)addresses[1].ssid);
 		}
-	}
+
+		Serial.print('>');
+		// Destination callsign
+		Serial.print(addresses[0].callsign);
+
+		if (addresses[0].ssid)
+		{
+			Serial.print('-');
+			Serial.print((unsigned int)addresses[0].ssid);
+		}
+
+		for (i = 2; i < num_addresses; i++)
+		{
+			Serial.print(',');
+			Serial.print(addresses[i].callsign);
+
+			if (addresses[i].ssid)
+			{
+				Serial.print('-');
+				Serial.print((unsigned int)addresses[i].ssid);
+			}
+		}
 
 	Serial.print(':');
 	#endif
@@ -210,7 +218,7 @@ ax25_send_footer()
 	// Signal the end of frame
 	ax25_send_flag();
 	#ifdef DEBUG_AX25
-	Serial.println();
+		Serial.println();
 	#endif
 }
 

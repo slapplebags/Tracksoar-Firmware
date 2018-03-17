@@ -31,8 +31,8 @@ EN  - > PD4
 	#include <avr/io.h>
 	// in gcc with Arduino 1.6 prog_uchar is deprecated. Allow it:
 	#include <avr/pgmspace.h>
-	#include "config.h"
-	#include "afsk_avr.h"
+	#include "config.hpp"
+	#include "afsk_avr.hpp"
 
 
 	// Module consts

@@ -15,39 +15,22 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-// Mpide 22 fails to compile Arduino code because it stupidly defines ARDUINO
-// as an empty macro (hence the +0 hack). UNO32 builds are fine. Just use the
-// real Arduino IDE for Arduino builds. Optionally complain to the Mpide
-// authors to fix the broken macro.
-#if (ARDUINO + 0) == 0
-	#error "Oops! We need the real Arduino IDE (version 22 or 23) for Arduino builds."
-	#error "See trackuino.pde for details on this"
-
-	// Refuse to compile on arduino version 21 or lower. 22 includes an
-	// optimization of the USART code that is critical for real-time operation
-	// of the AVR code.
-#elif (ARDUINO + 0) < 22
-	#error "Oops! We need Arduino 22 or 23"
-	#error "See trackuino.pde for details on this"
-#endif
-
 // Trackuino custom libs
-#include "config.h"
-#include "afsk_avr.h"
-#include "aprs.h"
-#include "buzzer.h"
-#include "gps.h"
-#include "pin.h"
-#include "power.h"
-#include "sensors_avr.h"
+#include "config.hpp"
+#include "afsk_avr.hpp"
+#include "aprs.hpp"
+#include "gps.hpp"
+#include "power.hpp"
+#include "sensors_avr.hpp"
 #include <avr/wdt.h>
 
 // Arduino/AVR libs
 #if (ARDUINO + 1) >= 100
 	#include <Arduino.h>
 #else
-	#include <WProgram.h>
+	#error "Please use a arduweenie version from this decade."
 #endif
+
 #define cbi(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
 // Module constants
 static const uint32_t VALID_POS_TIMEOUT = 2000;  // ms
@@ -63,8 +46,11 @@ static int32_t next_aprs = 0;
 
 void setup()
 {
-	pinMode(LED_PIN, OUTPUT);
-	pin_write(LED_PIN, LOW);
+
+
+	LED_DDR  |= _BV(LED_PIN_BIT);
+
+
 	watchdogSetup();
 	// deactivate internal pull-ups for twi
 	// as per note from atmega8 manual pg167
@@ -72,22 +58,22 @@ void setup()
 	cbi(PORTC, 5);
 
 	Serial.begin(GPS_BAUDRATE);
+	Serial1.begin(GPS_BAUDRATE);
+
 	#ifdef DEBUG_RESET
 		Serial.println("RESET");
 	#endif
 
-	buzzer_setup();
 	afsk_setup();
 	gps_setup();
 	sensors_setup();
 
 	#ifdef DEBUG_SENS
-		Serial.print("Ti=");
-		Serial.print(sensors_int_lm60());
-		Serial.print(", Te=");
-		Serial.print(sensors_ext_lm60());
-		Serial.print(", Vin=");
-		Serial.println(sensors_vin());
+		Serial.print("Temp=");
+		Serial.print(sensors_temperature());
+		Serial.print(", pres=");
+		Serial.print(sensors_pressure());
+		Serial.println(".");
 	#endif
 
 	// Do not start until we get a valid time reference
@@ -96,13 +82,15 @@ void setup()
 	{
 		do
 		{
-			while (! Serial.available())
-			{ power_save(); }
+			while (! Serial1.available())
+			{
+				power_save();
+				Serial.println("Looping for gps lock.");
+			}
 		}
-		while (! gps_decode(Serial.read()));
+		while (! gps_decode(Serial1.read()));
 
-		next_aprs = millis() + 1000 *
-		            (APRS_PERIOD - (gps_seconds + APRS_PERIOD - APRS_SLOT) % APRS_PERIOD);
+		next_aprs = millis() + 1000 * (APRS_PERIOD - (gps_seconds + APRS_PERIOD - APRS_SLOT) % APRS_PERIOD);
 	}
 	else
 	{
@@ -122,20 +110,15 @@ void get_pos()
 	do
 	{
 		if (Serial.available())
-		{ valid_pos = gps_decode(Serial.read()); }
+		{
+			valid_pos = gps_decode(Serial.read());
+		}
 	}
 	while ( (millis() - timeout < VALID_POS_TIMEOUT) && ! valid_pos) ;
 
 	if (valid_pos)
 	{
-		if (gps_altitude > BUZZER_ALTITUDE)
-		{
-			buzzer_off();   // In space, no one can hear you buzz
-		}
-		else
-		{
-			buzzer_on();
-		}
+		// Empty
 	}
 }
 
@@ -158,8 +141,9 @@ void loop()
 		}
 
 		#ifdef DEBUG_MODEM
-		// Show modem ISR stats from the previous transmission
-		afsk_debug();
+			// Show modem ISR stats from the previous transmission
+			afsk_debug();
+			Serial.println("Loop!");
 		#endif
 	}
 

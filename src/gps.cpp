@@ -15,9 +15,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#include "config.h"
-#include "pin.h"
-#include "gps.h"
+#include "config.hpp"
+#include "gps.hpp"
 #if (ARDUINO + 1) >= 100
 	#include <Arduino.h>
 #else
@@ -345,13 +344,19 @@ void parse_num_sats(const char *token)
 // Calculate expected UBX ACK packet and parse UBX response from GPS
 boolean getUBX_ACK(const uint8_t *MSG)
 {
+
+
+	#ifdef DEBUG_GPS
+		Serial.print("getUBX_ACK: ");
+	#endif
+
 	uint8_t b;
 	uint8_t ackByteID = 0;
 	uint8_t ackPacket[10];
 	unsigned long startTime = millis();
 
 	//#ifdef DEBUG_GPS
-	//  debugSerial.print(" * Reading ACK response: ");
+	//  Serial.print(" * Reading ACK response: ");
 	//#endif
 
 	// Construct the expected ACK packet
@@ -380,20 +385,21 @@ boolean getUBX_ACK(const uint8_t *MSG)
 		{
 			// All packets in order!
 
-			//#ifdef DEBUG_GPS
-			//      debugSerial.println(" (SUCCESS!)");
-			//#endif
+			#ifdef DEBUG_GPS
+				Serial.println(" (SUCCESS!)");
+			#endif
 			return true;
 		}
 
 		// Timeout if no valid response in 3 seconds
 		if (millis() - startTime > 3000)
 		{
-			//#ifdef DEBUG_GPS
-			//      debugSerial.println(" (FAILED!)");
-			//#endif
+			#ifdef DEBUG_GPS
+				Serial.println("FAILED - timeout!");
+			#endif
 			return false;
 		}
+
 
 		// Make sure data is available to read
 		if (GPS_SERIAL.available())
@@ -405,9 +411,9 @@ boolean getUBX_ACK(const uint8_t *MSG)
 			{
 				ackByteID++;
 
-				//#ifdef DEBUG_GPS
-				//        debugSerial.print(b, HEX);
-				//#endif
+				#ifdef DEBUG_GPS
+					Serial.print(b, HEX);
+				#endif
 			}
 			else
 			{
@@ -420,6 +426,11 @@ boolean getUBX_ACK(const uint8_t *MSG)
 // Send a byte array of UBX protocol to the GPS
 void sendUBX(const uint8_t *MSG, uint8_t len)
 {
+
+	#ifdef DEBUG_GPS
+		Serial.print("sendUBX: ");
+	#endif
+
 	uint8_t temp;
 
 	for (int i = 0; i < len; i++)
@@ -428,10 +439,14 @@ void sendUBX(const uint8_t *MSG, uint8_t len)
 
 		GPS_SERIAL.write(temp);
 
-		//#ifdef DEBUG_GPS
-		//    debugSerial.print(MSG[i], HEX);
-		//#endif
+		#ifdef DEBUG_GPS
+			Serial.print(MSG[i], HEX);
+		#endif
 	}
+
+	#ifdef DEBUG_GPS
+		Serial.println(".");
+	#endif
 
 	GPS_SERIAL.println();
 }
@@ -470,48 +485,42 @@ void gps_setup()
 	strcpy(gps_aprs_lat, "0000.00N");
 	strcpy(gps_aprs_lon, "00000.00E");
 
-	#ifdef GPS_USING_UBLOX
+	bool gps_led = true;
+
 	// Setup for the uBLOX MAX-6/7/8
-
-	// Check to see if we need to power up the GPS
-	#ifdef GPS_POWER_PIN
-	pinMode(GPS_POWER_PIN,   OUTPUT);
-	pin_write(GPS_POWER_PIN, LOW);
-	#endif
-
-	#ifdef GPS_POWER_SLEEP_TIME
-	// Add a bit of a delay here to allow the GPS a chance to wake up
-	// (even if we aren't powering it via a digital pin)
-	delay(GPS_POWER_SLEEP_TIME);
-	#endif
-
-	#ifdef GPS_LED_PIN
-	// LED for GPS Status
-	pinMode(GPS_LED_PIN,      OUTPUT);
-	pin_write(GPS_LED_PIN,    LOW);
-	#endif
 
 	// Set MAX-6 to flight mode
 	int setup_attempts_remaining = 120;
 
 	while (!gps_success && (setup_attempts_remaining--) >= 0)
 	{
+
+		if (gps_led)
+		{
+			gps_led = false;
+			LED_PORT |= _BV(LED_PIN_BIT);
+		}
+		else
+		{
+			gps_led = true;
+			LED_PORT &= ~_BV(LED_PIN_BIT);
+		}
+
 		sendUBX(setNav, sizeof(setNav) / sizeof(uint8_t));
 		gps_success = getUBX_ACK(setNav);
+
 
 		if (!gps_success)
 		{
 			// Should find a better way to indicate a problem?
-			#ifdef GPS_LED_PIN
-			pin_write(GPS_LED_PIN, HIGH);
+
+			#ifdef DEBUG_GPS
+				Serial.println("Error in GPS Setup ");
 			#endif
 			delay(500);
 		}
 	}
 
-	#ifdef GPS_LED_PIN
-	pin_write(GPS_LED_PIN, LOW);
-	#endif
 
 	// Finally turn off any NMEA sentences we don't need (in this case it's
 	// everything except GGA and RMC)
@@ -519,7 +528,6 @@ void gps_setup()
 	sendUBX(setGSA, sizeof(setGSA) / sizeof(uint8_t)); // Disable GSA
 	sendUBX(setGSV, sizeof(setGSV) / sizeof(uint8_t)); // Disable GSV
 	sendUBX(setVTG, sizeof(setVTG) / sizeof(uint8_t)); // Disable VTG
-	#endif
 }
 
 bool gps_decode(char c)
@@ -536,8 +544,8 @@ bool gps_decode(char c)
 			if (num_tokens && our_checksum == their_checksum)
 			{
 				#ifdef DEBUG_GPS
-				Serial.print(" (OK!) ");
-				Serial.print(millis());
+					Serial.print(" (OK!) ");
+					Serial.print(millis());
 				#endif
 
 				// Return a valid position only when we've got two rmc and gga
@@ -590,7 +598,6 @@ bool gps_decode(char c)
 					gps_altitude = new_altitude;
 					gps_num_sats = new_num_sats;
 
-					#ifdef GPS_USING_UBLOX
 
 					if (gps_num_sats >= MIN_NO_CYCLIC_SATS)
 					{
@@ -613,7 +620,6 @@ bool gps_decode(char c)
 						}
 					}
 
-					#endif
 
 					ret = true;
 				}
@@ -621,8 +627,10 @@ bool gps_decode(char c)
 
 			#ifdef DEBUG_GPS
 
-			if (num_tokens)
-			{ Serial.println(); }
+				if (num_tokens)
+				{
+					Serial.println();
+				}
 
 			#endif
 			at_checksum = false;        // CR/LF signals the end of the checksum
@@ -669,7 +677,7 @@ bool gps_decode(char c)
 			num_tokens++;
 			offset = 0;
 			#ifdef DEBUG_GPS
-			Serial.print(c);
+				Serial.print(c);
 			#endif
 			break;
 
@@ -693,7 +701,7 @@ bool gps_decode(char c)
 			}
 
 			#ifdef DEBUG_GPS
-			Serial.print(c);
+				Serial.print(c);
 			#endif
 	}
 

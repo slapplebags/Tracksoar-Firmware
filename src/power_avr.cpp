@@ -24,9 +24,8 @@
 #else
 	#include <WProgram.h>
 #endif
-#include "config.h"
-#include "pin.h"
-#include "power.h"
+#include "config.hpp"
+#include "power.hpp"
 #include <avr/wdt.h>
 
 // void disable_bod_and_sleep()
@@ -71,9 +70,10 @@ void power_save()
 
 	wdt_reset();
 
-	pin_write(LED_PIN, LOW);
+
+	LED_PORT &= ~_BV(LED_PIN_BIT);
 	sleep_mode();    // Go to sleep
-	pin_write(LED_PIN, HIGH);
+	LED_PORT |= _BV(LED_PIN_BIT);
 
 	sleep_disable();  // Resume after wake up
 	power_all_enable();

@@ -18,7 +18,7 @@
 #ifndef __RADIO_HX1_H__
 #define __RADIO_HX1_H__
 
-#include "radio.h"
+#include "radio.hpp"
 
 class RadioHx1 : public Radio
 {

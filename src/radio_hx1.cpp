@@ -15,9 +15,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#include "config.h"
-#include "pin.h"
-#include "radio_hx1.h"
+#include "config.hpp"
+#include "radio_hx1.hpp"
 #if (ARDUINO + 1) >= 100
 	#include <Arduino.h>
 #else
@@ -28,18 +27,22 @@
 void RadioHx1::setup()
 {
 	// Configure pins
-	pinMode(PTT_PIN, OUTPUT);
-	pin_write(PTT_PIN, LOW);
-	pinMode(AUDIO_PIN, OUTPUT);
+	// Radio enable pin
+	TX_ENABLE_PORT &= ~_BV(TX_ENABLE_PIN_BIT);
+	TX_ENABLE_DDR  |=  _BV(TX_ENABLE_PIN_BIT);
+
+	// Tx out is driven by timer 4.
+	TX_OUT_DDR     |=  _BV(TX_OUT_PIN_BIT);
+
 }
 
 void RadioHx1::ptt_on()
 {
-	pin_write(PTT_PIN, HIGH);
+	TX_ENABLE_PORT |= _BV(TX_ENABLE_PIN_BIT);
 	delay(25);   // The HX1 takes 5 ms from PTT to full RF, give it 25
 }
 
 void RadioHx1::ptt_off()
 {
-	pin_write(PTT_PIN, LOW);
+	TX_ENABLE_PORT &= ~_BV(TX_ENABLE_PIN_BIT);
 }

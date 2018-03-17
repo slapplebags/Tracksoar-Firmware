@@ -28,10 +28,9 @@
  * http://www.nongnu.org/avr-libc/user-manual/group__avr__interrupts.html
  */
 
-#include "config.h"
-#include "afsk_avr.h"
-#include "pin.h"
-#include "radio_hx1.h"
+#include "config.hpp"
+#include "afsk_avr.hpp"
+#include "radio_hx1.hpp"
 #if (ARDUINO + 1) >= 100
 	#include <Arduino.h>
 #else
@@ -62,6 +61,7 @@ volatile static uint8_t sample_fifo[SAMPLE_FIFO_SIZE];   // queue of samples
 volatile static uint8_t sample_fifo_head = 0;            // empty when head == tail
 volatile static uint8_t sample_fifo_tail = 0;
 volatile static uint32_t sample_overruns = 0;
+volatile static uint32_t sample_count = 0;
 
 // The radio (class defined in config.h)
 static RadioHx1 radio;
@@ -79,9 +79,9 @@ inline static bool afsk_is_fifo_full()
 
 inline static bool afsk_is_fifo_full_safe()
 {
-	noInterrupts();
+	cli();
 	boolean b = afsk_is_fifo_full();
-	interrupts();
+	sei();
 	return b;
 }
 
@@ -92,9 +92,9 @@ inline static bool afsk_is_fifo_empty()
 
 inline static bool afsk_is_fifo_empty_safe()
 {
-	noInterrupts();
+	cli();
 	bool b = afsk_is_fifo_empty();
-	interrupts();
+	sei();
 	return b;
 }
 
@@ -106,9 +106,9 @@ inline static void afsk_fifo_in(uint8_t s)
 
 inline static void afsk_fifo_in_safe(uint8_t s)
 {
-	noInterrupts();
+	cli();
 	afsk_fifo_in(s);
-	interrupts();
+	sei();
 }
 
 inline static uint8_t afsk_fifo_out()
@@ -120,9 +120,9 @@ inline static uint8_t afsk_fifo_out()
 
 inline static uint8_t afsk_fifo_out_safe()
 {
-	noInterrupts();
+	cli();
 	uint8_t b = afsk_fifo_out();
-	interrupts();
+	sei();
 	return b;
 }
 
@@ -209,8 +209,8 @@ bool afsk_flush()
 		uint8_t s = afsk_read_sample((phase >> 7) & (TABLE_SIZE - 1));
 
 		#ifdef DEBUG_AFSK
-		Serial.print((uint16_t)s);
-		Serial.print('/');
+			Serial.print((uint16_t)s);
+			Serial.print('/');
 		#endif
 
 		#if PRE_EMPHASIS == 1
@@ -221,8 +221,8 @@ bool afsk_flush()
 		#endif
 
 		#ifdef DEBUG_AFSK
-		Serial.print((uint16_t)s);
-		Serial.print(' ');
+			Serial.print((uint16_t)s);
+			Serial.print(' ');
 		#endif
 
 		afsk_fifo_in_safe(s);
@@ -232,7 +232,7 @@ bool afsk_flush()
 		if (current_sample_in_baud >= SAMPLES_PER_BAUD)
 		{
 			#ifdef DEBUG_AFSK
-			Serial.println();
+				Serial.println();
 			#endif
 			packet_pos++;
 			current_sample_in_baud -= SAMPLES_PER_BAUD;
@@ -249,21 +249,26 @@ AFSK_ISR
 	{
 		if (go)
 		{
-			sample_overruns++;
+			sample_overruns += 1;
 		}
 	}
-	else {
+	else
+	{
+		sample_count += 1;
 		afsk_output_sample(afsk_fifo_out());
 	}
 	afsk_clear_interrupt_flag();
 }
 
 #ifdef DEBUG_MODEM
-void afsk_debug()
-{
-	Serial.print("fifo overruns=");
-	Serial.println(sample_overruns);
+	void afsk_debug()
+	{
+		Serial.print("fifo overruns = ");
+		Serial.print(sample_overruns);
+		Serial.print(", sent samples = ");
+		Serial.println(sample_count);
 
-	sample_overruns = 0;
-}
+		sample_overruns = 0;
+		sample_count = 0;
+	}
 #endif

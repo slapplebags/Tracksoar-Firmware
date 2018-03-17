@@ -36,7 +36,7 @@ EN  - > PD4
 
 	#include <stdint.h>
 	#include <avr/pgmspace.h>
-	#include "config.h"
+	#include "config.hpp"
 
 	// Exported functions
 	void afsk_setup();
