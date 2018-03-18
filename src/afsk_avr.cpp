@@ -171,11 +171,18 @@ EN  - > PD4
 			// This allows 256 cycles per sample and gives 16M/256 = 62.5 KHz PWM rate
 
 			// OC4B set at BOTTOM, clear on compare match, Pulse Width Modulator B Enable
-			TCCR4A = _BV(COM4B0) | _BV(PWM4B);
+			TCCR4A = _BV(COM4B1) | _BV(COM4B0) | _BV(PWM4B);
 
 			// Prescaler of 1
 			TCCR4B = _BV(CS40);
 
+			// Some of the bits in TCCR4A are shadowed in TCCR4C. Somehow.
+			// Anyways, set them as expected, and zero out the rest
+			TCCR4C = _BV(COM4B1) | _BV(COM4B0) | _BV(PWM4B);
+
+			// This /shouldn't/ be needed, but it wasn't operating correctly
+			// before I set it to zero.
+			TCCR4D = 0;
 
 			// OCR4C sets the value of TOP
 			OCR4C = 255;
