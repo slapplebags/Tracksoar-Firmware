@@ -22,7 +22,6 @@
 #include "gps.hpp"
 #include "power.hpp"
 #include "sensors_avr.hpp"
-#include <avr/wdt.h>
 
 // Arduino/AVR libs
 #if (ARDUINO + 1) >= 100
@@ -51,11 +50,11 @@ void setup()
 	LED_DDR  |= _BV(LED_PIN_BIT);
 
 
-	watchdogSetup();
+	// watchdogSetup();
 	// deactivate internal pull-ups for twi
 	// as per note from atmega8 manual pg167
-	cbi(PORTC, 4);
-	cbi(PORTC, 5);
+	// cbi(PORTC, 4);
+	// cbi(PORTC, 5);
 
 	Serial.begin(GPS_BAUDRATE);
 	Serial1.begin(GPS_BAUDRATE);
@@ -84,7 +83,7 @@ void setup()
 		{
 			while (! Serial1.available())
 			{
-				power_save();
+				// power_save();
 				Serial.println("Looping for gps lock.");
 			}
 		}
@@ -118,6 +117,7 @@ void get_pos()
 
 	if (valid_pos)
 	{
+		Serial.println("Looping for gps update message.");
 		// Empty
 	}
 }
@@ -125,19 +125,20 @@ void get_pos()
 void loop()
 {
 	// Time for another APRS frame
-	wdt_reset();
+	// wdt_reset();
 
 	if ((int32_t) (millis() - next_aprs) >= 0)
 	{
+		Serial.println("Doing transmit");
 		get_pos();
 		aprs_send();
-		wdt_reset();
+		// wdt_reset();
 		next_aprs += APRS_PERIOD * 1000L;
 
 		while (afsk_flush())
 		{
-			power_save();
-			wdt_reset();
+			// power_save();
+			// wdt_reset();
 		}
 
 		#ifdef DEBUG_MODEM
@@ -145,31 +146,32 @@ void loop()
 			afsk_debug();
 			Serial.println("Loop!");
 		#endif
+		Serial.println("Message sent. Sleeping");
 	}
 
-	power_save(); // Incoming GPS data or interrupts will wake us up
+	// power_save(); // Incoming GPS data or interrupts will wake us up
 }
 
-void watchdogSetup(void)
-{
-	cli();
-	wdt_reset();
-	/*
-	 WDTCSR configuration:
-	 WDIE = 1: Interrupt Enable
-	 WDE = 1 :Reset Enable
-	 See table for time-out variations:
-	 WDP3 = 0 :For 1000ms Time-out
-	 WDP2 = 1 :For 1000ms Time-out
-	 WDP1 = 1 :For 1000ms Time-out
-	 WDP0 = 0 :For 1000ms Time-out
-	*/
-	// Enter Watchdog Configuration mode:
-	WDTCSR |= (1 << WDCE) | (1 << WDE);
-	// Set Watchdog settings:
-	WDTCSR = (0 << WDIE) | (1 << WDE) |
-	         (1 << WDP3) | (0 << WDP2) | (0 << WDP1) |
-	         (1 << WDP0);
-	Serial.println("WDT reset");
-	sei();
-}
+// void watchdogSetup(void)
+// {
+// 	cli();
+// 	wdt_reset();
+// 	/*
+// 	 WDTCSR configuration:
+// 	 WDIE = 1: Interrupt Enable
+// 	 WDE = 1 :Reset Enable
+// 	 See table for time-out variations:
+// 	 WDP3 = 0 :For 1000ms Time-out
+// 	 WDP2 = 1 :For 1000ms Time-out
+// 	 WDP1 = 1 :For 1000ms Time-out
+// 	 WDP0 = 0 :For 1000ms Time-out
+// 	*/
+// 	// Enter Watchdog Configuration mode:
+// 	WDTCSR |= (1 << WDCE) | (1 << WDE);
+// 	// Set Watchdog settings:
+// 	WDTCSR = (0 << WDIE) | (1 << WDE) |
+// 	         (1 << WDP3) | (0 << WDP2) | (0 << WDP1) |
+// 	         (1 << WDP0);
+// 	Serial.println("WDT reset");
+// 	sei();
+// }

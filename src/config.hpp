@@ -107,13 +107,14 @@
 // into an overall lower amplitude of the received signal. 1 = yes, 0 = no.
 #define PRE_EMPHASIS    1
 
+
 #define TX_ENABLE_DDR                 DDRD
 #define TX_ENABLE_PORT               PORTD
 #define TX_ENABLE_PIN_BIT                4
 
 #define TX_OUT_DDR                    DDRB
 #define TX_OUT_PORT                  PORTB
-#define TX_OUT_PIN_BIT                   3
+#define TX_OUT_PIN_BIT                   6
 
 
 // --------------------------------------------------------------------------

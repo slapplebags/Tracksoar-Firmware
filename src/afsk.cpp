@@ -269,6 +269,5 @@ AFSK_ISR
 		Serial.println(sample_count);
 
 		sample_overruns = 0;
-		sample_count = 0;
 	}
 #endif

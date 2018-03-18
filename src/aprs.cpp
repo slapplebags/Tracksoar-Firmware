@@ -82,16 +82,6 @@ void aprs_send()
 	dtostrf(sensors_temperature(), -1, 2, temp);
 	ax25_send_string(temp);
 
-	//
-	//   ax25_send_string("/Ti=");
-	//   snprintf(temp, 6, "%d", sensors_int_lm60());
-	//   ax25_send_string(temp);
-	//   ax25_send_string("/Te=");
-	//   snprintf(temp, 6, "%d", sensors_ext_lm60());
-	//   ax25_send_string(temp);
-	//  ax25_send_string("/V=");
-	//  snprintf(temp, 6, "%d", sensors_vin());
-	//  ax25_send_string(temp);
 	ax25_send_byte(' ');
 	ax25_send_string(APRS_COMMENT);     // Comment
 	ax25_send_footer();
