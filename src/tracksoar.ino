@@ -110,16 +110,15 @@ void get_pos()
 	{
 		if (Serial.available())
 		{
-			valid_pos = gps_decode(Serial.read());
+			valid_pos = gps_decode(Serial1.read());
 		}
 	}
-	while ( (millis() - timeout < VALID_POS_TIMEOUT) && ! valid_pos) ;
+	while ( ((millis() - timeout) < VALID_POS_TIMEOUT) && ! valid_pos) ;
 
 	if (valid_pos)
-	{
-		Serial.println("Looping for gps update message.");
-		// Empty
-	}
+		Serial.println("Have valid GPS position fix.");
+	else
+		Serial.println("Failed to receive valid GPS position fix.");
 }
 
 void loop()
