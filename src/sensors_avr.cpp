@@ -37,7 +37,7 @@
 
 		if (!bme280.begin())
 		{
-			DEBUG_UART.println("Could not find a valid BMP085 sensor, check wiring!");
+			DEBUG_UART.println("Could not find a valid BME280 sensor, check wiring!");
 
 			while (1) {}
 		}
@@ -58,7 +58,7 @@
 		return bme280.readFloatHumidity();
 	}
 
-	#else
+#else
 	Adafruit_BMP085 bmp805;
 
 	void sensors_setup()

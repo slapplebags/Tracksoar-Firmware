@@ -45,15 +45,7 @@ static int32_t next_aprs = 0;
 
 void setup()
 {
-
-
 	LED_DDR  |= _BV(LED_PIN_BIT);
-
-	// watchdogSetup();
-	// deactivate internal pull-ups for twi
-	// as per note from atmega8 manual pg167
-	// cbi(PORTC, 4);
-	// cbi(PORTC, 5);
 
 	DEBUG_UART.begin(GPS_BAUDRATE);
 	GPS_UART.begin(GPS_BAUDRATE);
@@ -66,13 +58,6 @@ void setup()
 	gps_setup();
 	sensors_setup();
 
-	#ifdef DEBUG_SENS
-		DEBUG_UART.print("Temp=");
-		DEBUG_UART.print(sensors_temperature());
-		DEBUG_UART.print(", pres=");
-		DEBUG_UART.print(sensors_pressure());
-		DEBUG_UART.println(".");
-	#endif
 
 	// Do not start until we get a valid time reference
 	// for slotted transmissions.
@@ -107,17 +92,19 @@ void get_pos()
 
 	do
 	{
-		if (DEBUG_UART.available())
+		if (GPS_UART.available())
 		{
 			valid_pos = gps_decode(GPS_UART.read());
 		}
 	}
 	while ( ((millis() - timeout) < VALID_POS_TIMEOUT) && ! valid_pos) ;
 
-	if (valid_pos)
-		DEBUG_UART.println("Have valid GPS position fix.");
-	else
-		DEBUG_UART.println("Failed to receive valid GPS position fix.");
+	#if defined(DEBUG_GPS)
+		if (valid_pos)
+			DEBUG_UART.println("Have valid GPS position fix.");
+		else
+			DEBUG_UART.println("Failed to receive valid GPS position fix.");
+	#endif
 }
 
 void loop()
@@ -128,6 +115,17 @@ void loop()
 	if ((int32_t) (millis() - next_aprs) >= 0)
 	{
 		DEBUG_UART.println("Doing transmit");
+
+		#ifdef DEBUG_SENS
+			DEBUG_UART.print("Temp=");
+			DEBUG_UART.print(sensors_temperature());
+			DEBUG_UART.print(", pressure=");
+			DEBUG_UART.print(sensors_pressure());
+			DEBUG_UART.print(", humidity=");
+			DEBUG_UART.print(sensors_humidity());
+			DEBUG_UART.println(".");
+		#endif
+
 		get_pos();
 		aprs_send();
 		// wdt_reset();

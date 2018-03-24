@@ -120,13 +120,19 @@
 #define PRE_EMPHASIS    1
 
 
-#define TX_ENABLE_DDR                 DDRD
-#define TX_ENABLE_PORT               PORTD
-#define TX_ENABLE_PIN_BIT                4
+#if defined(__AVR_ATmega328P__)
+	#error "Bug Connor to fix this!"
+#elif defined(__AVR_ATmega32U4__)
+	#define TX_ENABLE_DDR                 DDRD
+	#define TX_ENABLE_PORT               PORTD
+	#define TX_ENABLE_PIN_BIT                4
 
-#define TX_OUT_DDR                    DDRB
-#define TX_OUT_PORT                  PORTB
-#define TX_OUT_PIN_BIT                   6
+	#define TX_OUT_DDR                    DDRB
+	#define TX_OUT_PORT                  PORTB
+	#define TX_OUT_PIN_BIT                   6
+#else
+	#error "Unknown platform!"
+#endif  // __AVR_ATmega32U4__
 
 
 // --------------------------------------------------------------------------
