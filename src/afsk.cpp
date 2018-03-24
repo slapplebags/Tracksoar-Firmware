@@ -209,8 +209,8 @@ bool afsk_flush()
 		uint8_t s = afsk_read_sample((phase >> 7) & (TABLE_SIZE - 1));
 
 		#ifdef DEBUG_AFSK
-			Serial.print((uint16_t)s);
-			Serial.print('/');
+			DEBUG_UART.print((uint16_t)s);
+			DEBUG_UART.print('/');
 		#endif
 
 		#if PRE_EMPHASIS == 1
@@ -221,8 +221,8 @@ bool afsk_flush()
 		#endif
 
 		#ifdef DEBUG_AFSK
-			Serial.print((uint16_t)s);
-			Serial.print(' ');
+			DEBUG_UART.print((uint16_t)s);
+			DEBUG_UART.print(' ');
 		#endif
 
 		afsk_fifo_in_safe(s);
@@ -232,7 +232,7 @@ bool afsk_flush()
 		if (current_sample_in_baud >= SAMPLES_PER_BAUD)
 		{
 			#ifdef DEBUG_AFSK
-				Serial.println();
+				DEBUG_UART.println();
 			#endif
 			packet_pos++;
 			current_sample_in_baud -= SAMPLES_PER_BAUD;
@@ -263,10 +263,10 @@ AFSK_ISR
 #ifdef DEBUG_MODEM
 	void afsk_debug()
 	{
-		Serial.print("fifo overruns = ");
-		Serial.print(sample_overruns);
-		Serial.print(", sent samples = ");
-		Serial.println(sample_count);
+		DEBUG_UART.print("fifo overruns = ");
+		DEBUG_UART.print(sample_overruns);
+		DEBUG_UART.print(", sent samples = ");
+		DEBUG_UART.println(sample_count);
 
 		sample_overruns = 0;
 	}

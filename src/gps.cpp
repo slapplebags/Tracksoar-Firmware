@@ -347,7 +347,7 @@ boolean getUBX_ACK(const uint8_t *MSG)
 
 
 	#ifdef DEBUG_GPS
-		Serial.print("getUBX_ACK: ");
+		DEBUG_UART.print("getUBX_ACK: ");
 	#endif
 
 	uint8_t b;
@@ -356,7 +356,7 @@ boolean getUBX_ACK(const uint8_t *MSG)
 	unsigned long startTime = millis();
 
 	//#ifdef DEBUG_GPS
-	//  Serial.print(" * Reading ACK response: ");
+	//  DEBUG_UART.print(" * Reading ACK response: ");
 	//#endif
 
 	// Construct the expected ACK packet
@@ -386,7 +386,7 @@ boolean getUBX_ACK(const uint8_t *MSG)
 			// All packets in order!
 
 			#ifdef DEBUG_GPS
-				Serial.println(" (SUCCESS!)");
+				DEBUG_UART.println(" (SUCCESS!)");
 			#endif
 			return true;
 		}
@@ -395,7 +395,7 @@ boolean getUBX_ACK(const uint8_t *MSG)
 		if (millis() - startTime > 3000)
 		{
 			#ifdef DEBUG_GPS
-				Serial.println("FAILED - timeout!");
+				DEBUG_UART.println("FAILED - timeout!");
 			#endif
 			return false;
 		}
@@ -412,7 +412,7 @@ boolean getUBX_ACK(const uint8_t *MSG)
 				ackByteID++;
 
 				#ifdef DEBUG_GPS
-					Serial.print(b, HEX);
+					DEBUG_UART.print(b, HEX);
 				#endif
 			}
 			else
@@ -428,7 +428,7 @@ void sendUBX(const uint8_t *MSG, uint8_t len)
 {
 
 	#ifdef DEBUG_GPS
-		Serial.print("sendUBX: ");
+		DEBUG_UART.print("sendUBX: ");
 	#endif
 
 	uint8_t temp;
@@ -440,12 +440,12 @@ void sendUBX(const uint8_t *MSG, uint8_t len)
 		GPS_SERIAL.write(temp);
 
 		#ifdef DEBUG_GPS
-			Serial.print(MSG[i], HEX);
+			DEBUG_UART.print(MSG[i], HEX);
 		#endif
 	}
 
 	#ifdef DEBUG_GPS
-		Serial.println(".");
+		DEBUG_UART.println(".");
 	#endif
 
 	GPS_SERIAL.println();
@@ -515,7 +515,7 @@ void gps_setup()
 			// Should find a better way to indicate a problem?
 
 			#ifdef DEBUG_GPS
-				Serial.println("Error in GPS Setup ");
+				DEBUG_UART.println("Error in GPS Setup ");
 			#endif
 			delay(500);
 		}
@@ -544,8 +544,8 @@ bool gps_decode(char c)
 			if (num_tokens && our_checksum == their_checksum)
 			{
 				#ifdef DEBUG_GPS
-					Serial.print(" (OK!) ");
-					Serial.print(millis());
+					DEBUG_UART.print(" (OK!) ");
+					DEBUG_UART.print(millis());
 				#endif
 
 				// Return a valid position only when we've got two rmc and gga
@@ -629,7 +629,7 @@ bool gps_decode(char c)
 
 				if (num_tokens)
 				{
-					Serial.println();
+					DEBUG_UART.println();
 				}
 
 			#endif
@@ -677,7 +677,7 @@ bool gps_decode(char c)
 			num_tokens++;
 			offset = 0;
 			#ifdef DEBUG_GPS
-				Serial.print(c);
+				DEBUG_UART.print(c);
 			#endif
 			break;
 
@@ -701,7 +701,7 @@ bool gps_decode(char c)
 			}
 
 			#ifdef DEBUG_GPS
-				Serial.print(c);
+				DEBUG_UART.print(c);
 			#endif
 	}
 

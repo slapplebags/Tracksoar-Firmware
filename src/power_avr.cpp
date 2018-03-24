@@ -70,7 +70,6 @@ void power_save()
 
 	wdt_reset();
 
-
 	LED_PORT &= ~_BV(LED_PIN_BIT);
 	sleep_mode();    // Go to sleep
 	LED_PORT |= _BV(LED_PIN_BIT);

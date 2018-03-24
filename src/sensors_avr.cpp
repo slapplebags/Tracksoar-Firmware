@@ -37,7 +37,7 @@
 
 		if (!bme280.begin())
 		{
-			Serial.println("Could not find a valid BMP085 sensor, check wiring!");
+			DEBUG_UART.println("Could not find a valid BMP085 sensor, check wiring!");
 
 			while (1) {}
 		}
@@ -65,7 +65,7 @@
 	{
 		if (!bmp805.begin())
 		{
-			Serial.println("Could not find a valid BMP085 sensor, check wiring!");
+			DEBUG_UART.println("Could not find a valid BMP085 sensor, check wiring!");
 
 			while (1) {}
 		}

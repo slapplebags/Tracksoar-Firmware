@@ -97,6 +97,17 @@
 // debug data will be printed out the serial port.
 #define GPS_BAUDRATE  9600
 
+#if defined(__AVR_ATmega328P__)
+	#pragma message "Debug serial on the 328 has some concerns. You should probably be sure it's disabled"
+	#define DEBUG_UART Serial
+	#define GPS_UART   Serial
+#elif defined(__AVR_ATmega32U4__)
+	#define DEBUG_UART Serial
+	#define GPS_UART   Serial1
+#else
+	#error "Unknown platform!"
+#endif  // __AVR_ATmega32U4__
+
 
 // --------------------------------------------------------------------------
 // Modem config (afsk.cpp)
@@ -162,9 +173,15 @@
 // This is the LED pin (PC6 - pin 6 of PORTC). The LED will be on while the AVR is
 // running and off while it's sleeping, so its brightness gives an indication
 // of the CPU activity.
-#define LED_DDR                 DDRC
-#define LED_PORT               PORTC
-#define LED_PIN_BIT                6
+#if defined(__AVR_ATmega328P__)
+	#error "Bug Connor to fix this!"
+#elif defined(__AVR_ATmega32U4__)
+	#define LED_DDR                 DDRC
+	#define LED_PORT               PORTC
+	#define LED_PIN_BIT                6
+#else
+	#error "Unknown platform!"
+#endif  // __AVR_ATmega32U4__
 
 // Debug info includes printouts from different modules to aid in testing and
 // debugging.

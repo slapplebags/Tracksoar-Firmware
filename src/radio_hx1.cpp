@@ -38,13 +38,13 @@ void RadioHx1::setup()
 
 void RadioHx1::ptt_on()
 {
-	Serial.println("Enabling transmitter");
+	DEBUG_UART.println("Enabling transmitter");
 	TX_ENABLE_PORT |= _BV(TX_ENABLE_PIN_BIT);
 	delay(25);   // The HX1 takes 5 ms from PTT to full RF, give it 25
 }
 
 void RadioHx1::ptt_off()
 {
-	Serial.println("Disabling transmitter");
+	DEBUG_UART.println("Disabling transmitter");
 	TX_ENABLE_PORT &= ~_BV(TX_ENABLE_PIN_BIT);
 }

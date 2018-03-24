@@ -49,18 +49,17 @@ void setup()
 
 	LED_DDR  |= _BV(LED_PIN_BIT);
 
-
 	// watchdogSetup();
 	// deactivate internal pull-ups for twi
 	// as per note from atmega8 manual pg167
 	// cbi(PORTC, 4);
 	// cbi(PORTC, 5);
 
-	Serial.begin(GPS_BAUDRATE);
-	Serial1.begin(GPS_BAUDRATE);
+	DEBUG_UART.begin(GPS_BAUDRATE);
+	GPS_UART.begin(GPS_BAUDRATE);
 
 	#ifdef DEBUG_RESET
-		Serial.println("RESET");
+		DEBUG_UART.println("RESET");
 	#endif
 
 	afsk_setup();
@@ -68,11 +67,11 @@ void setup()
 	sensors_setup();
 
 	#ifdef DEBUG_SENS
-		Serial.print("Temp=");
-		Serial.print(sensors_temperature());
-		Serial.print(", pres=");
-		Serial.print(sensors_pressure());
-		Serial.println(".");
+		DEBUG_UART.print("Temp=");
+		DEBUG_UART.print(sensors_temperature());
+		DEBUG_UART.print(", pres=");
+		DEBUG_UART.print(sensors_pressure());
+		DEBUG_UART.println(".");
 	#endif
 
 	// Do not start until we get a valid time reference
@@ -81,13 +80,13 @@ void setup()
 	{
 		do
 		{
-			while (! Serial1.available())
+			while (! GPS_UART.available())
 			{
 				// power_save();
-				Serial.println("Looping for gps lock.");
+				DEBUG_UART.println("Looping for gps lock.");
 			}
 		}
-		while (! gps_decode(Serial1.read()));
+		while (! gps_decode(GPS_UART.read()));
 
 		next_aprs = millis() + 1000 * (APRS_PERIOD - (gps_seconds + APRS_PERIOD - APRS_SLOT) % APRS_PERIOD);
 	}
@@ -108,17 +107,17 @@ void get_pos()
 
 	do
 	{
-		if (Serial.available())
+		if (DEBUG_UART.available())
 		{
-			valid_pos = gps_decode(Serial1.read());
+			valid_pos = gps_decode(GPS_UART.read());
 		}
 	}
 	while ( ((millis() - timeout) < VALID_POS_TIMEOUT) && ! valid_pos) ;
 
 	if (valid_pos)
-		Serial.println("Have valid GPS position fix.");
+		DEBUG_UART.println("Have valid GPS position fix.");
 	else
-		Serial.println("Failed to receive valid GPS position fix.");
+		DEBUG_UART.println("Failed to receive valid GPS position fix.");
 }
 
 void loop()
@@ -128,7 +127,7 @@ void loop()
 
 	if ((int32_t) (millis() - next_aprs) >= 0)
 	{
-		Serial.println("Doing transmit");
+		DEBUG_UART.println("Doing transmit");
 		get_pos();
 		aprs_send();
 		// wdt_reset();
@@ -143,9 +142,9 @@ void loop()
 		#ifdef DEBUG_MODEM
 			// Show modem ISR stats from the previous transmission
 			afsk_debug();
-			Serial.println("Loop!");
+			DEBUG_UART.println("Loop!");
 		#endif
-		Serial.println("Message sent. Sleeping");
+		DEBUG_UART.println("Message sent. Sleeping");
 	}
 
 	// power_save(); // Incoming GPS data or interrupts will wake us up
@@ -171,6 +170,6 @@ void loop()
 // 	WDTCSR = (0 << WDIE) | (1 << WDE) |
 // 	         (1 << WDP3) | (0 << WDP2) | (0 << WDP1) |
 // 	         (1 << WDP0);
-// 	Serial.println("WDT reset");
+// 	DEBUG_UART.println("WDT reset");
 // 	sei();
 // }
