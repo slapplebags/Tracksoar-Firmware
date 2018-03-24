@@ -82,7 +82,7 @@ void setup()
 		{
 			while (! GPS_UART.available())
 			{
-				// power_save();
+				power_save();
 				DEBUG_UART.println("Looping for gps lock.");
 			}
 		}
@@ -135,7 +135,7 @@ void loop()
 
 		while (afsk_flush())
 		{
-			// power_save();
+			power_save();
 			// wdt_reset();
 		}
 
@@ -147,7 +147,7 @@ void loop()
 		DEBUG_UART.println("Message sent. Sleeping");
 	}
 
-	// power_save(); // Incoming GPS data or interrupts will wake us up
+	power_save(); // Incoming GPS data or interrupts will wake us up
 }
 
 // void watchdogSetup(void)
