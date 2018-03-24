@@ -171,6 +171,14 @@
 // Calibration value in the units selected. Use integer only.
 #define CALIBRATION_VAL 0
 
+#if defined(__AVR_ATmega328P__)
+	#error "Bug Connor to fix this!"
+#elif defined(__AVR_ATmega32U4__)
+	#define BAT_ADC_PIN_IDX                0
+#else
+	#error "Unknown platform!"
+#endif  // __AVR_ATmega32U4__
+
 
 // --------------------------------------------------------------------------
 // Debug

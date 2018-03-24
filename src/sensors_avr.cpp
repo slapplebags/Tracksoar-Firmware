@@ -24,7 +24,7 @@
 #ifdef TRACKSOAR_20
 	BME280 bme280;
 
-	void sensors_setup()
+	inline void setup_bme280()
 	{
 		bme280.settings.commInterface = I2C_MODE;
 		bme280.settings.I2CAddress = 0x76;
@@ -43,6 +43,28 @@
 		}
 	}
 
+	inline void setup_battery_adc()
+	{
+
+		ADCSRA = _BV(ADPS2) | _BV(ADPS1) | _BV(ADPS0); // Set ADC prescalar to 128 - 125KHz sample rate @ 16MHz (the slowest it goes)
+
+		ADMUX  = _BV(REFS0); // Set ADC reference to AVCC
+		// No MUX values needed to be changed to use ADC0
+
+		ADCSRB = 0;  // Set ADC to Free-Running Mode
+		ACSR   = _BV(ADC);  // Turn off the analog comparator
+		DIDR0  = _BV(BAT_ADC_PIN_IDX);   // Turn off digital input buffer on the bat in pin.
+
+		ADCSRA |= _BV(ADEN);  // Enable ADC
+		ADCSRA |= _BV(ADSC);  // Start A2D Conversions, free running.
+	}
+
+	void sensors_setup()
+	{
+		setup_bme280();
+		setup_battery_adc();
+	}
+
 	float sensors_temperature()
 	{
 		return bme280.readTempC();
@@ -56,6 +78,13 @@
 	float sensors_humidity()
 	{
 		return bme280.readFloatHumidity();
+	}
+
+	// ADC should be free-running, so just
+	// read the last conversion result.
+	uint16_t sensors_battery()
+	{
+		return ADC;
 	}
 
 #else
@@ -85,7 +114,12 @@
 	{
 		return SHT2x.GetHumidity();
 	}
-	#endif
+
+	uint16_t sensors_battery()
+	{
+		return 0xFFFF;
+	}
+#endif
 
 
 #endif // ifdef AVR

@@ -81,6 +81,9 @@ void aprs_send()
 	ax25_send_string("/Ti=");
 	dtostrf(sensors_temperature(), -1, 2, temp);
 	ax25_send_string(temp);
+	ax25_send_string("/batt=");
+	dtostrf(sensors_battery(), -1, 2, temp);
+	ax25_send_string(temp);
 
 	ax25_send_byte(' ');
 	ax25_send_string(APRS_COMMENT);     // Comment

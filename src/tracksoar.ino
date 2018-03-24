@@ -123,6 +123,8 @@ void loop()
 			DEBUG_UART.print(sensors_pressure());
 			DEBUG_UART.print(", humidity=");
 			DEBUG_UART.print(sensors_humidity());
+			DEBUG_UART.print(", battery=");
+			DEBUG_UART.print(sensors_battery());
 			DEBUG_UART.println(".");
 		#endif
 
