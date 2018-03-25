@@ -23,7 +23,7 @@
 	#include <Wire.h>
 
 	#ifdef TRACKSOAR_20
-		#include "./SparkFunBME280.h"
+		#include "./SparkFunBME280.hpp"
 		#pragma message("Version 2.0a")
 	#else
 		#error "Unknown version!"
