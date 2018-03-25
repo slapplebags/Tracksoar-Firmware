@@ -56,6 +56,10 @@
 #define DIGI_PATH1      "WIDE2"
 #define DIGI_PATH1_TTL  1
 
+// Disable WIDE pathing above this altitude (in metres)
+// Set to something ridiculous (100,000) to disable.
+#define DISABLE_PATH_ABOVE_ALT_METRES 3000
+
 // APRS comment: this goes in the comment portion of the APRS message. You
 // might want to keep this short. The longer the packet, the more vulnerable
 // it is to noise.
@@ -139,27 +143,6 @@
 // Sensors config (sensors.cpp)
 // --------------------------------------------------------------------------
 
-// Most of the sensors.cpp functions use internal reference voltages (either
-// AVCC or 1.1V). If you want to use an external reference, you should
-// uncomment the following line:
-//
-// #define USE_AREF
-//
-// BEWARE! If you hook up an external voltage to the AREF pin and
-// accidentally set the ADC to any of the internal references, YOU WILL
-// FRY YOUR AVR.
-//
-// It is always advised to connect the AREF pin through a pull-up resistor,
-// whose value is defined here in ohms (set to 0 if no pull-up):
-//
-#define AREF_PULLUP           4700
-//
-// Since there is already a 32K resistor at the ADC pin, the actual
-// voltage read will be VREF * 32 / (32 + AREF_PULLUP)
-//
-// Read more in the Arduino reference docs:
-// http://arduino.cc/en/Reference/AnalogReference?from=Reference.AREF
-
 // Pin mappings for the internal / external temperature sensors. VS refers
 // to (arduino) digital pins, whereas VOUT refers to (arduino) analog pins.
 #define GPS_USING_UBLOX
@@ -168,8 +151,10 @@
 // 1 = Celsius, 2 = Kelvin, 3 = Fahrenheit
 #define TEMP_UNIT 1
 
-// Calibration value in the units selected. Use integer only.
-#define CALIBRATION_VAL 0
+// The voltage of the AVCC rail. Basically the 5V rail.
+// Nominally 4.99V, delta whatever the resistor tolerances
+// are
+#define AVCC_VOLTAGE 4.99
 
 #if defined(__AVR_ATmega328P__)
 	#error "Bug Connor to fix this!"

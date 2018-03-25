@@ -82,9 +82,11 @@
 
 	// ADC should be free-running, so just
 	// read the last conversion result.
-	uint16_t sensors_battery()
+	// VRef is tied to avcc, so the actual
+	// voltage is value * (avcc / bits)
+	float sensors_battery()
 	{
-		return ADC;
+		return ADC * (AVCC_VOLTAGE / 1024);
 	}
 
 #else

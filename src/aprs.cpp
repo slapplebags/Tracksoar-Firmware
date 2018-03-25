@@ -35,14 +35,18 @@ float meters_to_feet(float m)
 	return m / 0.3048;
 }
 
+long max_alt = 0;
+
 // Exported functions
 void aprs_send()
 {
+
 	char temp[12];                   // Temperature (int/ext)
 	const struct s_address addresses[] =
 	{
 		{D_CALLSIGN, D_CALLSIGN_ID},  // Destination callsign
 		{S_CALLSIGN, S_CALLSIGN_ID},  // Source callsign (-11 = balloon, -9 = car)
+
 		#ifdef DIGI_PATH1
 			{DIGI_PATH1, DIGI_PATH1_TTL}, // Digi1 (first digi in the chain)
 		#endif
@@ -51,9 +55,28 @@ void aprs_send()
 		#endif
 	};
 
-	ax25_send_header(addresses, sizeof(addresses) / sizeof(s_address));
+	int address_chain_sz = 2;
+
+	#ifdef DIGI_PATH1
+		address_chain_sz += 1;
+	#endif
+	#ifdef DIGI_PATH2
+		address_chain_sz += 1;
+	#endif
+
+	// If the current altitude is above the digipeating threshold,
+	// no longer send the digipeat segments of the path.
+	if (gps_altitude > DISABLE_PATH_ABOVE_ALT_METRES)
+		address_chain_sz = 2;
+
+	// Track the current altitude, and the max altitude.
+	long cur_alt = (long)(meters_to_feet(gps_altitude) + 0.5);
+
+	if (cur_alt > max_alt)
+		max_alt = cur_alt;
+
+	ax25_send_header(addresses, address_chain_sz);
 	ax25_send_byte('/');                // Report w/ timestamp, no APRS messaging. $ = NMEA raw data
-	// ax25_send_string("021709z");     // 021709z = 2nd day of the month, 17:09 zulu (UTC/GMT)
 	ax25_send_string(gps_time);         // 170915 = 17h:09m:15s zulu (not allowed in Status Reports)
 	ax25_send_byte('h');
 	ax25_send_string(gps_aprs_lat);     // Lat: 38deg and 22.20 min (.20 are NOT seconds, but 1/100th of minutes)
@@ -66,7 +89,10 @@ void aprs_send()
 	snprintf(temp, 4, "%03d", (int)(gps_speed + 0.5));
 	ax25_send_string(temp);             // speed (knots)
 	ax25_send_string("/A=");            // Altitude (feet). Goes anywhere in the comment area
-	snprintf(temp, 7, "%06ld", (long)(meters_to_feet(gps_altitude) + 0.5));
+	snprintf(temp, 7, "%06ld", cur_alt);
+	ax25_send_string(temp);
+	ax25_send_string("/MaxA=");            // Altitude (feet). Goes anywhere in the comment area
+	snprintf(temp, 7, "%06ld", max_alt);
 	ax25_send_string(temp);
 	// Pressure: "/Pa=12345"
 	ax25_send_string("/Pa=");

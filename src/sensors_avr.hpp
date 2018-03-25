@@ -33,7 +33,7 @@
 	float sensors_temperature();
 	int32_t sensors_pressure();
 	float sensors_humidity();
-	uint16_t sensors_battery();
+	float sensors_battery();
 
 #endif // ifndef __SENSORS_AVR_H__
 #endif // ifdef AVR
