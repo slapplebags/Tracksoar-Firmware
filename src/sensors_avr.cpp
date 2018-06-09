@@ -56,7 +56,7 @@
 		DIDR0  = _BV(BAT_ADC_PIN_IDX);   // Turn off digital input buffer on the bat in pin.
 
 		ADCSRA |= _BV(ADEN);  // Enable ADC
-		ADCSRA |= _BV(ADSC) | _BV(ADATE);  // Start A2D Conversions, free running.
+		ADCSRA |= _BV(ADSC);  // Start a single conversion.
 	}
 
 	void sensors_setup()
@@ -80,12 +80,19 @@
 		return bme280.readFloatHumidity();
 	}
 
-	// ADC should be free-running, so just
-	// read the last conversion result.
+	// Trigger a conversion, wait for it to complete.
 	// VRef is tied to avcc, so the actual
 	// voltage is value * (avcc / bits)
 	float sensors_battery()
 	{
+		ADCSRA |= _BV(ADSC);  // Start a single conversion.
+
+		// Wait for it to convert
+		while (ADCSRA & _BV(ADSC))
+		{
+			// Empty
+		}
+
 		return ADC * (AVCC_VOLTAGE / 1024);
 	}
 
