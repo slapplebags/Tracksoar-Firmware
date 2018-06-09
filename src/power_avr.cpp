@@ -53,8 +53,49 @@
 // 	sleep_mode();    // Go to sleep
 // }
 
-void power_save()
+
+
+void safe_pet_watchdog(void)
 {
+	if (UDADDR & _BV(ADDEN) || true)
+		return;
+	wdt_reset();
+}
+
+void watchdogSetup(void)
+{
+	// If we have a active USB connection, don't turn on the WDT, because it breaks the
+	// bootloader.
+	if (UDADDR & _BV(ADDEN) || true)
+		return;
+
+	cli();
+	wdt_reset();
+	/*
+	 WDTCSR configuration:
+	 WDIE = 1: Interrupt Enable
+	 WDE = 1 :Reset Enable
+	 See table for time-out variations:
+	 WDP3 = 0 :For 1000ms Time-out
+	 WDP2 = 1 :For 1000ms Time-out
+	 WDP1 = 1 :For 1000ms Time-out
+	 WDP0 = 0 :For 1000ms Time-out
+	*/
+	// Enter Watchdog Configuration mode:
+	WDTCSR |= (1 << WDCE) | (1 << WDE);
+	// Set Watchdog settings:
+	WDTCSR = (0 << WDIE) | (1 << WDE) |
+	         (1 << WDP3) | (0 << WDP2) | (0 << WDP1) |
+	         (1 << WDP0);
+	DEBUG_UART.println("WDT reset");
+	sei();
+}
+
+
+
+void power_save(void)
+{
+
 	/* Enter power saving mode. SLEEP_MODE_IDLE is the least saving
 	 * mode, but it's the only one that will keep the UART running.
 	 * In addition, we need timer0 to keep track of time, timer 1
@@ -68,7 +109,7 @@ void power_save()
 	power_spi_disable();
 	power_twi_disable();
 
-	wdt_reset();
+	safe_pet_watchdog();
 
 	LED_PORT &= ~_BV(LED_PIN_BIT);
 	sleep_mode();    // Go to sleep

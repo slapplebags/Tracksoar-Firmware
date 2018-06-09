@@ -56,7 +56,7 @@
 		DIDR0  = _BV(BAT_ADC_PIN_IDX);   // Turn off digital input buffer on the bat in pin.
 
 		ADCSRA |= _BV(ADEN);  // Enable ADC
-		ADCSRA |= _BV(ADSC);  // Start A2D Conversions, free running.
+		ADCSRA |= _BV(ADSC) | _BV(ADATE);  // Start A2D Conversions, free running.
 	}
 
 	void sensors_setup()

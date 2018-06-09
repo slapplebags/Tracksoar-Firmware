@@ -38,6 +38,7 @@ static const uint32_t VALID_POS_TIMEOUT = 2000;  // ms
 #include <Wire.h>
 // Same is true for SPI.h
 #include <SPI.h>
+#include <avr/wdt.h>
 
 // Module variables
 static int32_t next_aprs = 0;
@@ -47,7 +48,7 @@ void setup()
 {
 	LED_DDR  |= _BV(LED_PIN_BIT);
 
-	DEBUG_UART.begin(GPS_BAUDRATE);
+	DEBUG_UART.begin(115200);
 	GPS_UART.begin(GPS_BAUDRATE);
 
 	#ifdef DEBUG_RESET
@@ -80,6 +81,9 @@ void setup()
 		next_aprs = millis();
 	}
 
+
+	watchdogSetup();
+
 	// TODO: beep while we get a fix, maybe indicating the number of
 	// visible satellites by a series of short beeps?
 }
@@ -109,8 +113,10 @@ void get_pos()
 
 void loop()
 {
+
+
 	// Time for another APRS frame
-	// wdt_reset();
+	safe_pet_watchdog();
 
 	if ((int32_t) (millis() - next_aprs) >= 0)
 	{
@@ -130,13 +136,13 @@ void loop()
 
 		get_pos();
 		aprs_send();
-		// wdt_reset();
+		safe_pet_watchdog();
 		next_aprs += APRS_PERIOD * 1000L;
 
 		while (afsk_flush())
 		{
 			power_save();
-			// wdt_reset();
+			safe_pet_watchdog();
 		}
 
 		#ifdef DEBUG_MODEM
@@ -149,27 +155,3 @@ void loop()
 
 	power_save(); // Incoming GPS data or interrupts will wake us up
 }
-
-// void watchdogSetup(void)
-// {
-// 	cli();
-// 	wdt_reset();
-// 	/*
-// 	 WDTCSR configuration:
-// 	 WDIE = 1: Interrupt Enable
-// 	 WDE = 1 :Reset Enable
-// 	 See table for time-out variations:
-// 	 WDP3 = 0 :For 1000ms Time-out
-// 	 WDP2 = 1 :For 1000ms Time-out
-// 	 WDP1 = 1 :For 1000ms Time-out
-// 	 WDP0 = 0 :For 1000ms Time-out
-// 	*/
-// 	// Enter Watchdog Configuration mode:
-// 	WDTCSR |= (1 << WDCE) | (1 << WDE);
-// 	// Set Watchdog settings:
-// 	WDTCSR = (0 << WDIE) | (1 << WDE) |
-// 	         (1 << WDP3) | (0 << WDP2) | (0 << WDP1) |
-// 	         (1 << WDP0);
-// 	DEBUG_UART.println("WDT reset");
-// 	sei();
-// }

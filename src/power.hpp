@@ -17,7 +17,9 @@
 #ifndef __POWER_H__
 #define __POWER_H__
 
-void power_save();
+void safe_pet_watchdog(void);
+void power_save(void);
+void watchdogSetup(void);
 
 #endif // ifndef __POWER_H__
 
