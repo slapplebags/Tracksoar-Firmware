@@ -15,40 +15,31 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifdef AVR
+#ifndef __GPS_H__
+#define __GPS_H__
 
-#include "pin.h"
 #include <stdint.h>
-#include <pins_arduino.h>
-#if (ARDUINO + 1) >= 100
-#  include <Arduino.h>
+
+#if defined(__AVR_ATmega32U4__)
+	#define GPS_SERIAL Serial1
 #else
-#  include <WProgram.h>
+	#define GPS_SERIAL Serial
 #endif
 
-// This is a digitalWrite() replacement that does not disrupt
-// timer 2.
-void pin_write(uint8_t pin, uint8_t val)
-{
-  uint8_t bit = digitalPinToBitMask(pin);
-  uint8_t port = digitalPinToPort(pin);
-  volatile uint8_t *out;
+extern char gps_time[7];       // HHMMSS
+extern uint32_t gps_seconds;   // seconds after midnight
+extern char gps_date[7];       // DDMMYY
+extern float gps_lat;
+extern float gps_lon;
+extern char gps_aprs_lat[9];
+extern char gps_aprs_lon[10];
+extern float gps_course;
+extern float gps_speed;
+extern float gps_altitude;
+extern uint8_t gps_num_sats;
+extern bool gps_low_power_mode;
 
-  if (port == NOT_A_PIN) return;
+void gps_setup();
+bool gps_decode(char c);
 
-  out = portOutputRegister(port);
-
-  if (val == LOW) {
-    uint8_t oldSREG = SREG;
-    cli();
-    *out &= ~bit;
-    SREG = oldSREG;
-  } else {
-    uint8_t oldSREG = SREG;
-    cli();
-    *out |= bit;
-    SREG = oldSREG;
-  }
-}
-
-#endif  // AVR
+#endif

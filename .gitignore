@@ -6,3 +6,4 @@ trackduino micro/trackuino micro sensor chip mk2.pro
 
 .pioenvs
 .piolibdeps
+.DS_Store

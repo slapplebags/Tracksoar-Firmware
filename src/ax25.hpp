@@ -15,16 +15,19 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef __RADIO_HX1_H__
-#define __RADIO_HX1_H__
+#ifndef __AX25_H__
+#define __AX25_H__
 
-#include "radio.h"
-
-class RadioHx1 : public Radio {
-  public:
-    virtual void setup();
-    virtual void ptt_on();
-    virtual void ptt_off();
+struct s_address
+{
+	char callsign[7];
+	unsigned char ssid;
 };
+
+void ax25_send_header(const struct s_address *addresses, int num_addresses);
+void ax25_send_byte(unsigned char byte);
+void ax25_send_string(const char *string);
+void ax25_send_footer();
+void ax25_flush_frame();
 
 #endif

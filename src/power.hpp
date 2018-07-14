@@ -14,27 +14,12 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
+#ifndef __POWER_H__
+#define __POWER_H__
 
-#ifdef AVR
-#ifndef __SENSORS_AVR_H__
-#define __SENSORS_AVR_H__
+void safe_pet_watchdog(void);
+void power_save(void);
+void watchdogSetup(void);
 
-#include "config.h"
-#include <Wire.h>
+#endif // ifndef __POWER_H__
 
-#ifdef TRACKSOAR_12
-	#include "./SparkFunBME280.h"
- 	#pragma message("Version 1.2")
-#else
-	#include "Adafruit_BMP085.h"
-	#include "SHT2x.h"
-  	#pragma message("Version < 1.2")
-#endif
-
-void sensors_setup();
-float sensors_temperature();
-int32_t sensors_pressure();
-float sensors_humidity();
-
-#endif // ifndef __SENSORS_AVR_H__
-#endif // ifdef AVR

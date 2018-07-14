@@ -14,10 +14,26 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-#ifndef __POWER_H__
-#define __POWER_H__
 
-void power_save();
+#ifdef AVR
+#ifndef __SENSORS_AVR_H__
+	#define __SENSORS_AVR_H__
 
-#endif // ifndef __POWER_H__
+	#include "config.hpp"
+	#include <Wire.h>
 
+	#ifdef TRACKSOAR_20
+		#include "./SparkFunBME280.hpp"
+		#pragma message("Version 2.0a")
+	#else
+		#error "Unknown version!"
+	#endif
+
+	void sensors_setup();
+	float sensors_temperature();
+	int32_t sensors_pressure();
+	float sensors_humidity();
+	float sensors_battery();
+
+#endif // ifndef __SENSORS_AVR_H__
+#endif // ifdef AVR
